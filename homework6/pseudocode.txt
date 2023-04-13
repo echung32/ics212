@@ -1,0 +1,33 @@
+-----------------------------------
+deleteRecord
+
+- start: The pointer to the first record of the list (or NULL)
+- uaccountno: The user's account number (integer)
+-----------------------------------
+
+define a pointer to a record called cursor
+define a pointer to a record called precursor
+define a pointer to a record called postcursor
+define an int called deleted
+
+copy from -1 to deleted
+copy from start to cursor
+while ( cursor != NULL )
+    if ( uaccountno == accountno in the record whose address is in cursor )
+        copy from 0 to deleted
+        if ( cursor == start )
+            copy from next in the record whose address is in cursor to start
+            copy from NULL in the record to next whose address is in cursor
+            release the space whose address is in cursor
+            copy from start to cursor
+        else        
+            copy from next in the record whose address is in cursor to postcursor
+            copy from NULL to next in the record whose address is in cursor
+            release the space whose address is in cursor
+            copy from postcursor to next in the record whose address is in precursor
+            copy from postcursor to cursor
+    else
+        copy from cursor to precursor
+        copy from next in the record whose address is in cursor to cursor
+
+return deleted

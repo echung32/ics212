@@ -1,0 +1,241 @@
+Script started on Sat 04 Mar 2023 05:17:21 PM HST
+]0;echung32@uhx02:~/ics212/homework5[?1034huhx02:/home/e/echung32/ics212/homework5% make
+gcc -ansi -pedantic-errors -Wall -c driver.c
+gcc -ansi -pedantic-errors -Wall -c iofunctions.c
+gcc -o homework5 driver.o iofunctions.o
+]0;echung32@uhx02:~/ics212/homework5uhx02:/home/e/echung32/ics212/homework5% touch driver.c
+]0;echung32@uhx02:~/ics212/homework5uhx02:/home/e/echung32/ics212/homework5% make
+gcc -ansi -pedantic-errors -Wall -c driver.c
+gcc -o homework5 driver.o iofunctions.o
+]0;echung32@uhx02:~/ics212/homework5uhx02:/home/e/echung32/ics212/homework5% touch iofunctions.c
+]0;echung32@uhx02:~/ics212/homework5uhx02:/home/e/echung32/ics212/homework5% touch iofunctions.cmake[K
+gcc -ansi -pedantic-errors -Wall -c iofunctions.c
+gcc -o homework5 driver.o iofunctions.o
+]0;echung32@uhx02:~/ics212/homework5uhx02:/home/e/echung32/ics212/homework5% touch iofunctions.h
+]0;echung32@uhx02:~/ics212/homework5uhx02:/home/e/echung32/ics212/homework5% touch iofunctions.hmake[K
+gcc -ansi -pedantic-errors -Wall -c driver.c
+gcc -o homework5 driver.o iofunctions.o
+]0;echung32@uhx02:~/ics212/homework5uhx02:/home/e/echung32/ics212/homework5% touch iofunctio[K[K[K[K[K[K[K[K[Kdriver[K[K[K[K[K[K[Kp[K pokemon.h
+]0;echung32@uhx02:~/ics212/homework5uhx02:/home/e/echung32/ics212/homework5% touch pokemon.hmake[K
+gcc -ansi -pedantic-errors -Wall -c driver.c
+gcc -ansi -pedantic-errors -Wall -c iofunctions.c
+gcc -o homework5 driver.o iofunctions.o
+]0;echung32@uhx02:~/ics212/homework5uhx02:/home/e/echung32/ics212/homework5% make
+make: `homework5' is up to date.
+]0;echung32@uhx02:~/ics212/homework5uhx02:/home/e/echung32/ics212/homework5% make
+make: `homework5' is up to date.
+]0;echung32@uhx02:~/ics212/homework5uhx02:/home/e/echung32/ics212/homework5% ./homework5 [K[K[K[K[K[K[K[K[K[K[K[Ktouch *.c
+]0;echung32@uhx02:~/ics212/homework5uhx02:/home/e/echung32/ics212/homework5% make
+gcc -ansi -pedantic-errors -Wall -c driver.c
+gcc -ansi -pedantic-errors -Wall -c iofunctions.c
+gcc -o homework5 driver.o iofunctions.o
+]0;echung32@uhx02:~/ics212/homework5uhx02:/home/e/echung32/ics212/homework5% touch *.o
+]0;echung32@uhx02:~/ics212/homework5uhx02:/home/e/echung32/ics212/homework5% touch *.o[5Pmake
+gcc -o homework5 driver.o iofunctions.o
+]0;echung32@uhx02:~/ics212/homework5uhx02:/home/e/echung32/ics212/homework5% make
+make: `homework5' is up to date.
+]0;echung32@uhx02:~/ics212/homework5uhx02:/home/e/echung32/ics212/homework5% ./homework5 
+---- START: 1-5 TESTS ----
+
+** TEST: writefile (RUN 0/5) **
+* filename: pokebank.txt
+* amount: 0
+* SUCCESSFUL WRITE
+** TEST: writefile (RUN 0/5) **
+
+** TEST: readfile (RUN 0/5) **
+* filename: pokebank.txt
+* SUCCESSFUL READ
+* numpokemons_2: 0
+** TEST: readfile (RUN 0/5) **
+
+** TEST: writefile (RUN 1/5) **
+* filename: pokebank.txt
+* amount: 1
+* CREATE POKEMON (1/1):
+* || level: 35
+* || name: Bulbasaur
+* SUCCESSFUL WRITE
+** TEST: writefile (RUN 1/5) **
+
+** TEST: readfile (RUN 1/5) **
+* filename: pokebank.txt
+* SUCCESSFUL READ
+* numpokemons_2: 1
+* READ POKEMON (1/1):
+* || level: 35
+* || name: Bulbasaur
+* || MATCHING: true
+** TEST: readfile (RUN 1/5) **
+
+** TEST: writefile (RUN 2/5) **
+* filename: pokebank.txt
+* amount: 2
+* CREATE POKEMON (1/2):
+* || level: 72
+* || name: Charmander
+* CREATE POKEMON (2/2):
+* || level: 9
+* || name: Charmander
+* SUCCESSFUL WRITE
+** TEST: writefile (RUN 2/5) **
+
+** TEST: readfile (RUN 2/5) **
+* filename: pokebank.txt
+* SUCCESSFUL READ
+* numpokemons_2: 2
+* READ POKEMON (1/2):
+* || level: 72
+* || name: Charmander
+* || MATCHING: true
+* READ POKEMON (2/2):
+* || level: 9
+* || name: Charmander
+* || MATCHING: true
+** TEST: readfile (RUN 2/5) **
+
+** TEST: writefile (RUN 3/5) **
+* filename: pokebank.txt
+* amount: 3
+* CREATE POKEMON (1/3):
+* || level: 0
+* || name: Minun
+* CREATE POKEMON (2/3):
+* || level: 52
+* || name: Squirtle
+* CREATE POKEMON (3/3):
+* || level: 85
+* || name: Bulbasaur
+* SUCCESSFUL WRITE
+** TEST: writefile (RUN 3/5) **
+
+** TEST: readfile (RUN 3/5) **
+* filename: pokebank.txt
+* SUCCESSFUL READ
+* numpokemons_2: 3
+* READ POKEMON (1/3):
+* || level: 0
+* || name: Minun
+* || MATCHING: true
+* READ POKEMON (2/3):
+* || level: 52
+* || name: Squirtle
+* || MATCHING: true
+* READ POKEMON (3/3):
+* || level: 85
+* || name: Bulbasaur
+* || MATCHING: true
+** TEST: readfile (RUN 3/5) **
+
+** TEST: writefile (RUN 4/5) **
+* filename: pokebank.txt
+* amount: 4
+* CREATE POKEMON (1/4):
+* || level: 45
+* || name: Pichu
+* CREATE POKEMON (2/4):
+* || level: 5
+* || name: Pikachu
+* CREATE POKEMON (3/4):
+* || level: 19
+* || name: Bulbasaur
+* CREATE POKEMON (4/4):
+* || level: 6
+* || name: Bulbasaur
+* SUCCESSFUL WRITE
+** TEST: writefile (RUN 4/5) **
+
+** TEST: readfile (RUN 4/5) **
+* filename: pokebank.txt
+* SUCCESSFUL READ
+* numpokemons_2: 4
+* READ POKEMON (1/4):
+* || level: 45
+* || name: Pichu
+* || MATCHING: true
+* READ POKEMON (2/4):
+* || level: 5
+* || name: Pikachu
+* || MATCHING: true
+* READ POKEMON (3/4):
+* || level: 19
+* || name: Bulbasaur
+* || MATCHING: true
+* READ POKEMON (4/4):
+* || level: 6
+* || name: Bulbasaur
+* || MATCHING: true
+** TEST: readfile (RUN 4/5) **
+
+** TEST: writefile (RUN 5/5) **
+* filename: pokebank.txt
+* amount: 5
+* CREATE POKEMON (1/5):
+* || level: 57
+* || name: Pikachu
+* CREATE POKEMON (2/5):
+* || level: 51
+* || name: Pichu
+* CREATE POKEMON (3/5):
+* || level: 11
+* || name: Minun
+* CREATE POKEMON (4/5):
+* || level: 74
+* || name: Squirtle
+* CREATE POKEMON (5/5):
+* || level: 27
+* || name: Pikachu
+* SUCCESSFUL WRITE
+** TEST: writefile (RUN 5/5) **
+
+** TEST: readfile (RUN 5/5) **
+* filename: pokebank.txt
+* SUCCESSFUL READ
+* numpokemons_2: 5
+* READ POKEMON (1/5):
+* || level: 57
+* || name: Pikachu
+* || MATCHING: true
+* READ POKEMON (2/5):
+* || level: 51
+* || name: Pichu
+* || MATCHING: true
+* READ POKEMON (3/5):
+* || level: 11
+* || name: Minun
+* || MATCHING: true
+* READ POKEMON (4/5):
+* || level: 74
+* || name: Squirtle
+* || MATCHING: true
+* READ POKEMON (5/5):
+* || level: 27
+* || name: Pikachu
+* || MATCHING: true
+** TEST: readfile (RUN 5/5) **
+
+---- END: 1-5 TESTS ----
+
+---- START: READ NON-EXISTENT FILE ----
+
+** TEST: readfile **
+* filename: nonexist.txt
+* READ FILE ERRORED (GOOD!)
+** TEST: readfile **
+
+---- END: READ NON-EXISTENT FILE ----
+
+---- START: READ INTO SMALLER POKEBANK ----
+
+** TEST: readfile **
+* filename: pokebank.txt
+* numpokemons: 3
+* matches size: true
+** TEST: readfile **
+
+---- END: READ INTO SMALLER POKEBANK ----
+
+]0;echung32@uhx02:~/ics212/homework5uhx02:/home/e/echung32/ics212/homework5% exit
+exit
+
+Script done on Sat 04 Mar 2023 05:19:00 PM HST
