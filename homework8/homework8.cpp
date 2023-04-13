@@ -46,12 +46,32 @@ int writefile(const char [], const unsigned char []);
 
 int main(int argc, char* argv[])
 {
-    unsigned char header[20];
+    int success;
+    const char *readfilename[3] = {"request1.bin", "request2.bin", "request3.bin"};
+    const char *writefilename[3] = {"response1.bin", "response2.bin", "response3.bin"};
 
-    readfile("request3.bin", header);
-    writefile("request3test.bin", header);
+    for (int i = 0; i < 3; i++)
+    {
+        unsigned char header[20];
+        unsigned char newheader[20];
 
-    std::cout << header << std::endl;
+        success = readfile(readfilename[i], header);
+        if (success == 0)
+        {
+            std::cout << readfilename[i] << " - read - " << header << std::endl;
+        }
+
+        success = writefile(writefilename[i], header);
+        if (success == 0)
+        {
+            std::cout << writefilename[i] << " - write - " << header << std::endl;
+        }
+
+        /** printheader(header); */ 
+        makeheader(header, newheader);
+    }
+
+    return success;
 }
 
 /*****************************************************************
@@ -68,7 +88,31 @@ int main(int argc, char* argv[])
 
 void printheader(const unsigned char header[])
 {
-    std::cout << "print" << std::endl;
+    /** 2 bytes */
+    int source, destination;
+    /** 4 bytes */
+    unsigned int sequence, acknowledgement;
+    /** 1 bit */
+    const char *control[6] = {"FIN", "SYN", "RST", "PSH", "ACK", "URG"};
+
+    source = header[1] << 8 | header[0];
+    destination = header[3] << 8 | header[2];
+    sequence = header[7] << 24 | header[6] << 16 | header[5] << 8 | header[4];
+    acknowledgement = header[11] << 24 | header[10] << 16 | header[9] << 8 | header[8];
+
+    printf("Source: %d\n", source);
+    printf("Destination: %d\n", destination);
+    printf("Sequence: %u\n", sequence);
+    printf("Acknowledgement: %u\n", acknowledgement);
+
+    printf("Control bits which are set to 1:\n");
+    for (int i = 6; i > 0; i--)
+    {
+        if ((header[13] & (1 << (i - 1))) != 0)
+        {
+            printf("%s\n", control[i - 1]);
+        }
+    }
 }
 
 /*****************************************************************
@@ -86,14 +130,59 @@ void printheader(const unsigned char header[])
 
 void makeheader(const unsigned char header[], unsigned char returnHeader[])
 {
-    std::cout << "make" << std::endl;
+    /** 2 bytes */
+    int source, destination;
+    /** 4 bytes */
+    unsigned int sequence, acknowledgement;
+    /** 1 bit */
+    const char *control[6] = {"FIN", "SYN", "RST", "PSH", "ACK", "URG"};
+    int bitmask_32768 = 1 << 15;
+
+    /** copy header to returnHeader */
+    for (int i = 0; i < 20; i++)
+    {
+        returnHeader[i] = header[i];
+    }
+
+    source = returnHeader[1] << 8 | returnHeader[0];
+    destination = returnHeader[3] << 8 | returnHeader[2];
+    sequence = returnHeader[7] << 24 | returnHeader[6] << 16 | returnHeader[5] << 8 | returnHeader[4];
+    acknowledgement = returnHeader[11] << 24 | returnHeader[10] << 16 | returnHeader[9] << 8 | returnHeader[8];
+
+    /** check greater than 32768 */
+    if ((source & bitmask_32768) != 0)
+    {
+        int bitmask_4th = 1 << 5;
+        int bitmask_11th = 1 << (12 - 8);
+
+        returnHeader[0] ^= bitmask_4th;
+        returnHeader[1] ^= bitmask_11th;
+
+        printf("GREATER!!\n");
+    }
+
+    /** set the destination to the source */
+    returnHeader[2] = returnHeader[0];
+    returnHeader[3] = returnHeader[1];
+    /** header source has the destination, copy from there. */
+    returnHeader[0] = header[2];
+    returnHeader[1] = header[3];
+
+    /** set acknowledgement number to sequence number */
+    returnHeader[11] = header[7];
+    returnHeader[10] = header[6];
+    returnHeader[9] = header[5];
+    returnHeader[8] = header[4];
+
+    printheader(returnHeader);
 }
 
 /*****************************************************************
 //
 //  Function name: readfile
 //
-//  DESCRIPTION:   This 
+//  DESCRIPTION:   This function reads a binary file and writes the
+//                 contents read into the header variable.
 //
 //  Parameters:    filename (const char [])  : the binary file to read
 //                 header (unsigned char []) : the read TCP header data.
@@ -109,15 +198,17 @@ int readfile(const char filename[], unsigned char header[])
     int success = -1;
 
     pFile = fopen(filename, "rb");
-    if (pFile != NULL) {
+    if (pFile != NULL)
+    {
         int result = fread(header, sizeof(unsigned char), sizeof(unsigned char) * 20, pFile);
-        if (result == sizeof(unsigned char) * 20) { 
+        if (result == sizeof(unsigned char) * 20)
+        { 
             success = 0;
         }
 
         fclose (pFile);
     }
-    
+
     return success;
 }
 
@@ -125,7 +216,8 @@ int readfile(const char filename[], unsigned char header[])
 //
 //  Function name: writefile
 //
-//  DESCRIPTION:   This
+//  DESCRIPTION:   This function takes the data from the header variable
+//                 and writes it to a binary file.
 //
 //  Parameters:    filename (const char [])  : the binary file to write to
 //                 header (unsigned char []) : the TCP header data to write
@@ -141,14 +233,16 @@ int writefile(const char filename[], const unsigned char header[])
     int success = -1;
 
     pFile = fopen(filename, "wb");
-    if (pFile != NULL) {
+    if (pFile != NULL)
+    {
         int result = fwrite(header, sizeof(unsigned char), sizeof(unsigned char) * 20, pFile);
-        if (result == sizeof(unsigned char) * 20) { 
+        if (result == sizeof(unsigned char) * 20)
+        { 
             success = 0;
         }
 
         fclose (pFile);
     }
-    
+
     return success;
 }

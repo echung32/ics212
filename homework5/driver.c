@@ -53,7 +53,7 @@ int main(int argc, char* argv[])
 
     /** to initialize random number generator */
     srand(time(NULL));
-    
+
     /** repeat random test 5 times */
     printf("---- START: 1-5 TESTS ----\n\n");
     while (repeats <= repeatTimes)
