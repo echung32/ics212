@@ -69,9 +69,7 @@ int writefile(struct pokemon pokearray[], int num, char filename[])
 //
 //  Function name: readfile
 //
-//  DESCRIPTION:   A template function
-//                 This function does not do anything.
-//                 Please describe your function correctly.
+//  DESCRIPTION:   Read a file formatted as a Pokemon file.
 //
 //  Parameters:    bar (int) : Describe the meaning
 //
@@ -104,7 +102,7 @@ int readfile(struct pokemon pokearray[], int* num, char filename[])
 
         *num = index;
         fclose(ofile);
-        fflush(stdout);
+        fflush(ofile);
         success = 0;
     }
 
