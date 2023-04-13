@@ -13,7 +13,9 @@
 //  FILE:        driver.c
 //
 //  DESCRIPTION:
-//   Describe the file
+//   This driver file runs the read/write functions to test the
+//   functionality of the iofunctions and makes sure they behave
+//   as expected.
 //
 ****************************************************************/
 
@@ -28,55 +30,50 @@
 //
 //  Function name: main
 //
-//  DESCRIPTION:   Don't forget to describe what your main
-//                 function does.
+//  DESCRIPTION:   This calls the read/write functions in iofunctions.c
+//                 and tests their functions by first creating a randomized
+//                 test inputs, attempting to read a nonexistent file, and
+//                 finally reading into a smaller pokebank.
 //
 //  Parameters:    argc (int) : The number of elements in argv
 //                 argv (char*[]) : An array of arguments passed
 //                                  to the program.
 //
-//  Return values:  0 : some meaning
-//                 -1 : some meaning
+//  Return values:  1 : success
 //
 ****************************************************************/
 
 int main(int argc, char* argv[])
 {
+    int othertests = 1;
     int repeats = 0;
-    int randomamount;
-    int randomname;
+    int repeatTimes = 5;
     char filename[] = "pokebank.txt";
-    char * name[] = {"Pikachu", "Pichu", "Bulbasaur", "Charmander", "Raichu", "Squirtle"};
+    char * name[] = {"Pikachu", "Pichu", "Bulbasaur", "Charmander", "Raichu", "Squirtle", "Minun"};
 
     /** to initialize random number generator */
     srand(time(NULL));
     
     /** repeat random test 5 times */
-    printf("---- START: RANDOM TESTS ----\n\n");
-    while (repeats++ < 5)
+    printf("---- START: 1-5 TESTS ----\n\n");
+    while (repeats <= repeatTimes)
     {
+        int randomname;
         int readwritesuccess = -1;
         
         struct pokemon pokemonbank[5];
-        int numpokemons;
+        int numpokemons = 0;
 
-        int index = 0;
-        struct pokemon pokemonbank_2[5];
-        int numpokemons_2;
-
-        /** to bring it down to 1 digit, then bring it between 0-5 */
-        randomamount = (rand() % 10) % 6;
-
-        printf("** TEST: writefile (RUN %d/5) **\n", repeats);
+        printf("** TEST: writefile (RUN %d/%d) **\n", repeats, repeatTimes);
         printf("* filename: %s\n", filename);
-        printf("* randomamount: %d\n", randomamount);
-        while (numpokemons < randomamount)
+        printf("* amount: %d\n", repeats);
+        while (numpokemons < repeats)
         {
-            randomname = (rand() % 10) % 6;
+            randomname = (rand() % 10) % 7;
 
             pokemonbank[numpokemons].level = rand() % 100;
             strncpy(pokemonbank[numpokemons].name, name[randomname], 30);
-            printf("* CREATE POKEMON (%d/%d):\n", numpokemons + 1, randomamount);
+            printf("* CREATE POKEMON (%d/%d):\n", numpokemons + 1, repeats);
             printf("* || level: %d\n", pokemonbank[numpokemons].level);
             printf("* || name: %s\n", pokemonbank[numpokemons].name);
             numpokemons++;
@@ -92,13 +89,17 @@ int main(int argc, char* argv[])
             printf("* FAILED WRITE\n");
         }
 
-        printf("** TEST: writefile (RUN %d/5) **\n\n", repeats);
+        printf("** TEST: writefile (RUN %d/%d) **\n\n", repeats, repeatTimes);
 
-        printf("** TEST: readfile (RUN %d/5) **\n", repeats);
+        printf("** TEST: readfile (RUN %d/%d) **\n", repeats, repeatTimes);
         printf("* filename: %s\n", filename);
 
         if ( readwritesuccess == 0 )
         {
+            int index = 0;
+            struct pokemon pokemonbank_2[5];
+            int numpokemons_2 = 5;
+
             readwritesuccess = readfile(pokemonbank_2, &numpokemons_2, filename);
             if ( readwritesuccess == 0 )
             {
@@ -132,18 +133,18 @@ int main(int argc, char* argv[])
             printf("* SKIPPED READ DUE TO FAILED WRITE\n");
         }
 
-        printf("** TEST: readfile (RUN %d/5) **\n\n", repeats);
+        printf("** TEST: readfile (RUN %d/%d) **\n\n", repeats, repeatTimes);
+        repeats++;
     }
-    printf("---- END: RANDOM TESTS ----\n\n");
+    printf("---- END: 1-5 TESTS ----\n\n");
 
-    /** read from non-exist file */
-    printf("---- START: READ NON-EXISTENT FILE ----\n\n");
-    /** scope hack, so that variables can be neater */
-    if (0 == 0)
+    if (othertests == 1)
     {
         int nonexistRead = 0;
         struct pokemon nonexistPokebank[5];
-        int nonexistPokemonNum;
+        int nonexistPokemonNum = 5;
+        /** read from non-exist file */
+        printf("---- START: READ NON-EXISTENT FILE ----\n\n");
         printf("** TEST: readfile **\n");
         printf("* filename: nonexist.txt\n");
         nonexistRead = readfile(nonexistPokebank, &nonexistPokemonNum, "nonexist.txt");
@@ -156,18 +157,16 @@ int main(int argc, char* argv[])
             printf("* READ FILE DIDN'T ERROR (BAD!)\n");
         }
         printf("** TEST: readfile **\n\n");
+        printf("---- END: READ NON-EXISTENT FILE ----\n\n");
     }
 
-    printf("---- END: READ NON-EXISTENT FILE ----\n\n");
-    
-    /** read without enough space in pokebank */
-    printf("---- START: READ INTO SMALLER POKEBANK ----\n\n");
-    /** scope hack, so that variables can be neater */
-    if (0 == 0)
+    if (othertests == 1)
     {
         int spaceRead = 0;
         struct pokemon spacePokebank[3];
-        int spacePokemonNum;
+        int spacePokemonNum = 3;
+        /** read without enough space in pokebank */
+        printf("---- START: READ INTO SMALLER POKEBANK ----\n\n");
         printf("** TEST: readfile **\n");
         printf("* filename: %s\n", filename);
         spaceRead = readfile(spacePokebank, &spacePokemonNum, filename);
@@ -187,9 +186,8 @@ int main(int argc, char* argv[])
             printf("* matches size: %s\n", matchtest);
         }
         printf("** TEST: readfile **\n\n");
+        printf("---- END: READ INTO SMALLER POKEBANK ----\n\n");
     }
-
-    printf("---- END: READ INTO SMALLER POKEBANK ----\n\n");
 
     return 1;
 }

@@ -1,8 +1,8 @@
 /*****************************************************************
 //
-//  NAME:        Ravi Narayan
+//  NAME:        Ethan Chung
 //
-//  HOMEWORK:    1
+//  HOMEWORK:    5
 //
 //  CLASS:       ICS 212
 //
@@ -10,10 +10,11 @@
 //
 //  DATE:        February 22, 2023
 //
-//  FILE:        template.h
+//  FILE:        pokemon.h
 //
 //  DESCRIPTION:
-//   Describe the file
+//   This file provides the structure of the pokemon data type,
+//   which contains a level int and a name of 30 chars.
 //
  ****************************************************************/
 

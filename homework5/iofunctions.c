@@ -13,7 +13,9 @@
 //  FILE:        iofunctions.c
 //
 //  DESCRIPTION:
-//   Describe the file
+//   This file contains the read/write logic that interacts directly
+//   with the filesystem. This is the only file that should directly
+//   interact with the filesystem.
 //
 ****************************************************************/
 
@@ -24,12 +26,14 @@
 //
 //  Function name: writefile
 //
-//  DESCRIPTION:   Don't forget to describe what your main
-//                 function does.
+//  DESCRIPTION:   Writes the provided pokearray struct into a file.
+//                 If a file already exists with the filename provided,
+//                 it will overwrite the existing file with new data.
 //
-//  Parameters:    argc (int) : The number of elements in argv
-//                 argv (char*[]) : An array of arguments passed
-//                                  to the program.
+//  Parameters:    pokearray (struct pokemon[]) : The data of the pokemons
+//                                                to be written to disk.
+//                 num (int) : The size of the pokemon array.
+//                 filename (char[]) : The name of the file to write to.
 //
 //  Return values:  0 : file successfully opened
 //                 -1 : file failed to open
@@ -47,7 +51,7 @@ int writefile(struct pokemon pokearray[], int num, char filename[])
         int index = 0;
         while ( index < num )
         {
-            /** We need to convert the integer into a string. */
+            /** convert the integer into a string. */
             char level[20];
             sprintf(level, "%d", pokearray[index].level);
 
@@ -71,7 +75,13 @@ int writefile(struct pokemon pokearray[], int num, char filename[])
 //
 //  DESCRIPTION:   Read a file formatted as a Pokemon file.
 //
-//  Parameters:    bar (int) : Describe the meaning
+//  Parameters:    pokearray (struct pokemon[]) : The data from the file
+//                                                will be written to this struct.
+//                 num (int) : The size of the pokemon array read.
+//                             This is not representative of the amount
+//                             of pokemons in the actual file, only the amount
+//                             that could be written to the pokearray.
+//                 filename (char[]) : The name of the file to read from.
 //
 //  Return values:  0 : file successfully opened
 //                 -1 : file failed to open
@@ -89,7 +99,7 @@ int readfile(struct pokemon pokearray[], int* num, char filename[])
         int index = 0;
         int scanned = 0;
 
-        while ( index < sizeof(pokearray) && scanned != EOF )
+        while ( index < *num && scanned != EOF )
         {
             scanned = fscanf(ofile, "%d\n%s", &pokearray[index].level, pokearray[index].name);
 

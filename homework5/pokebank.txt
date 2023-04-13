@@ -1,6 +1,10 @@
-93
-Bulbasaur
-7
-Pikachu
-39
+18
 Charmander
+57
+Pikachu
+64
+Raichu
+76
+Squirtle
+18
+Raichu

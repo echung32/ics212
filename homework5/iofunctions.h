@@ -13,7 +13,8 @@
 //  FILE:        iofunctions.h
 //
 //  DESCRIPTION:
-//   Describe the file
+//   This file specifies the function prototypes for the iofunction.c
+//   file, which contains definitions for writefile and readfile.
 //
  ****************************************************************/
 
