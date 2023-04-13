@@ -1,0 +1,15 @@
+add
+1234
+name
+address
+address
+
+add
+4321
+hello
+address
+one two
+
+printall
+quit
+

@@ -117,7 +117,7 @@ void printAllRecords(struct record * start)
     {
         printf("#  Account: %d\n", cursor->accountno);
         printf("#>    Name: %s\n", cursor->name);
-        printf("#> Address: %s\n", cursor->address);
+        printf("#> Address: %s", cursor->address);
         cursor = cursor->next;
     }
 
@@ -239,8 +239,8 @@ int deleteRecord(struct record ** start, int accountnum)
 //  Parameters:    start (record**) : The pointer to the starting pointer
 //                 accountnum (int) : The account number to delete
 //
-//  Return values:  0 : success
-//                  1 : error
+//  Return values:  0 : file written successfully
+//                  1 : file was not written to successfully
 //
  ****************************************************************/
 
@@ -265,7 +265,11 @@ int writefile(struct record * start, char filename[])
             fprintf(ofile, "%d\n", cursor->accountno);
             fprintf(ofile, "%s\n", cursor->name);
             fprintf(ofile, "%s\n", cursor->address);
-            printf("* writing account %d\n", cursor->accountno);
+            fprintf(ofile, "7a8sd23ba28283f81\n");
+            if (debugmode == 1)
+            {
+                printf("* writing account %d\n", cursor->accountno);
+            }
 
             cursor = cursor->next;
         }
@@ -294,8 +298,8 @@ int writefile(struct record * start, char filename[])
 //  Parameters:    start (record**) : The pointer to the starting pointer
 //                 accountnum (int) : The account number to delete
 //
-//  Return values:  0 : success
-//                  1 : error
+//  Return values:  0 : file read successfully
+//                  1 : file was not read successfully
 //
  ****************************************************************/
 
@@ -325,11 +329,11 @@ int readfile(struct record ** start, char filename[])
             if (in_address)
             {
                 /** First char is a newline char, so no more address. */
-                if (strcmp(buffer, "\n") == 0)
+                if (strcmp(buffer, "7a8sd23ba28283f81\n") == 0)
                 {
                     int actualAccountno;
 
-                    /** add back last newline that was removed. */
+                    /** add back the last newline that was removed */
                     strcat(address, "\n");
 
                     /**
@@ -343,7 +347,6 @@ int readfile(struct record ** start, char filename[])
 
                     /** convert accountno into an integer */
                     actualAccountno = strtol(accountno, NULL, 10);
-
                     addRecord(start, actualAccountno, name, address);
 
                     /** reset buffer just in case. */
@@ -352,12 +355,12 @@ int readfile(struct record ** start, char filename[])
                 }
                 else
                 {
-                    /** get rid of all the newlines */
+                    /** get rid of the newlines */
                     if (strlen(buffer) > 0 && buffer[strlen(buffer) - 1] == '\n')
                     {
                         buffer[strlen(buffer) - 1] = '\0';
                     }
-                    /** add it back at the end */
+                    /** add newline to the previous address */
                     strcat(address, "\n");
                     strcat(address, buffer);
                 }
@@ -378,7 +381,7 @@ int readfile(struct record ** start, char filename[])
                     buffer[strlen(buffer) - 1] = '\0';
                 }
                 strcpy(name, buffer);
-
+        
                 /** first line for address */
                 fgets(buffer, 1000, ofile);
                 if (strlen(buffer) > 0 && buffer[strlen(buffer) - 1] == '\n')
@@ -388,7 +391,7 @@ int readfile(struct record ** start, char filename[])
                 strcpy(address, buffer);
 
                 /** Continue to consume address now. */
-                if (strlen(address) > 0 && address[strlen(address) - 1] != '\n')
+                if (strlen(address) > 0 && buffer[strlen(address) - 1] != '\n')
                 {
                     in_address = 1;
                 }
@@ -439,7 +442,10 @@ void cleanup(struct record ** start)
 
     while (cursor != NULL)
     {
-        printf("* cleaning account %d\n", cursor->accountno);
+        if (debugmode == 1)
+        {
+            printf("* cleaning account %d\n", cursor->accountno);
+        }
         postcursor = cursor->next;
         cursor->next = NULL;
         free(cursor);
