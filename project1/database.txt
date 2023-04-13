@@ -8,10 +8,6 @@ John Doe
 Mans Dumb 1234
 Mans Deed 4321
 
-123452
-322
-823423
-
 555332
 Joh Bruh
 1345 Hello Hello %2

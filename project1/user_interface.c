@@ -197,7 +197,6 @@ int main(int argc, char* argv[])
             getAccountNum(&accountno);
 
             /** Delete record in database */
-            
             if (deleteRecord(&start, accountno) == 0)
             {
                 printf(">> You have deleted an account.\n\n");
@@ -209,9 +208,9 @@ int main(int argc, char* argv[])
         }
         else if (strlen(option) != 0 && strncmp(option, "quit", strlen(option)) == 0)
         {
-            printf(">> Goodbye, banker!\n");
             writefile(start, filename);
             cleanup(&start);
+            printf(">> Goodbye, banker!\n");
             quit = 1;
         }
         else
@@ -284,7 +283,7 @@ void getaddress(char address[], int length)
 void getAccountNum(int *accountnum)
 {
     int successful = 0;
-   
+
     do
     {
         char buffer[9];

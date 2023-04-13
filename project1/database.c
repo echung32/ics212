@@ -63,13 +63,11 @@ void addRecord(struct record ** start, int accountnum, char name[], char address
     if (*start == NULL)
     {
         /** Add record at empty head */
-
         *start = newAccount;
     }
     else if (*start != NULL && accountnum < (*start)->accountno)
     {
         /** Add record at head with at least one item. */
-
         struct record * temp = NULL;
         temp = *start;
         *start = newAccount;
@@ -114,7 +112,7 @@ void printAllRecords(struct record * start)
     {
         printf("** START * printAllRecords **\n");
     }
-    
+
     while (cursor != NULL)
     {
         printf("#  Account: %d\n", cursor->accountno);
@@ -122,7 +120,7 @@ void printAllRecords(struct record * start)
         printf("#> Address: %s\n", cursor->address);
         cursor = cursor->next;
     }
-    
+
     if (debugmode == 1)
     {
         printf("**  END  * printAllRecords **\n");
@@ -199,7 +197,7 @@ int deleteRecord(struct record ** start, int accountnum)
         printf("* accountnum: %d\n", accountnum);
         printf("**  END  * deleteRecord **\n");
     }
-    
+
     while (cursor != NULL)
     {
         if (accountnum == cursor->accountno)
@@ -225,9 +223,9 @@ int deleteRecord(struct record ** start, int accountnum)
         {
             precursor = cursor;
             cursor = cursor->next;
-        }       
+        }
     }
-    
+
     return deleted;
 }
 
@@ -250,25 +248,25 @@ int writefile(struct record * start, char filename[])
 {
     FILE * ofile;
     int success = 1;
-    
+
     if (debugmode == 1)
     {
         printf("** START * writefile **\n");
         printf("* filename: %s\n", filename);
-        printf("**  END  * writefile **\n");
     }
 
     ofile = fopen(filename, "w");
     if (ofile != NULL)
     {
         struct record * cursor = start;
-    
+
         while (cursor != NULL)
         {
             fprintf(ofile, "%d\n", cursor->accountno);
             fprintf(ofile, "%s\n", cursor->name);
             fprintf(ofile, "%s\n", cursor->address);
-            
+            printf("* writing account %d\n", cursor->accountno);
+
             cursor = cursor->next;
         }
         /** Adds another newline to the end of the file. */
@@ -276,6 +274,11 @@ int writefile(struct record * start, char filename[])
 
         fclose(ofile);
         success = 0;
+    }
+
+    if (debugmode == 1)
+    {
+        printf("**  END  * writefile **\n\n");
     }
 
     return success;
@@ -295,11 +298,12 @@ int writefile(struct record * start, char filename[])
 //                  1 : error
 //
  ****************************************************************/
+
 int readfile(struct record ** start, char filename[])
 {
     FILE * ofile;
     int success = -1;
-    
+
     if (debugmode == 1)
     {
         printf("** START * readfile **\n");
@@ -316,12 +320,15 @@ int readfile(struct record ** start, char filename[])
         char address[50];
         int in_address = 0;
 
-        while (fgets(buffer, 1000, ofile) != NULL) {
-            if (in_address) {
+        while (fgets(buffer, 1000, ofile) != NULL)
+        {
+            if (in_address)
+            {
                 /** First char is a newline char, so no more address. */
-                if (strcmp(buffer, "\n") == 0) {
+                if (strcmp(buffer, "\n") == 0)
+                {
                     int actualAccountno;
-                    
+
                     /** add back last newline that was removed. */
                     strcat(address, "\n");
 
@@ -332,7 +339,7 @@ int readfile(struct record ** start, char filename[])
                      *     printf("name = \"%s\"\n", name);
                      *     printf("address = \"%s\"\n", address);
                      * }
-                    */
+                     */
 
                     /** convert accountno into an integer */
                     actualAccountno = strtol(accountno, NULL, 10);
@@ -387,8 +394,8 @@ int readfile(struct record ** start, char filename[])
                 }
             }
         }
-        
-        if(feof(ofile))
+
+        if (feof(ofile))
         {
             success = 0;
             if (debugmode == 1)
@@ -396,7 +403,7 @@ int readfile(struct record ** start, char filename[])
                 printf("End of File reached -- all records have been read!\n\n");
             }
         }
-        else if(ferror(ofile))
+        else if (ferror(ofile))
         {
             printf("An error has occured -- some records may not have been read!\n\n");
         }
@@ -419,14 +426,28 @@ int readfile(struct record ** start, char filename[])
 //  Return values:  0 : success
 //
  ****************************************************************/
+
 void cleanup(struct record ** start)
 {
+    struct record * cursor = *start;
+    struct record * postcursor = *start;
+
     if (debugmode == 1)
     {
         printf("** START * cleanup **\n");
-        printf("* accountnum: \n");
-        printf("**  END  * cleanup **\n");
     }
-    
-    
+
+    while (cursor != NULL)
+    {
+        printf("* cleaning account %d\n", cursor->accountno);
+        postcursor = cursor->next;
+        cursor->next = NULL;
+        free(cursor);
+        cursor = postcursor;
+    }
+
+    if (debugmode == 1)
+    {
+        printf("**  END  * cleanup **\n\n");
+    }
 }
