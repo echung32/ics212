@@ -44,8 +44,7 @@ extern int debugmode;
 
 void addRecord(struct record ** start, int accountnum, char name[], char address[])
 {
-    struct record * temp = malloc(sizeof(struct record));
-    struct record * cursor = NULL;
+    struct record * newAccount = malloc(sizeof(struct record));
 
     if (debugmode == 1)
     {
@@ -56,17 +55,41 @@ void addRecord(struct record ** start, int accountnum, char name[], char address
         printf("**  END  * addRecord **\n");
     }
 
-    temp[0].accountno = accountnum;
-    strncpy(name, temp[0].name, 30);
-    strncpy(address, temp[0].address, 50);
-    temp[0].next = NULL;
-    
-    /** Add record at head */
-    if (start == NULL || accountnum < (*start)->accountno)
+    newAccount->accountno = accountnum;
+    strncpy(newAccount->name, name, 30);
+    strncpy(newAccount->address, address, 50);
+    newAccount->next = NULL;
+
+    if (*start == NULL)
     {
-        cursor = *start;
-        *start = temp;
-        (*start)->next = cursor;
+        /** Add record at empty head */
+
+        *start = newAccount;
+    }
+    else if (*start != NULL && accountnum < (*start)->accountno)
+    {
+        /** Add record at head with at least one item. */
+
+        struct record * temp = NULL;
+        temp = *start;
+        *start = newAccount;
+        (*start)->next = temp;
+    }
+    else
+    {
+        /** Add record somewhere else with at least one item. */
+
+        struct record * cursor = (*start)->next;
+        struct record * precursor = *start;
+
+        while ( cursor != NULL && accountnum > cursor->accountno)
+        {
+            cursor = cursor->next;
+            precursor = precursor->next;
+        }
+
+        precursor->next = newAccount;
+        newAccount->next = cursor;
     }
 }
 
@@ -85,10 +108,20 @@ void addRecord(struct record ** start, int accountnum, char name[], char address
 
 void printAllRecords(struct record * start)
 {
+    struct record * cursor = start;
+
     if (debugmode == 1)
     {
         printf("** START * printAllRecords **\n");
         printf("**  END  * printAllRecords **\n");
+    }
+    
+    while (cursor != NULL)
+    {
+        printf("- Account: %d\n", cursor->accountno);
+        printf("->    name: %s\n", cursor->name);
+        printf("-> address: %s\n", cursor->address);
+        cursor = cursor->next;
     }
 }
 
@@ -108,13 +141,31 @@ void printAllRecords(struct record * start)
 
 int findRecord(struct record * start, int accountnum)
 {
+    struct record * cursor = start;
+    int success = 0;
+
     if (debugmode == 1)
     {
         printf("** START * findRecord **\n");
         printf("* accountnum: %d\n", accountnum);
         printf("**  END  * findRecord **\n");
     }
-    return 0;
+    
+    while (cursor != NULL && accountnum != cursor->accountno)
+    {
+        cursor = cursor->next;
+    }
+    
+    /** Cursor will be null if it didn't find anything. */
+    if (cursor != NULL)
+    {
+        printf("* accountno: %d\n", cursor->accountno);
+        printf("*      name: %s\n", cursor->name);
+        printf("*   address: %s\n", cursor->address);
+        success = 1;
+    }
+
+    return success;
 }
 
 /*****************************************************************

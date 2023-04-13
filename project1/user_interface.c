@@ -179,8 +179,14 @@ int main(int argc, char* argv[])
             getAccountNum(&accountno);
 
             /** Find record in database */
-            findRecord(start, accountno);
-            printf(">> You've found an account.\n\n");
+            if (findRecord(start, accountno) == 1)
+            {
+                printf(">> You've found an account.\n\n");
+            }
+            else
+            {
+                printf(">> Account %d could not be found.\n\n", accountno);
+            }
         }
         else if (strlen(option) != 0 && strncmp(option, "delete", strlen(option)) == 0)
         {
