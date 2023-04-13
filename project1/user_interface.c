@@ -179,7 +179,7 @@ int main(int argc, char* argv[])
             getAccountNum(&accountno);
 
             /** Find record in database */
-            if (findRecord(start, accountno) == 1)
+            if (findRecord(start, accountno) == 0)
             {
                 printf(">> You've found an account.\n\n");
             }
@@ -197,8 +197,15 @@ int main(int argc, char* argv[])
             getAccountNum(&accountno);
 
             /** Delete record in database */
-            deleteRecord(&start, accountno);
-            printf(">> You have deleted an account.\n\n");
+            
+            if (deleteRecord(&start, accountno) == 0)
+            {
+                printf(">> You have deleted an account.\n\n");
+            }
+            else
+            {
+                printf(">> Account %d could not be found.\n\n", accountno);
+            }
         }
         else if (strlen(option) != 0 && strncmp(option, "quit", strlen(option)) == 0)
         {

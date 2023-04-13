@@ -118,9 +118,9 @@ void printAllRecords(struct record * start)
     
     while (cursor != NULL)
     {
-        printf("- Account: %d\n", cursor->accountno);
-        printf("->    name: %s\n", cursor->name);
-        printf("-> address: %s\n", cursor->address);
+        printf("#  Account: %d\n", cursor->accountno);
+        printf("#>    Name: %s\n", cursor->name);
+        printf("#> Address: %s\n", cursor->address);
         cursor = cursor->next;
     }
 }
@@ -136,13 +136,14 @@ void printAllRecords(struct record * start)
 //                 accountnum (int) : The account number to delete
 //
 //  Return values:  0 : success
+//                  1 : error
 //
  ****************************************************************/
 
 int findRecord(struct record * start, int accountnum)
 {
     struct record * cursor = start;
-    int success = 0;
+    int success = 1;
 
     if (debugmode == 1)
     {
@@ -150,19 +151,17 @@ int findRecord(struct record * start, int accountnum)
         printf("* accountnum: %d\n", accountnum);
         printf("**  END  * findRecord **\n");
     }
-    
-    while (cursor != NULL && accountnum != cursor->accountno)
+
+    while (cursor != NULL)
     {
+        if (accountnum == cursor->accountno)
+        {
+            printf("#  Account: %d\n", cursor->accountno);
+            printf("#>    Name: %s\n", cursor->name);
+            printf("#> Address: %s\n", cursor->address);
+            success = 0;
+        }
         cursor = cursor->next;
-    }
-    
-    /** Cursor will be null if it didn't find anything. */
-    if (cursor != NULL)
-    {
-        printf("* accountno: %d\n", cursor->accountno);
-        printf("*      name: %s\n", cursor->name);
-        printf("*   address: %s\n", cursor->address);
-        success = 1;
     }
 
     return success;
@@ -179,18 +178,53 @@ int findRecord(struct record * start, int accountnum)
 //                 accountnum (int) : The account number to delete
 //
 //  Return values:  0 : success
+//                  1 : error
 //
  ****************************************************************/
 
 int deleteRecord(struct record ** start, int accountnum)
 {
+    struct record * cursor = *start;
+    struct record * precursor;
+    struct record * postcursor;
+    int deleted = 1;
+
     if (debugmode == 1)
     {
         printf("** START * deleteRecord **\n");
         printf("* accountnum: %d\n", accountnum);
         printf("**  END  * deleteRecord **\n");
     }
-    return 0;
+    
+    while (cursor != NULL)
+    {
+        if (accountnum == cursor->accountno)
+        {
+            deleted = 0;
+            if (cursor == *start)
+            {
+                *start = cursor->next;
+                cursor->next = NULL;
+                free(cursor);
+                cursor = *start;
+            }
+            else
+            {
+                postcursor = cursor->next;
+                cursor->next = NULL;
+                free(cursor);
+                precursor->next = postcursor;
+                cursor = postcursor;
+            }
+        }
+        else
+        {
+            precursor = cursor;
+            cursor = cursor->next;
+        }       
+    }
+    
+    return deleted;
 }
 
 /*****************************************************************
@@ -204,13 +238,14 @@ int deleteRecord(struct record ** start, int accountnum)
 //                 accountnum (int) : The account number to delete
 //
 //  Return values:  0 : success
+//                  1 : error
 //
  ****************************************************************/
 
 int writefile(struct record * start, char filename[])
 {
     FILE * ofile;
-    int success = -1;
+    int success = 1;
     
     if (debugmode == 1)
     {
@@ -222,21 +257,17 @@ int writefile(struct record * start, char filename[])
     ofile = fopen(filename, "w");
     if (ofile != NULL)
     {
-        /**
-         * int index = 0;
-         * while ( index < num )
-         * {
-         *     char level[20];
-         *     sprintf(level, "%d", pokearray[index].level);
-         * 
-         *     fputs(level, ofile);
-         *     fputs("\n", ofile);
-         *     fputs(pokearray[index].name, ofile);
-         *     fputs("\n", ofile);
-         * 
-         *     index++;
-         * }
-         */
+        struct record * cursor = start;
+    
+        while (cursor != NULL)
+        {
+            fprintf(ofile, "%d\n", cursor->accountno);
+            fprintf(ofile, "%s\n", cursor->name);
+            fprintf(ofile, "%s", cursor->address);
+            
+            cursor = cursor->next;
+        }
+
         fclose(ofile);
         success = 0;
     }
@@ -255,6 +286,7 @@ int writefile(struct record * start, char filename[])
 //                 accountnum (int) : The account number to delete
 //
 //  Return values:  0 : success
+//                  1 : error
 //
  ****************************************************************/
 int readfile(struct record ** start, char filename[])
@@ -272,25 +304,20 @@ int readfile(struct record ** start, char filename[])
     ofile = fopen(filename, "r");
     if (ofile != NULL)
     {
-        /**
-         * 
-         * int index = 0;
-         * int scanned = 0;
-         * 
-         * while ( index < *num && scanned != EOF )
-         * {
-         *     scanned = fscanf(ofile, "%d\n%s", &pokearray[index].level, pokearray[index].name);
-         * 
-         *     if (scanned != EOF)
-         *     {
-         *         index++;
-         *     }
-         * }
-         * 
-         * *num = index;
-         */ 
+        int scanned = 0;
+        struct record * cursor = malloc(sizeof(struct record));
+
+        while (scanned != EOF)
+        {
+            int accountno;
+            char name;
+            char address;
+            scanned = fscanf(ofile, "%d\n%30s\n%50[^\n]c", &accountno, &name, &address);
+            addRecord(start, accountno, &name, &address);
+        }
+
         fclose(ofile);
-        fflush(ofile);
+        free(cursor);
         success = 0;
     }
 
