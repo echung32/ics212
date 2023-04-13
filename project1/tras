@@ -1,0 +1,67 @@
+ if (fgets(buffer, 100, ofile) != NULL)
+            {
+                sscanf(buffer, "%d", &accountno);
+            } else {
+                done = 1;
+            }
+            
+            while ((tempName = fgetc(ofile)) != '\n')
+            {
+                sprintf(&name, "%s%c", &name, tempName);
+            }
+
+            printf("%s", &name);
+            while (addressDone == 0)
+            {
+                if (fgets(buffer, 100, ofile) != NULL)
+                {
+                    if (buffer[0] == '\n')
+                    {
+                        addressDone = 1;
+                    }
+                    else
+                    {
+                        char tempAddress;
+                        sscanf(buffer, "%[^\n]s", &tempAddress);
+                        strcat(&address, &tempAddress);
+                    }
+                }
+            }
+            
+                        char buffer[100];
+            int addressDone = 0;
+            int tempName;
+
+            int accountno;
+            char name;
+            char address;
+            
+            if (fgets(buffer, 100, ofile) != NULL)
+            {
+                sscanf(buffer, "%d", &accountno);
+            } else {
+                done = 1;
+            }
+            
+            if (fgets(buffer, 100, ofile) != NULL)
+            {
+                sscanf(buffer, "%[^\n]s", &name); 
+            }
+            
+            printf("%s", &name);
+            while (addressDone == 0)
+            {
+                while ((tempName = fgetc(ofile)) != '\n' && tempName != EOF)
+                {
+                    if (fgetc(ofile) != '\n')
+                    {
+                        sprintf(&name, "%s%c", &address, tempName);
+                    } else {
+                        addressDone == 0;
+                    }
+                }
+            }
+            
+            printf("* accountnum: %s\n", &accountno);
+            printf("*       name: %s\n", &name);
+            printf("*    address: %s\n", &address);

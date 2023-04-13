@@ -113,7 +113,6 @@ void printAllRecords(struct record * start)
     if (debugmode == 1)
     {
         printf("** START * printAllRecords **\n");
-        printf("**  END  * printAllRecords **\n");
     }
     
     while (cursor != NULL)
@@ -122,6 +121,11 @@ void printAllRecords(struct record * start)
         printf("#>    Name: %s\n", cursor->name);
         printf("#> Address: %s\n", cursor->address);
         cursor = cursor->next;
+    }
+    
+    if (debugmode == 1)
+    {
+        printf("**  END  * printAllRecords **\n");
     }
 }
 
@@ -263,10 +267,12 @@ int writefile(struct record * start, char filename[])
         {
             fprintf(ofile, "%d\n", cursor->accountno);
             fprintf(ofile, "%s\n", cursor->name);
-            fprintf(ofile, "%s", cursor->address);
+            fprintf(ofile, "%s\n", cursor->address);
             
             cursor = cursor->next;
         }
+        /** Adds another newline to the end of the file. */
+        fprintf(ofile, "\n");
 
         fclose(ofile);
         success = 0;
@@ -298,27 +304,104 @@ int readfile(struct record ** start, char filename[])
     {
         printf("** START * readfile **\n");
         printf("* filename: %s\n", filename);
-        printf("**  END  * readfile **\n");
+        printf("**  END  * readfile **\n\n");
     }
 
     ofile = fopen(filename, "r");
     if (ofile != NULL)
     {
-        int scanned = 0;
-        struct record * cursor = malloc(sizeof(struct record));
+        char buffer[1000];
+        char accountno[8];
+        char name[30];
+        char address[50];
+        int in_address = 0;
 
-        while (scanned != EOF)
+        while (fgets(buffer, 1000, ofile) != NULL) {
+            if (in_address) {
+                /** First char is a newline char, so no more address. */
+                if (strcmp(buffer, "\n") == 0) {
+                    int actualAccountno;
+                    
+                    /** add back last newline that was removed. */
+                    strcat(address, "\n");
+
+                    /**
+                     * if (debugmode == 1)
+                     * {
+                     *     printf("accountno = \"%s\"\n", accountno);
+                     *     printf("name = \"%s\"\n", name);
+                     *     printf("address = \"%s\"\n", address);
+                     * }
+                    */
+
+                    /** convert accountno into an integer */
+                    actualAccountno = strtol(accountno, NULL, 10);
+
+                    addRecord(start, actualAccountno, name, address);
+
+                    /** reset buffer just in case. */
+                    strcpy(buffer, "");
+                    in_address = 0;
+                }
+                else
+                {
+                    /** get rid of all the newlines */
+                    if (strlen(buffer) > 0 && buffer[strlen(buffer) - 1] == '\n')
+                    {
+                        buffer[strlen(buffer) - 1] = '\0';
+                    }
+                    /** add it back at the end */
+                    strcat(address, "\n");
+                    strcat(address, buffer);
+                }
+            }
+            else
+            {
+                /** accountno */
+                if (strlen(buffer) > 0 && buffer[strlen(buffer) - 1] == '\n')
+                {
+                    buffer[strlen(buffer) - 1] = '\0';
+                }
+                strcpy(accountno, buffer);
+
+                /** name */
+                fgets(buffer, 1000, ofile);
+                if (strlen(buffer) > 0 && buffer[strlen(buffer) - 1] == '\n')
+                {
+                    buffer[strlen(buffer) - 1] = '\0';
+                }
+                strcpy(name, buffer);
+
+                /** first line for address */
+                fgets(buffer, 1000, ofile);
+                if (strlen(buffer) > 0 && buffer[strlen(buffer) - 1] == '\n')
+                {
+                    buffer[strlen(buffer) - 1] = '\0';
+                }
+                strcpy(address, buffer);
+
+                /** Continue to consume address now. */
+                if (strlen(address) > 0 && address[strlen(address) - 1] != '\n')
+                {
+                    in_address = 1;
+                }
+            }
+        }
+        
+        if(feof(ofile))
         {
-            int accountno;
-            char name;
-            char address;
-            scanned = fscanf(ofile, "%d\n%30s\n%50[^\n]c", &accountno, &name, &address);
-            addRecord(start, accountno, &name, &address);
+            success = 0;
+            if (debugmode == 1)
+            {
+                printf("End of File reached -- all records have been read!\n\n");
+            }
+        }
+        else if(ferror(ofile))
+        {
+            printf("An error has occured -- some records may not have been read!\n\n");
         }
 
         fclose(ofile);
-        free(cursor);
-        success = 0;
     }
 
     return success;
