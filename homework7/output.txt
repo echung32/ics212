@@ -1,8 +1,8 @@
-Script started on Fri 31 Mar 2023 01:23:29 PM HST
+Script started on Fri 31 Mar 2023 01:38:59 PM HST
 ]0;echung32@uhx02:~/ics212/homework7[?1034huhx02:/home/e/echung32/ics212/homework7% ./homework7 
 This program checks which numbers, in the sequence from 0 to a number, are multiples of 5.
 
-Enter maximum number to show: 43
+Enter maximum number to show: 37
   Number  Multiple of 5?
        0  Yes
        1   No
@@ -42,13 +42,7 @@ Enter maximum number to show: 43
       35  Yes
       36   No
       37   No
-      38   No
-      39   No
-      40  Yes
-      41   No
-      42   No
-      43   No
 ]0;echung32@uhx02:~/ics212/homework7uhx02:/home/e/echung32/ics212/homework7% exit
 exit
 
-Script done on Fri 31 Mar 2023 01:23:40 PM HST
+Script done on Fri 31 Mar 2023 01:39:07 PM HST

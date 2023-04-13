@@ -72,7 +72,8 @@ int user_interface()
     int number;
     int successful = 0;
 
-    std::cout << "This program checks which numbers, in the sequence from 0 to a number" << std::flush;
+    std::cout << "This program checks which numbers" << std::flush;
+    std::cout << ", in the sequence from 0 to a number" << std::flush;
     std::cout << ", are multiples of 5.\n" << std::endl;
 
     do
@@ -82,9 +83,10 @@ int user_interface()
 
         if (number <= 0)
         {
-            std::cout << "You must enter a positive integer greater than 0. Try again!\n" << std::endl;
+            std::cout << "You must enter a positive integer greater than 0." << std::flush;
+            std::cout << "Try again!\n" << std::endl;
         }
-        else if (!std::cin.good())  
+        else if (!std::cin.good())
         {
             std::cout << "You must enter a valid integer. Try again!\n" << std::endl;
         }
@@ -92,7 +94,7 @@ int user_interface()
         {
             successful = 1;
         }
-        
+
         std::cin.clear();
         std::cin.ignore(100, '\n');
     }
@@ -154,11 +156,13 @@ void print_table(int number)
     {
         is_multiple5(index, isMultiple);
         std::cout << std::setw(8) << index << std::setw(5) << std::flush;
-        
+
         if (isMultiple == 1)
         {
             std::cout << "Yes" << std::endl;
-        } else {
+        }
+        else
+        {
             std::cout << "No" << std::endl;
         }
     }
