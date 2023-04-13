@@ -167,8 +167,15 @@ int main(int argc, char* argv[])
         else if (strlen(option) != 0 && strncmp(option, "printall", strlen(option)) == 0)
         {
             printf(">> You are printing all accounts.\n");
-            printAllRecords(start);
-            printf(">> All records have been printed.\n\n");
+            if (start == NULL)
+            {
+                printf(">> No records to print.\n\n");
+            }
+            else
+            {
+                printAllRecords(start);
+                printf(">> All records have been printed.\n\n");
+            }
         }
         else if (strlen(option) != 0 && strncmp(option, "find", strlen(option)) == 0)
         {
@@ -331,4 +338,11 @@ void getAccountNum(int *accountnum)
         }
     }
     while (successful == 0);
+
+    if (debugmode == 1)
+    {
+        printf("** START * getAccountNum **\n");
+        printf("* accountnum: %d\n", *accountnum);
+        printf("**  END  * getAccountNum **\n");
+    }
 }

@@ -117,7 +117,7 @@ void printAllRecords(struct record * start)
     {
         printf("#  Account: %d\n", cursor->accountno);
         printf("#>    Name: %s\n", cursor->name);
-        printf("#> Address: %s", cursor->address);
+        printf("#> Address: %s\n", cursor->address);
         cursor = cursor->next;
     }
 
@@ -381,7 +381,7 @@ int readfile(struct record ** start, char filename[])
                     buffer[strlen(buffer) - 1] = '\0';
                 }
                 strcpy(name, buffer);
-        
+
                 /** first line for address */
                 fgets(buffer, 1000, ofile);
                 if (strlen(buffer) > 0 && buffer[strlen(buffer) - 1] == '\n')

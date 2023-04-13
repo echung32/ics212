@@ -1,0 +1,8 @@
+I have concluded my testing for the "project1" program. Test results are available in the "textplan.xlsx" file.
+
+Overall, no significant issues were found which prevent the program from being used, and no crashes were experienced. However, some minor issues were found:
+
+- the `cat database.txt` step expects nothing to be returned, yet a newline is printed. However, the program still functioned, so there should be no issue with this.
+- when deleting an accountno with multiple accounts, the message returned does not indicate whether it has deleted only one, or multiple accounts. This may lead to confusion.
+
+This concludes my report.

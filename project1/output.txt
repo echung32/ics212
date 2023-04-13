@@ -1,0 +1,93 @@
+Script started on Fri 24 Mar 2023 09:30:40 PM HST
+]0;echung32@uhx02:~/ics212/project1[?1034huhx02:/home/e/echung32/ics212/project1% add[K[K[K./project1 
+Welcome, banker! This program allows you to easily find and manage customer bank records stored on the database.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> add
+
+>> You are adding a new account.
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> 113344
+> Enter customer name below.
+- Maximum of 30 characters. You can input more, but it will be ignored.
+> John Smith
+> Enter customer address below.
+- Maximum of 50 characters. You can input more, but it will be ignored.
+- Stop input by pressing 'ENTER -> CTRL+D'.
+1111 Dole St.,
+Honolulu HI, 96822
+>> You've added a new account.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> printall
+>> You are printing all accounts.
+#  Account: 113344
+#>    Name: John Smith
+#> Address: 1111 Dole St.,
+Honolulu HI, 96822
+>> All records have been printed.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> find  
+>> You are finding an account.
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> 113344
+#  Account: 113344
+#>    Name: John Smith
+#> Address: 1111 Dole St.,
+Honolulu HI, 96822
+
+>> You've found an account.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> delete
+>> You are deleting an account.
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> 113344
+>> You have deleted an account.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> de  prion  ntall
+>> You are printing all accounts.
+>> No records to print.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> quit
+>> Goodbye, banker!
+]0;echung32@uhx02:~/ics212/project1uhx02:/home/e/echung32/ics212/project1% exit
+exit
+
+Script done on Fri 24 Mar 2023 09:31:41 PM HST

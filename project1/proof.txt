@@ -1,0 +1,19 @@
+Script started on Fri 24 Mar 2023 09:16:14 PM HST
+]0;echung32@uhx02:~/ics212/project1[?1034huhx02:/home/e/echung32/ics212/project1% make
+make: `project1' is up to date.
+]0;echung32@uhx02:~/ics212/project1uhx02:/home/e/echung32/ics212/project1% touch database.h[K[K[K[K[K[K[K[K[K[K*.hj[K
+]0;echung32@uhx02:~/ics212/project1uhx02:/home/e/echung32/ics212/project1% touch *.h[5Pmake
+gcc -ansi -pedantic-errors -Wall -c user_interface.c
+gcc -ansi -pedantic-errors -Wall -c database.c
+gcc -o project1 user_interface.o database.o
+]0;echung32@uhx02:~/ics212/project1uhx02:/home/e/echung32/ics212/project1% maketouch *.h[Kc
+]0;echung32@uhx02:~/ics212/project1uhx02:/home/e/echung32/ics212/project1% touch *.c[5Pmake
+gcc -ansi -pedantic-errors -Wall -c user_interface.c
+gcc -ansi -pedantic-errors -Wall -c database.c
+gcc -o project1 user_interface.o database.o
+]0;echung32@uhx02:~/ics212/project1uhx02:/home/e/echung32/ics212/project1% maketouch *.c[K[K[K[K[K[K[K[K[Kmake
+make: `project1' is up to date.
+]0;echung32@uhx02:~/ics212/project1uhx02:/home/e/echung32/ics212/project1% ex[K[Kdo[K[Kexit
+exit
+
+Script done on Fri 24 Mar 2023 09:17:06 PM HST
