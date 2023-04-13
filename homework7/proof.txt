@@ -1,0 +1,14 @@
+Script started on Fri 31 Mar 2023 01:23:10 PM HST
+]0;echung32@uhx02:~/ics212/homework7[?1034huhx02:/home/e/echung32/ics212/homework7% touch *.cpp
+]0;echung32@uhx02:~/ics212/homework7uhx02:/home/e/echung32/ics212/homework7% make
+g++ -ansi -pedantic-errors -Wall -c homework7.cpp
+g++ -o homework7 homework7.o
+t]0;echung32@uhx02:~/ics212/homework7uhx02:/home/e/echung32/ics212/homework7% touch *.o
+]0;echung32@uhx02:~/ics212/homework7uhx02:/home/e/echung32/ics212/homework7% touch *.o[5Pmake
+g++ -o homework7 homework7.o
+]0;echung32@uhx02:~/ics212/homework7uhx02:/home/e/echung32/ics212/homework7% to[K[Kmake
+make: `homework7' is up to date.
+]0;echung32@uhx02:~/ics212/homework7uhx02:/home/e/echung32/ics212/homework7% exit
+exit
+
+Script done on Fri 31 Mar 2023 01:23:23 PM HST
