@@ -2,13 +2,13 @@
 //
 //  NAME:        Ethan Chung
 //
-//  HOMEWORK:    3b
+//  HOMEWORK:    project1
 //
 //  CLASS:       ICS 212
 //
 //  INSTRUCTOR:  Ravi Narayan
 //
-//  DATE:        February 6, 2023
+//  DATE:        March 17, 2023
 //
 //  FILE:        user_interface.c
 //
@@ -26,6 +26,7 @@
 #include "database.h"
 
 void getaddress(char address[], int length);
+void getAccountNum(int *accountnum);
 
 int debugmode = 0;
 
@@ -50,13 +51,8 @@ int debugmode = 0;
 int main(int argc, char* argv[])
 {
     struct record * start = NULL;
-    char option[100];
+    char filename[] = "database.txt";
     int quit = 0;
-
-    struct record temprecord;
-    char buffer[100];
-    int scannerresult = 0;
-    int successful = 0;
 
     /** Handle Debug Mode */
     if (argc > 1)
@@ -90,9 +86,12 @@ int main(int argc, char* argv[])
         printf("Welcome, banker!");
         printf(" This program allows you to easily find");
         printf(" and manage customer bank records stored on the database.\n\n");
+        readfile(&start, filename);
     }
     while (quit == 0)
     {
+        char option[100];
+
         printf(">> What do you want to do?\n");
         printf("- add: add a new record in the database\n");
         printf("- printall: print all records in the database\n");
@@ -107,51 +106,46 @@ int main(int argc, char* argv[])
 
         if (strlen(option) != 0 && strncmp(option, "add", strlen(option)) == 0)
         {
+            struct record data = {0};
+            int successful = 0;
+
             printf("\n>> You are adding a new account.\n");
 
             /** Account number */
-            do
-            {
-                printf("> Enter account number: ");
-                /** Ask user input, up to 99 chars */
-                scanf("%99s", buffer);
-                /** Look for a digit in the buffer, then set it to number. */
-                scannerresult = sscanf(buffer, "%d", &temprecord.accountno);
-
-                if (scannerresult != 1 || (scannerresult == 1 && temprecord.accountno <= 0))
-                {
-                    /** Cleanup input buffer */
-                    while ((fgetc(stdin)) != '\n');
-
-                    printf("!! Account numbers must be integers >= 0. Please try again.\n\n");
-                }
-                else
-                {
-                    successful = 1;
-                }
-            }
-            while (successful == 0);
+            getAccountNum(&data.accountno);
 
             /** Name */
-            successful = 0;
-            /** Clearing buffer by setting all values to 0. */
-            memset(&buffer, 0, sizeof(buffer));
-            /** To read and void the newline character after scanf() */
-            while ((fgetc(stdin)) != '\n');
             do
             {
-                printf("> Enter customer name: ");
-                /** Ask user input, up to 29 chars */
-                fgets(temprecord.name, 30, stdin);
-                /** Remove newline from buffer result */
-                temprecord.name[strcspn(temprecord.name, "\n")] = 0;
+                int index = 0;
+                int character; /** Holds current getchar'd character */
 
-                if (strlen(temprecord.name) == 0)
+                printf("> Enter customer name below.\n");
+                printf("- Maximum of 30 characters. You can input more, but it will be ignored.\n");
+                printf("> ");
+
+                /**
+                 * Keep track of an index in order to add into the name properly,
+                 * and to ensure the size is length - 1 (for last '/0' character).
+                 */
+
+                while ((character = fgetc(stdin)) != '\n')
                 {
-                    /** Cleanup input buffer */
-                    while ((fgetc(stdin)) != '\n');
+                    /** Continue to eat up the characters from stdin, but don't add. */
 
-                    printf("!! You must input at least one character. Please try again.");
+                    if (index < 29)
+                    {
+                        data.name[index] = character;
+                        index = index + 1;
+                    }
+                }
+
+                /** Remove newline from fgetc result */
+                data.name[strcspn(data.name, "\n")] = 0;
+
+                if (strlen(data.name) == 0)
+                {
+                    printf("!! You must input at least one character. Please try again.\n\n");
                 }
                 else
                 {
@@ -161,22 +155,14 @@ int main(int argc, char* argv[])
             while (successful == 0);
 
             /** Address */
-            /** Clearing buffer by setting all values to 0. */
-            memset(&buffer, 0, sizeof(buffer));
             printf("> Enter customer address below.\n");
             printf("- Maximum of 50 characters. You can input more, but it will be ignored.\n");
             printf("- Stop input by pressing 'ENTER -> CTRL+D'.\n");
-            getaddress(buffer, 50);
-            strcpy(temprecord.address, buffer);
+            getaddress(data.address, 50);
 
             /** Add to database */
-            addRecord(&start, temprecord.accountno, temprecord.name, temprecord.address);
+            addRecord(&start, data.accountno, data.name, data.address);
             printf(">> You've added a new account.\n\n");
-
-            /** Reset variables -- clears the data by setting the values to 0. */
-            successful = 0;
-            memset(&temprecord, 0, sizeof(temprecord));
-            memset(&buffer, 0, sizeof(buffer));
         }
         else if (strlen(option) != 0 && strncmp(option, "printall", strlen(option)) == 0)
         {
@@ -186,88 +172,37 @@ int main(int argc, char* argv[])
         }
         else if (strlen(option) != 0 && strncmp(option, "find", strlen(option)) == 0)
         {
+            int accountno = 0;
+
             printf(">> You are finding an account.\n");
             /** Account number */
-            do
-            {
-                printf("> Enter account number: ");
-                /** Ask user input, up to 99 chars */
-                scanf("%99s", buffer);
-                /** Look for a digit in the buffer, then set it to number. */
-                scannerresult = sscanf(buffer, "%d", &temprecord.accountno);
+            getAccountNum(&accountno);
 
-                if (scannerresult != 1 || (scannerresult == 1 && temprecord.accountno <= 0))
-                {
-                    /** Cleanup input buffer */
-                    while ((fgetc(stdin)) != '\n');
-
-                    printf("!! Account numbers must be integers >= 0. Please try again.\n\n");
-                }
-                else
-                {
-                    successful = 1;
-                }
-            }
-            while (successful == 0);
             /** Find record in database */
-            findRecord(start, temprecord.accountno);
+            findRecord(start, accountno);
             printf(">> You've found an account.\n\n");
-
-            /** Remove trailing newline character after scanf */
-            while ((fgetc(stdin)) != '\n');
-            /** Reset variables -- clears the data by setting the values to 0. */
-            successful = 0;
-            memset(&temprecord, 0, sizeof(temprecord));
-            memset(&buffer, 0, sizeof(buffer));
         }
         else if (strlen(option) != 0 && strncmp(option, "delete", strlen(option)) == 0)
         {
+            int accountno = 0;
+
             printf(">> You are deleting an account.\n");
             /** Account number */
-            do
-            {
-                printf("> Enter account number: ");
-                /** Ask user input, up to 99 chars */
-                scanf("%99s", buffer);
-                /** Look for a digit in the buffer, then set it to number. */
-                scannerresult = sscanf(buffer, "%d", &temprecord.accountno);
+            getAccountNum(&accountno);
 
-                if (scannerresult != 1 || (scannerresult == 1 && temprecord.accountno <= 0))
-                {
-                    /** Cleanup input buffer */
-                    while ((fgetc(stdin)) != '\n');
-
-                    printf("!! Account numbers must be integers >= 0. Please try again.\n\n");
-                }
-                else
-                {
-                    successful = 1;
-                }
-            }
-            while (successful == 0);
             /** Delete record in database */
-            deleteRecord(&start, temprecord.accountno);
+            deleteRecord(&start, accountno);
             printf(">> You have deleted an account.\n\n");
-            /** Remove trailing newline character after scanf */
-            while ((fgetc(stdin)) != '\n');
-            /** Reset variables -- clears the data by setting the values to 0. */
-            successful = 0;
-            memset(&temprecord, 0, sizeof(temprecord));
-            memset(&buffer, 0, sizeof(buffer));
         }
         else if (strlen(option) != 0 && strncmp(option, "quit", strlen(option)) == 0)
         {
             printf(">> Goodbye, banker!\n");
+            writefile(start, filename);
+            cleanup(&start);
             quit = 1;
         }
         else
         {
-            /** Cleanup stdin */
-            if (strlen(option) > 0)
-            {
-                while ((fgetc(stdin)) != '\n');
-            }
-
             printf("!! Invalid option. Please try again!\n\n");
         }
     }
@@ -294,7 +229,7 @@ int main(int argc, char* argv[])
 void getaddress(char address[], int length)
 {
     int index = 0;
-    int ch; /** Holds current getchar'd character */
+    int character; /** Holds current getchar'd character */
 
     if (debugmode == 1)
     {
@@ -309,12 +244,79 @@ void getaddress(char address[], int length)
      * and to ensure the size is length - 1 (for last '/0' character).
      */
 
-    while ((ch = fgetc(stdin)) != EOF)
+    while ((character = fgetc(stdin)) != EOF)
     {
+        /** Continue to eat up the characters from stdin, but don't add. */
         if (index < length - 1)
         {
-            address[index] = ch;
+            address[index] = character;
             index = index + 1;
         }
     }
+}
+
+/*****************************************************************
+//
+//  Function name: getAccountNum
+//
+//  DESCRIPTION:   This helper 
+//
+//  Parameters:    address (char[]) : A pointer to store the customer's address.
+//                 length (int) : The maximum length of the address.
+//
+//  Return values:  void
+//
+ ****************************************************************/
+
+void getAccountNum(int *accountnum)
+{
+    int successful = 0;
+   
+    do
+    {
+        char buffer[9];
+        int scannerresult = 0;
+        int index = 0;
+        int character;
+
+        /**
+         * Max 8 characters to prevent integer overflow issues.
+         */
+
+        printf("> Enter account number below.\n");
+        printf("- Maximum of 8 characters. You can input more, but it will be ignored.\n");
+        printf("> ");
+
+        /**
+         * Keep track of an index in order to add into the name properly,
+         * and to ensure the size is length - 1 (for last '/0' character).
+         */
+
+        while ((character = fgetc(stdin)) != '\n')
+        {
+            /** Continue to eat up the characters from stdin, but don't add. */
+
+            if (index < 8)
+            {
+                buffer[index] = character;
+                index = index + 1;
+            }
+        }
+
+        /** Remove newline from fgetc result */
+        buffer[strcspn(buffer, "\n")] = 0;
+
+        /** Look for a digit in the buffer, then set it to number. */
+        scannerresult = sscanf(buffer, "%8d", accountnum);
+
+        if (scannerresult != 1 || (scannerresult == 1 && *accountnum <= 0))
+        {
+            printf("!! Account numbers must be integers >= 0. Please try again.\n\n");
+        }
+        else
+        {
+            successful = 1;
+        }
+    }
+    while (successful == 0);
 }
