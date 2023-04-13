@@ -1,0 +1,84 @@
+Script started on Sat 08 Apr 2023 08:03:12 PM HST
+]0;echung32@uhx02:~/ics212/homework8[?1034huhx02:/home/e/echung32/ics212/homework8% ls
+[0m[38;5;34mhomework8[0m    Makefile    request1.bin  response1.bin           response2_expected.bin
+homework8.c  output.txt  request2.bin  response1_expected.bin  response3.bin
+homework8.o  proof.txt   request3.bin  response2.bin           response3_expected.bin
+]0;echung32@uhx02:~/ics212/homework8uhx02:/home/e/echung32/ics212/homework8% ./homework8 
+read request1.bin: Jãêêÿÿô_*1P*
+write response1.bin: êêjó
+
+>> printing request header
+Source: 58186
+Destination: 60138
+Sequence: 252903423
+Acknowledgement: 824860660
+Control bits which are set to 1:
+URG
+PSH
+SYN
+
+>> printing response header
+Source: 60138
+Destination: 62314
+Sequence: 252903424
+Acknowledgement: 252903423
+Control bits which are set to 1:
+URG
+ACK
+PSH
+SYN
+
+-----------
+read request2.bin: ßÜßÿÿÿëäóAP
+write response2.bin: Üßß
+
+>> printing request header
+Source: 7391
+Destination: 57308
+Sequence: 3959422975
+Acknowledgement: 1106502663
+Control bits which are set to 1:
+ACK
+FIN
+
+>> printing response header
+Source: 57308
+Destination: 7391
+Sequence: 3959422976
+Acknowledgement: 3959422975
+Control bits which are set to 1:
+ACK
+FIN
+
+-----------
+read request3.bin: ™¢ƒ–¼Gbç WP
+write response3.bin: ƒ–¹²½G¼GP
+
+>> printing request header
+Source: 41625
+Destination: 38531
+Sequence: 303187900
+Acknowledgement: 1461774178
+Control bits which are set to 1:
+SYN
+FIN
+
+>> printing response header
+Source: 38531
+Destination: 45753
+Sequence: 303187901
+Acknowledgement: 303187900
+Control bits which are set to 1:
+ACK
+SYN
+FIN
+
+-----------
+]0;echung32@uhx02:~/ics212/homework8uhx02:/home/e/echung32/ics212/homework8% ls
+[0m[38;5;34mhomework8[0m    Makefile    request1.bin  response1.bin           response2_expected.bin
+homework8.c  output.txt  request2.bin  response1_expected.bin  response3.bin
+homework8.o  proof.txt   request3.bin  response2.bin           response3_expected.bin
+]0;echung32@uhx02:~/ics212/homework8uhx02:/home/e/echung32/ics212/homework8% exit
+exit
+
+Script done on Sat 08 Apr 2023 08:03:30 PM HST

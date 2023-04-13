@@ -1,0 +1,14 @@
+Script started on Sat 08 Apr 2023 08:02:50 PM HST
+]0;echung32@uhx02:~/ics212/homework8[?1034huhx02:/home/e/echung32/ics212/homework8% touch *.c
+]0;echung32@uhx02:~/ics212/homework8uhx02:/home/e/echung32/ics212/homework8% make
+gcc -ansi -pedantic-errors -Wall -c homework8.c
+gcc -o homework8 homework8.o
+]0;echung32@uhx02:~/ics212/homework8uhx02:/home/e/echung32/ics212/homework8% touch *.o
+]0;echung32@uhx02:~/ics212/homework8uhx02:/home/e/echung32/ics212/homework8% touch *.o[5Pmake
+gcc -o homework8 homework8.o
+]0;echung32@uhx02:~/ics212/homework8uhx02:/home/e/echung32/ics212/homework8% maketouch *.o[5Pmake
+make: `homework8' is up to date.
+]0;echung32@uhx02:~/ics212/homework8uhx02:/home/e/echung32/ics212/homework8% exit
+exit
+
+Script done on Sat 08 Apr 2023 08:03:05 PM HST
