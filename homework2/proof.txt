@@ -1,0 +1,9 @@
+Script started on Fri 27 Jan 2023 12:19:20 PM HST
+]0;echung32@uhx02:~/ics212/homework2[?1034huhx02:/home/e/echung32/ics212/homework2% exitgcc -o homework2 homework2.oansi -pedantic-errors -Wall -c homeework2.c
+]0;echung32@uhx02:~/ics212/homework2uhx02:/home/e/echung32/ics212/homework2% gcc -ansi -pedantic-errors -Wall -c homeework2.c[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgcc -o homework2 homework2.o
+]0;echung32@uhx02:~/ics212/homework2uhx02:/home/e/echung32/ics212/homework2% gcc -o homework2 homework2.oansi -pedantic-errors -Wall -c homeework2.c[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+exit
+
+Script done on Fri 27 Jan 2023 12:19:27 PM HST

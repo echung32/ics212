@@ -1,0 +1,214 @@
+Script started on Fri 27 Jan 2023 12:20:13 PM HST
+]0;echung32@uhx02:~/ics212/homework2[?1034huhx02:/home/e/echung32/ics212/homework2% echo SHOW THAT[K[K[K[K[K[K[K[K[K-- SHOW THAT THE PROGRAM RUN [KS --
+-- SHOW THAT THE PROGRAM RUNS --
+]0;echung32@uhx02:~/ics212/homework2uhx02:/home/e/echung32/ics212/homework2% ./homework2 
+This program checks which numbers, in the sequence from 0 to a number, are multiples of 5.
+
+Enter maximum number to show: 15
+  Number  Multiple of 5?
+       0  Yes
+       1   No
+       2   No
+       3   No
+       4   No
+       5  Yes
+       6   No
+       7   No
+       8   No
+       9   No
+      10  Yes
+      11   No
+      12   No
+      13   No
+      14   No
+      15  Yes
+]0;echung32@uhx02:~/ics212/homework2uhx02:/home/e/echung32/ics212/homework2% ./homework2 echo -- SHOW THAT THE PROGRAM RUNS --[1P --[1P --[1P --[1P --[1P--[1P --[1P --[1P --[1P --[1P --[1P --[1P --[1P--[1P --[1P --[1P --[1P--[1P --[1P --[1P --[1P --[1P--[1P --[1P --[1P --[1P --S --H --O --W --[C --[1P--[1P --[1P --[1P --[1P --T --R --Y --[C --A --B --C --[1P --[1P --[1P --[1P--[1P --[1P --[1P --T --E --S --T --[1P --[1P --[1P --[1P --T --E --S --T --[C --I --N --V --A --L --I --D --[C --N --U --M --[1P --[1P --[1P --L --E --T --T --E --R --[C --C --H --E --C --K --[C --[1P--[C[C[C[1P --[1P --[1P --[1P --[1P --[1P--[1P --[1P --[1P --[1P --[1P --[1P --[1P--[1P --[1P --[1P --[1P --[1P --[1P --[1P --U --S --I --N --G --[C --S --T --R --I --N --G --S --[C[C[C
+-- TEST USING STRINGS --
+]0;echung32@uhx02:~/ics212/homework2uhx02:/home/e/echung32/ics212/homework2% echo -- TEST USING STRINGS --[17P./homework2 
+This program checks which numbers, in the sequence from 0 to a number, are multiples of 5.
+
+Enter maximum number to show: HELLO     hello
+You must enter a valid integer. Try again!
+Enter maximum number to show: 15  10
+  Number  Multiple of 5?
+       0  Yes
+       1   No
+       2   No
+       3   No
+       4   No
+       5  Yes
+       6   No
+       7   No
+       8   No
+       9   No
+      10  Yes
+]0;echung32@uhx02:~/ics212/homework2uhx02:/home/e/echung32/ics212/homework2% ./homework2 echo -- TEST USING STRINGS --[1P --[1P --[1P --[1P --[1P --[1P --[1P --S --T --R --[1P --[1P --[1P --M --I --X --[C --O --F --[C --B --O --T --H --[C
+-- TEST USING MIX OF BOTH --
+]0;echung32@uhx02:~/ics212/homework2uhx02:/home/e/echung32/ics212/homework2% echo -- TEST USING MIX OF BOTH --[21P./homework2 
+This program checks which numbers, in the sequence from 0 to a number, are multiples of 5.
+
+Enter maximum number to show: 123hello
+  Number  Multiple of 5?
+       0  Yes
+       1   No
+       2   No
+       3   No
+       4   No
+       5  Yes
+       6   No
+       7   No
+       8   No
+       9   No
+      10  Yes
+      11   No
+      12   No
+      13   No
+      14   No
+      15  Yes
+      16   No
+      17   No
+      18   No
+      19   No
+      20  Yes
+      21   No
+      22   No
+      23   No
+      24   No
+      25  Yes
+      26   No
+      27   No
+      28   No
+      29   No
+      30  Yes
+      31   No
+      32   No
+      33   No
+      34   No
+      35  Yes
+      36   No
+      37   No
+      38   No
+      39   No
+      40  Yes
+      41   No
+      42   No
+      43   No
+      44   No
+      45  Yes
+      46   No
+      47   No
+      48   No
+      49   No
+      50  Yes
+      51   No
+      52   No
+      53   No
+      54   No
+      55  Yes
+      56   No
+      57   No
+      58   No
+      59   No
+      60  Yes
+      61   No
+      62   No
+      63   No
+      64   No
+      65  Yes
+      66   No
+      67   No
+      68   No
+      69   No
+      70  Yes
+      71   No
+      72   No
+      73   No
+      74   No
+      75  Yes
+      76   No
+      77   No
+      78   No
+      79   No
+      80  Yes
+      81   No
+      82   No
+      83   No
+      84   No
+      85  Yes
+      86   No
+      87   No
+      88   No
+      89   No
+      90  Yes
+      91   No
+      92   No
+      93   No
+      94   No
+      95  Yes
+      96   No
+      97   No
+      98   No
+      99   No
+     100  Yes
+     101   No
+     102   No
+     103   No
+     104   No
+     105  Yes
+     106   No
+     107   No
+     108   No
+     109   No
+     110  Yes
+     111   No
+     112   No
+     113   No
+     114   No
+     115  Yes
+     116   No
+     117   No
+     118   No
+     119   No
+     120  Yes
+     121   No
+     122   No
+     123   No
+]0;echung32@uhx02:~/ics212/homework2uhx02:/home/e/echung32/ics212/homework2% ./homework2 echo -- TEST USING MIX OF BOTH --[21P./homework2 [K./homework2 
+This program checks which numbers, in the sequence from 0 to a number, are multiples of 5.
+
+Enter maximum number to show: 321hell       hello123
+You must enter a valid integer. Try again!
+Enter maximum number to show: 12 0
+  Number  Multiple of 5?
+       0  Yes
+       1   No
+       2   No
+       3   No
+       4   No
+       5  Yes
+       6   No
+       7   No
+       8   No
+       9   No
+      10  Yes
+]0;echung32@uhx02:~/ics212/homework2uhx02:/home/e/echung32/ics212/homework2% ./homework2 echo -- TEST USING MIX OF BOTH --[21P./homework2 echo -- TEST USING STRINGS --[17P./homework2 echo -- TEST USING STRINGS --[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[KT WITH 0 --[K[K[K[K<=0[K 0 --
+bash: =: No such file or directory
+]0;echung32@uhx02:~/ics212/homework2uhx02:/home/e/echung32/ics212/homework2% echo -- TEST WITH <= 0 --[13P./homework2 
+This program checks which numbers, in the sequence from 0 to a number, are multiples of 5.
+
+Enter maximum number to show: -100
+You must enter a positive integer greater than 0. Try again!
+Enter maximum number to show: 0
+You must enter a positive integer greater than 0. Try again!
+Enter maximum number to show: 1 5
+  Number  Multiple of 5?
+       0  Yes
+       1   No
+       2   No
+       3   No
+       4   No
+       5  Yes
+]0;echung32@uhx02:~/ics212/homework2uhx02:/home/e/echung32/ics212/homework2% exit
+exit
+
+Script done on Fri 27 Jan 2023 12:22:13 PM HST

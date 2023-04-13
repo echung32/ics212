@@ -1,0 +1,27 @@
+Script started on Mon 16 Jan 2023 10:58:10 PM HST
+]0;echung32@uhx02:~/ics212/homework1[?1034huhx02:/home/e/echung32/ics212/homework1% pwd
+/home/e/echung32/ics212/homework1
+]0;echung32@uhx02:~/ics212/homework1uhx02:/home/e/echung32/ics212/homework1% mkdir unix_prac
+]0;echung32@uhx02:~/ics212/homework1uhx02:/home/e/echung32/ics212/homework1% cp homework1.o [K[K[K unx[Kux[K[Kix_prac/[K
+]0;echung32@uhx02:~/ics212/homework1uhx02:/home/e/echung32/ics212/homework1% cd unix_prac/
+]0;echung32@uhx02:~/ics212/homework1/unix_pracuhx02:/home/e/echung32/ics212/homework1/unix_prac% mv homework1 hw1
+]0;echung32@uhx02:~/ics212/homework1/unix_pracuhx02:/home/e/echung32/ics212/homework1/unix_prac% ./hw1
+Hello
+Hello
+World
+World
+!!!
+!!!
+While loop!
+While loop!
+While loop!
+Do-while loop!
+Do-while loop!
+Do-while loop!
+]0;echung32@uhx02:~/ics212/homework1/unix_pracuhx02:/home/e/echung32/ics212/homework1/unix_prac% rm hwe1[K[K1
+]0;echung32@uhx02:~/ics212/homework1/unix_pracuhx02:/home/e/echung32/ics212/homework1/unix_prac% cd ..
+]0;echung32@uhx02:~/ics212/homework1uhx02:/home/e/echung32/ics212/homework1% rmdir unix_prac/
+]0;echung32@uhx02:~/ics212/homework1uhx02:/home/e/echung32/ics212/homework1% exit
+exit
+
+Script done on Mon 16 Jan 2023 10:59:12 PM HST

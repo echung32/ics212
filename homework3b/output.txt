@@ -1,0 +1,712 @@
+Script started on Sun 12 Feb 2023 08:28:04 PM HST
+]0;echung32@uhx02:~/ics212/homework3b[?1034huhx02:/home/e/echung32/ics212/homework3b% echo basic testing of functions
+basic testing of functions
+]0;echung32@uhx02:~/ics212/homework3buhx02:/home/e/echung32/ics212/homework3b% ./homework3
+Welcome, banker! This program allows you to easily find and manage customer bank records stored on the database.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> add
+
+>> You are adding a new account.
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> 12345678
+> Enter customer name below.
+- Maximum of 30 characters. You can input more, but it will be ignored.
+> john three the 4th
+> Enter customer address below.
+- Maximum of 50 characters. You can input more, but it will be ignored.
+- Stop input by pressing 'ENTER -> CTRL+D'.
+111 Dole St, Honolulu, HI 96822
+North hemisphere
+>> You've added a new account.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> r printall
+>> You are printing all accounts.
+>> All records have been printed.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> find
+>> You are finding an account.
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> 12345678
+>> You've found an account.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> delete
+>> You are deleting an account.
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> 12345678
+>> You have deleted an account.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> quite 
+>> Goodbye, banker!
+]0;echung32@uhx02:~/ics212/homework3buhx02:/home/e/echung32/ics212/homework3b% echo test autocomplete functions
+test autocomplete functions
+]0;echung32@uhx02:~/ics212/homework3buhx02:/home/e/echung32/ics212/homework3b% ./homework3 
+Welcome, banker! This program allows you to easily find and manage customer bank records stored on the database.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> a
+
+>> You are adding a new account.
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> ^C
+]0;echung32@uhx02:~/ics212/homework3buhx02:/home/e/echung32/ics212/homework3b% ./homework3 
+Welcome, banker! This program allows you to easily find and manage customer bank records stored on the database.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> ad
+
+>> You are adding a new account.
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> ^C
+]0;echung32@uhx02:~/ics212/homework3buhx02:/home/e/echung32/ics212/homework3b% ./homework3 
+Welcome, banker! This program allows you to easily find and manage customer bank records stored on the database.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> add
+
+>> You are adding a new account.
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> ^C
+]0;echung32@uhx02:~/ics212/homework3buhx02:/home/e/echung32/ics212/homework3b% ./homework3 
+Welcome, banker! This program allows you to easily find and manage customer bank records stored on the database.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> apd
+!! Invalid option. Please try again!
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> adp
+!! Invalid option. Please try again!
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> printaaa
+!! Invalid option. Please try again!
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> prinaa   tnall
+!! Invalid option. Please try again!
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> add add print  all find
+!! Invalid option. Please try again!
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> find printall
+!! Invalid option. Please try again!
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> f p s a
+!! Invalid option. Please try again!
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> 111  
+!! Invalid option. Please try again!
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> 1add2
+!! Invalid option. Please try again!
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> 2 add2
+!! Invalid option. Please try again!
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> quit123
+!! Invalid option. Please try again!
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> quit  
+>> Goodbye, banker!
+]0;echung32@uhx02:~/ics212/homework3buhx02:/home/e/echung32/ics212/homework3b% echo testing debug arg
+testing debug arg
+]0;echung32@uhx02:~/ics212/homework3buhx02:/home/e/echung32/ics212/homework3b% ./homework3 debugff
+** ERROR: Invalid arguments!
+]0;echung32@uhx02:~/ics212/homework3buhx02:/home/e/echung32/ics212/homework3b% ./homework3 de[K[Kffdebug
+** ERROR: Invalid arguments!
+]0;echung32@uhx02:~/ics212/homework3buhx02:/home/e/echung32/ics212/homework3b% ./homework3 fff debug
+** ERROR: Invalid arguments!
+]0;echung32@uhx02:~/ics212/homework3buhx02:/home/e/echung32/ics212/homework3b% ./homework3 f[Kdebug f[Kfff
+** ERROR: Invalid arguments!
+]0;echung32@uhx02:~/ics212/homework3buhx02:/home/e/echung32/ics212/homework3b% ./homework3 f[Kdebug debug
+** ERROR: Invalid arguments!
+]0;echung32@uhx02:~/ics212/homework3buhx02:/home/e/echung32/ics212/homework3b% ./homework3 debug
+** DEBUG MODE ENABLED **
+Welcome, banker! This program allows you to easily find and manage customer bank records stored on the database.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> ^C
+]0;echung32@uhx02:~/ics212/homework3buhx02:/home/e/echung32/ics212/homework3b% echo comprehensive[K[K[K[K[K[K[K[K[K[K[K[K[Kadd testing in debug mode
+add testing in debug mode
+]0;echung32@uhx02:~/ics212/homework3buhx02:/home/e/echung32/ics212/homework3b% ./homework3 add[K[K[K[K debug
+** DEBUG MODE ENABLED **
+Welcome, banker! This program allows you to easily find and manage customer bank records stored on the database.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> add
+
+>> You are adding a new account.
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> helohelo
+!! Account numbers must be integers >= 0. Please try again.
+
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> hello123
+!! Account numbers must be integers >= 0. Please try again.
+
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> 123hello
+> Enter customer name below.
+- Maximum of 30 characters. You can input more, but it will be ignored.
+> john three the 4th the wealthy $$1000 individual super long name
+> Enter customer address below.
+- Maximum of 50 characters. You can input more, but it will be ignored.
+- Stop input by pressing 'ENTER -> CTRL+D'.
+** START * getaddress **
+* address: 
+*  length: 50
+**  END  * getaddress **
+this is a very long string
+that will likely overflow
+the fifty character limit
+** START * addRecord **
+* accountnum: 123
+*       name: john three the 4th the wealth
+*    address: this is a very long string
+that will likely overf
+**  END  * addRecord **
+>> You've added a new account.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> add
+
+>> You are adding a new account.
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> 1234-432
+> Enter customer name below.
+- Maximum of 30 characters. You can input more, but it will be ignored.
+> john the wealthy $$!!##
+> Enter customer address below.
+- Maximum of 50 characters. You can input more, but it will be ignored.
+- Stop input by pressing 'ENTER -> CTRL+D'.
+** START * getaddress **
+* address: 
+*  length: 50
+**  END  * getaddress **
+Jezero crater
+North hemisphere
+Mars
+** START * addRecord **
+* accountnum: 1234
+*       name: john the wealthy $$!!##
+*    address: Jezero crater
+North hemisphere
+Mars
+
+**  END  * addRecord **
+>> You've added a new account.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> add
+
+>> You are adding a new account.
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> -1234
+!! Account numbers must be integers >= 0. Please try again.
+
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> a2a2 b2
+!! Account numbers must be integers >= 0. Please try again.
+
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> 2a2a 2b
+> Enter customer name below.
+- Maximum of 30 characters. You can input more, but it will be ignored.
+> john two
+> Enter customer address below.
+- Maximum of 50 characters. You can input more, but it will be ignored.
+- Stop input by pressing 'ENTER -> CTRL+D'.
+** START * getaddress **
+* address: 
+*  length: 50
+**  END  * getaddress **
+111 Dole St
+Honolulu, HI 96822
+** START * addRecord **
+* accountnum: 2
+*       name: john two
+*    address: 111 Dole St
+Honolulu, HI 96822
+
+**  END  * addRecord **
+>> You've added a new account.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> add
+
+>> You are adding a new account.
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> 1234-
+> Enter customer name below.
+- Maximum of 30 characters. You can input more, but it will be ignored.
+> a super l long name that exceeds 30th character mark $$11@@33aa..
+> Enter customer address below.
+- Maximum of 50 characters. You can input more, but it will be ignored.
+- Stop input by pressing 'ENTER -> CTRL+D'.
+** START * getaddress **
+* address: 
+*  length: 50
+**  END  * getaddress **
+the address of h university of hawaii at manoa
+is very long
+** START * addRecord **
+* accountnum: 1234
+*       name: a super long name that exceed
+*    address: the address of university of hawaii at manoa
+is v
+**  END  * addRecord **
+>> You've added a new account.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> printall
+>> You are printing all accounts.
+** START * printAllRecords **
+**  END  * printAllRecords **
+>> All records have been printed.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> e q
+>> Goodbye, banker!
+]0;echung32@uhx02:~/ics212/homework3buhx02:/home/e/echung32/ics212/homework3b% echo test other functions in debug
+test other functions in debug
+]0;echung32@uhx02:~/ics212/homework3buhx02:/home/e/echung32/ics212/homework3b% ./homework3 
+Welcome, banker! This program allows you to easily find and manage customer bank records stored on the database.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> find
+>> You are finding an account.
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> helohelo
+!! Account numbers must be integers >= 0. Please try again.
+
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> -1000
+!! Account numbers must be integers >= 0. Please try again.
+
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> hello123
+!! Account numbers must be integers >= 0. Please try again.
+
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> -1234
+!! Account numbers must be integers >= 0. Please try again.
+
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> a2a2 b2
+!! Account numbers must be integers >= 0. Please try again.
+
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> 1111 22
+>> You've found an account.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> find
+>> You are finding an account.
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> 2a2a 2b
+>> You've found an account.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> qu
+>> Goodbye, banker!
+]0;echung32@uhx02:~/ics212/homework3buhx02:/home/e/echung32/ics212/homework3b% ./homework3  [Kdebug
+** DEBUG MODE ENABLED **
+Welcome, banker! This program allows you to easily find and manage customer bank records stored on the database.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> hello123
+!! Invalid option. Please try again!
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> find
+>> You are finding an account.
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> a2a2 b2
+!! Account numbers must be integers >= 0. Please try again.
+
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> 
+!! Account numbers must be integers >= 0. Please try again.
+
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> 2a2a 2b
+** START * findRecord **
+* accountnum: 2
+**  END  * findRecord **
+>> You've found an account.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> find
+>> You are finding an account.
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> 1234-432
+** START * findRecord **
+* accountnum: 1234
+**  END  * findRecord **
+>> You've found an account.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> find
+>> You are finding an account.
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> 12345678
+** START * findRecord **
+* accountnum: 12345678
+**  END  * findRecord **
+>> You've found an account.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> find
+>> You are finding an account.
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> 12345678123456781234567812345678
+** START * findRecord **
+* accountnum: 12345678
+**  END  * findRecord **
+>> You've found an account.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> find
+>> You are finding an account.
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> 123hello123hello123hello123hello
+** START * findRecord **
+* accountnum: 123
+**  END  * findRecord **
+>> You've found an account.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> find
+>> You are finding an account.
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> 123hello123hello123hello123hello                                -1234-1234-1234
+!! Account numbers must be integers >= 0. Please try again.
+
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> 2a2 b22a2 b22a2 b2
+** START * findRecord **
+* accountnum: 2
+**  END  * findRecord **
+>> You've found an account.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> delete
+>> You are deleting an account.
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> helohelohelohelo
+!! Account numbers must be integers >= 0. Please try again.
+
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> hello123
+!! Account numbers must be integers >= 0. Please try again.
+
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> 123hello123hello
+** START * deleteRecord **
+* accountnum: 123
+**  END  * deleteRecord **
+>> You have deleted an account.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> del' 
+>> You are deleting an account.
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> 1234567812345678
+** START * deleteRecord **
+* accountnum: 12345678
+**  END  * deleteRecord **
+>> You have deleted an account.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> del
+>> You are deleting an account.
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> 2a2a 2b3. 
+** START * deleteRecord **
+* accountnum: 2
+**  END  * deleteRecord **
+>> You have deleted an account.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> . del
+>> You are deleting an account.
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> ..
+!! Account numbers must be integers >= 0. Please try again.
+
+> Enter account number below.
+- Maximum of 8 characters. You can input more, but it will be ignored.
+> 1938
+** START * deleteRecord **
+* accountnum: 1938
+**  END  * deleteRecord **
+>> You have deleted an account.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> quit
+>> Goodbye, banker!
+]0;echung32@uhx02:~/ics212/homework3buhx02:/home/e/echung32/ics212/homework3b% echo delte a[K[K[K[Kete, find, and add, share the same account number code.
+delete, find, and add, share the same account number code.
+]0;echung32@uhx02:~/ics212/homework3buhx02:/home/e/echung32/ics212/homework3b% quit[K[K[K[Kexit
+exit
+
+Script done on Sun 12 Feb 2023 08:39:27 PM HST

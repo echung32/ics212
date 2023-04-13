@@ -1,0 +1,52 @@
+--------------------------------------------------------------------------------
+*** Assume the following variables are already defined. ***
+
+- numbers: array of int
+- n: the size of the integer array (numbers)
+- m: the number of first slots which already have values (m < n)
+- num: the number to insert to the array
+--------------------------------------------------------------------------------
+
+# tells us whether or not to increment m
+define an int called inserted
+copy from 0 to inserted
+
+# keep track of current index
+define an int called index
+# ( slots taken - 1 ) to safely compare ( index + 1 )
+copy from m-1 to index
+
+# only one loop is needed b/c array is already sorted
+# index can be greater or equal to 0 because index is checked + 1
+# don't run loop if array is already full either ( m == n )
+while ( index >= 0 && m != n )
+    if ( numbers[index] > num )
+        # greater, so shift it right
+        copy from numbers[index] to numbers[index + 1]
+        # safe to overwrite numbers[index] now
+        # special case if index = 0 so we properly set the value
+        if ( index == 0 )
+            copy from num to numbers[0]
+            copy from 1 to inserted
+
+    else if ( numbers[index] <= num )
+        # less than or equal to, so we can add it in
+        #copy from numbers[index] to numbers[index + 1] <-- unnecessary?
+        # num is GREATER THAN the number at the index
+        # to keep an ordered array, we copy to index + 1
+        copy from num to numbers[index + 1]
+        copy from 1 to inserted
+    
+    # decrement index by 1
+    copy index-1 to index
+
+# special case if array is empty
+# while loop would not have ran n/c index < 0
+if ( m == 0 )
+    # set the first element to num
+    copy from num to numbers[0]
+    copy from 1 to inserted
+
+# increase filled size of array by 1
+if ( inserted == 1 )
+    copy m+1 to m

@@ -1,0 +1,18 @@
+Script started on Mon 16 Jan 2023 10:57:03 PM HST
+]0;echung32@uhx02:~/ics212/homework1[?1034huhx02:/home/e/echung32/ics212/homework1% ./homework1
+Hello
+Hello
+World
+World
+!!!
+!!!
+While loop!
+While loop!
+While loop!
+Do-while loop!
+Do-while loop!
+Do-while loop!
+]0;echung32@uhx02:~/ics212/homework1uhx02:/home/e/echung32/ics212/homework1% exit
+exit
+
+Script done on Mon 16 Jan 2023 10:57:11 PM HST

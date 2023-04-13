@@ -1,0 +1,29 @@
+Script started on Sun 12 Feb 2023 08:13:14 PM HST
+]0;echung32@uhx02:~/ics212/homework3b[?1034huhx02:/home/e/echung32/ics212/homework3b% touch *.c
+]0;echung32@uhx02:~/ics212/homework3buhx02:/home/e/echung32/ics212/homework3b% make
+gcc -ansi -pedantic-errors -Wall -c user_interface.c
+gcc -ansi -pedantic-errors -Wall -c database.c
+gcc -o homework3 user_interface.o database.o
+]0;echung32@uhx02:~/ics212/homework3buhx02:/home/e/echung32/ics212/homework3b% make
+make: `homework3' is up to date.
+]0;echung32@uhx02:~/ics212/homework3buhx02:/home/e/echung32/ics212/homework3b% touch user_interface.c
+]0;echung32@uhx02:~/ics212/homework3buhx02:/home/e/echung32/ics212/homework3b% make
+gcc -ansi -pedantic-errors -Wall -c user_interface.c
+gcc -o homework3 user_interface.o database.o
+]0;echung32@uhx02:~/ics212/homework3buhx02:/home/e/echung32/ics212/homework3b% touch *.o
+]0;echung32@uhx02:~/ics212/homework3buhx02:/home/e/echung32/ics212/homework3b% make
+gcc -o homework3 user_interface.o database.o
+]0;echung32@uhx02:~/ics212/homework3buhx02:/home/e/echung32/ics212/homework3b% ./homework3
+Welcome, banker! This program allows you to easily find and manage customer bank records stored on the database.
+
+>> What do you want to do?
+- add: add a new record in the database
+- printall: print all records in the database
+- find: find record(s) with a specified account #
+- delete: delete existing record(s) from the database using the account # as a key
+- quit: quit the program
+> ^C
+]0;echung32@uhx02:~/ics212/homework3buhx02:/home/e/echung32/ics212/homework3b% exit
+exit
+
+Script done on Sun 12 Feb 2023 08:13:51 PM HST
