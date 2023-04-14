@@ -1,3 +1,4 @@
+#include "record.h"
 class llist
 {
 private:

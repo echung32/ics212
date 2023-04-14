@@ -19,33 +19,36 @@
 //   database.
 //
  ****************************************************************/
- 
+
 #include "llist.h"
-#include "record.h"
+#include <iostream>
+#include <string.h>
 
-llist::list()
+extern int debugmode;
+
+llist::llist()
 {
-  this.start = NULL;
-  this.filename = "database.txt";
+    this->start = NULL;
+    strncpy(this->filename, "database.txt", 20);
 }
 
-llist::list(char filename[])
+llist::llist(char filename[])
 {
-  llist::list();
-  this.filename = filename;
+    this->start = NULL;
+    strncpy(this->filename, filename, 20);
 }
 
-llist::~list()
+llist::~llist()
 {
 }
 
-void llist::addRecord(int uaccountno, char uname[],char uaddress[])
+void llist::addRecord(int uaccountno, char uname[], char uaddress[])
 {
 }
 
 int llist::findRecord(int uaccountno)
 {
-  return 1;
+    return 1;
 }
 
 void llist::printAllRecords()
@@ -54,16 +57,19 @@ void llist::printAllRecords()
 
 int llist::deleteRecord(int uaccountno)
 {
-  return 1;
+    return 1;
 }
 
 int llist::writefile()
 {
-  return 1;
+    return 1;
 }
 
 int llist::readfile()
 {
-  return 1;
+    return 1;
 }
 
+void llist::cleanup()
+{
+}
