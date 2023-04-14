@@ -236,8 +236,8 @@ void getAccountNum(int &accountnum)
          * Max 8 characters to prevent integer overflow issues.
          */
 
-        cout << "> Enter account number below.\n" << endl;
-        cout << "- Maximum of 8 characters. You can input more, but it will be ignored.\n" << endl;
+        cout << "> Enter account number below." << endl;
+        cout << "- Maximum of 8 characters. You can input more, but it will be ignored." << endl;
         cout << "> " << flush;
 
         if (!(cin >> accountnum))
@@ -255,8 +255,8 @@ void getAccountNum(int &accountnum)
 
     if (debugmode == 1)
     {
-        cout << "** START * getAccountNum **\n" << endl;
+        cout << "** START * getAccountNum **" << endl;
         cout << "* accountnum: " << accountnum << endl;
-        cout << "**  END  * getAccountNum **\n" << endl;
+        cout << "**  END  * getAccountNum **" << endl;
     }
 }

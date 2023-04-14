@@ -23,6 +23,7 @@
 #include "llist.h"
 #include <iostream>
 #include <string.h>
+using namespace std;
 
 extern int debugmode;
 
@@ -48,11 +49,52 @@ void llist::addRecord(int uaccountno, char uname[], char uaddress[])
 
 int llist::findRecord(int uaccountno)
 {
-    return 1;
+    struct record *cursor = this->start;
+    int success = 1;
+
+    if (debugmode == 1)
+    {
+        cout << "** START * findRecord **" << endl;
+        cout << "* uaccountno: " << uaccountno << endl;
+        cout << "**  END  * findRecord **" << endl;
+    }
+
+    while (cursor != NULL)
+    {
+        if (uaccountno == cursor->accountno)
+        {
+            cout << "#  Account: " << cursor->accountno << endl;
+            cout << "#>    Name: " << cursor->name << endl;
+            cout << "#> Address: " << cursor->address << endl;
+            success = 0;
+        }
+        cursor = cursor->next;
+    }
+
+    return success;
 }
 
 void llist::printAllRecords()
 {
+    struct record *cursor = this->start;
+
+    if (debugmode == 1)
+    {
+        cout << "** START * printAllRecords **" << endl;
+    }
+
+    while (cursor != NULL)
+    {
+        cout << "#  Account: " << cursor->accountno << endl;
+        cout << "#>    Name: " << cursor->name << endl;
+        cout << "#> Address: " << cursor->address << endl;
+        cursor = cursor->next;
+    }
+
+    if (debugmode == 1)
+    {
+        cout << "**  END  * printAllRecords **" << endl;
+    }
 }
 
 int llist::deleteRecord(int uaccountno)
