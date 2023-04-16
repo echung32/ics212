@@ -66,7 +66,6 @@ int main(int argc, char* argv[])
     cout << "Welcome, banker!" << flush;
     cout << " This program allows you to easily find" << flush;
     cout << " and manage customer bank records stored on the database.\n" << endl;
-//        start->readfile();
 
     while (quit == 0)
     {
@@ -168,8 +167,6 @@ int main(int argc, char* argv[])
         }
         else if (strlen(option) != 0 && strncmp(option, "quit", strlen(option)) == 0)
         {
-//            start->writefile();
-//            start->cleanup();
             cout << ">> Goodbye, banker!" << endl;
             quit = 1;
         }

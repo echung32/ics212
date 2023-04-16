@@ -29,18 +29,43 @@ extern int debugmode;
 
 llist::llist()
 {
+    if (debugmode == 1)
+    {
+        cout << "** START * llist **" << endl;
+        cout << "* filename: " << "database.txt" << endl;
+        cout << "**  END  * llist **" << endl;
+    }
+
     this->start = NULL;
+    this->readfile();
     strncpy(this->filename, "database.txt", 20);
 }
 
 llist::llist(char filename[])
 {
+    if (debugmode == 1)
+    {
+        cout << "** START * llist **" << endl;
+        cout << "* filename: " << filename << endl;
+        cout << "**  END  * llist **" << endl;
+    }
+
     this->start = NULL;
+    this->readfile();
     strncpy(this->filename, filename, 20);
 }
 
 llist::~llist()
 {
+    if (debugmode == 1)
+    {
+        cout << "** START * ~llist **" << endl;
+        cout << "* called destructor " << endl;
+        cout << "**  END  * ~llist **" << endl;
+    }
+
+    writefile();
+    cleanup();
 }
 
 void llist::addRecord(int uaccountno, char uname[], char uaddress[])
