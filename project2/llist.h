@@ -17,9 +17,11 @@ public:
 
     llist(char[]);
 
-    llist(llist&);
+    llist(const llist&);
 
     ~llist();
+
+    llist& operator=(const llist&);
 
     void addRecord(int, char [], char []);
 

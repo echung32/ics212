@@ -56,10 +56,16 @@ llist::llist(char filename[])
 }
 
 // copy constructor
-llist::llist(llist &list)
+llist::llist(const llist &list)
 {
     this->start = list.start;
     strncpy(this->filename, list.filename, 20);
+}
+
+llist& llist::operator=(const llist& list)
+{
+    llist copy(list);
+    return *this;
 }
 
 // destructor
