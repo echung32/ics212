@@ -99,7 +99,6 @@ int main(int argc, char* argv[])
                 cout << "- Maximum of 30 characters. You can input more, but it will be ignored." << endl;
                 cout << "> " << flush;
 
-                cin.ignore(1000, '\n');
                 cin.getline(data.name, 30);
 
                 if (strlen(data.name) == 0)
@@ -205,7 +204,6 @@ void getaddress(char address[], int length)
         cout << "**  END  * getaddress **" << endl;
     }
 
-    cin.ignore(1000, '\n');
     cin.getline(address, length, '~');
     cin.ignore(1000, '\n');
 }

@@ -68,9 +68,82 @@ llist::~llist()
     cleanup();
 }
 
+/*****************************************************************
+//
+//  Function name: addRecord
+//
+//  DESCRIPTION:   This function adds a record into the database.
+//
+//  Parameters:    uaccountno (int) : The account number to add.
+//                 uname (char[]) : The account name to add.
+//                 uaddress (char[]) : The account address to add.
+//
+//  Return values:  void
+//
+ ****************************************************************/
+
 void llist::addRecord(int uaccountno, char uname[], char uaddress[])
 {
+    struct record * newAccount = new struct record;
+
+    if (debugmode == 1)
+    {
+        cout << "START * addRecord **" << endl;
+        cout << "* uaccountno: " << uaccountno << endl;
+        cout << "*      uname: " << uname << endl;
+        cout << "*   uaddress: " << uaddress << endl;
+        cout << "**  END  * addRecord **" << endl;
+    }
+
+    newAccount->accountno = uaccountno;
+    strncpy(newAccount->name, uname, 30);
+    strncpy(newAccount->address, uaddress, 50);
+    newAccount->next = NULL;
+
+    if (this->start == NULL)
+    {
+        /** Add record at empty head */
+        this->start = newAccount;
+    }
+    else if (uaccountno < this->start->accountno)
+    {
+        /** Add record at head with at least one item. */
+        struct record * temp = NULL;
+        temp = this->start;
+        this->start = newAccount;
+        this->start->next = temp;
+    }
+    else
+    {
+        /** Add record somewhere else with at least one item. */
+
+        struct record * cursor = this->start->next;
+        struct record * precursor = this->start;
+
+        while ( cursor != NULL && uaccountno > cursor->accountno)
+        {
+            cursor = cursor->next;
+            precursor = precursor->next;
+        }
+
+        precursor->next = newAccount;
+        newAccount->next = cursor;
+    }
 }
+
+/*****************************************************************
+//
+//  Function name: findRecord
+//
+//  DESCRIPTION:   This function finds a record from the database,
+//                 given an account number.
+//
+//  Parameters:    uaccountno (int) : The account number to delete
+//
+//  Return values:  0 : success
+//                  1 : error
+//
+ ****************************************************************/
 
 int llist::findRecord(int uaccountno)
 {
@@ -99,6 +172,19 @@ int llist::findRecord(int uaccountno)
     return success;
 }
 
+/*****************************************************************
+//
+//  Function name: printAllRecords
+//
+//  DESCRIPTION:   This function prints all records stored on the
+//                 database.
+//
+//  Parameters:    void
+//
+//  Return values:  void
+//
+ ****************************************************************/
+
 void llist::printAllRecords()
 {
     struct record *cursor = this->start;
@@ -121,6 +207,20 @@ void llist::printAllRecords()
         cout << "**  END  * printAllRecords **" << endl;
     }
 }
+
+/*****************************************************************
+//
+//  Function name: deleteRecord
+//
+//  DESCRIPTION:   This function deletes a record from the database,
+//                 given an account number.
+//
+//  Parameters:    uaccountno (int) : The account number to delete
+//
+//  Return values:  0 : success
+//                  1 : error
+//
+ ****************************************************************/
 
 int llist::deleteRecord(int uaccountno)
 {
