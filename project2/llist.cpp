@@ -55,6 +55,14 @@ llist::llist(char filename[])
     strncpy(this->filename, filename, 20);
 }
 
+// copy constructor
+llist::llist(llist &list)
+{
+    this->start = list.start;
+    strncpy(this->filename, list.filename, 20);
+}
+
+// destructor
 llist::~llist()
 {
     if (debugmode == 1)
