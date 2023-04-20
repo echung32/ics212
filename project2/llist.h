@@ -1,4 +1,5 @@
 #include "record.h"
+#include <ostream>
 
 class llist
 {
@@ -23,7 +24,7 @@ public:
 
     llist& operator=(const llist&);
 
-    friend ostream& operator<<(ostream&, const llist&);
+    friend std::ostream& operator<<(std::ostream&, const llist&);
 
     void addRecord(int, char [], char []);
 

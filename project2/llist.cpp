@@ -22,7 +22,8 @@
 
 #include "llist.h"
 #include <iostream>
-#include <string.h>
+#include <cstring>
+
 using namespace std;
 
 extern int debugmode;
@@ -72,10 +73,10 @@ llist& llist::operator=(const llist& list)
     return *this;
 }
 
-friend ostream& operator<<(ostream &stream, const llist &list)
-{
-
-}
+//ostream& operator<<(ostream &stream, const llist &list)
+//{
+//    return;
+//}
 
 // destructor
 llist::~llist()
@@ -247,7 +248,48 @@ void llist::printAllRecords()
 
 int llist::deleteRecord(int uaccountno)
 {
-    return 1;
+
+    struct record * cursor = this->start;
+    struct record * precursor;
+    struct record * postcursor;
+    int deleted = 1;
+
+    if (debugmode == 1)
+    {
+        cout << "** START * deleteRecord **" << endl;
+        cout << "* uaccountno: " << uaccountno << endl;
+        cout << "**  END  * deleteRecord **" << endl;
+    }
+
+    while (cursor != NULL)
+    {
+        if (uaccountno == cursor->accountno)
+        {
+            deleted = 0;
+            if (cursor == this->start)
+            {
+                this->start = cursor->next;
+                cursor->next = NULL;
+                delete cursor;
+                cursor = this->start;
+            }
+            else
+            {
+                postcursor = cursor->next;
+                cursor->next = NULL;
+                delete cursor;
+                precursor->next = postcursor;
+                cursor = postcursor;
+            }
+        }
+        else
+        {
+            precursor = cursor;
+            cursor = cursor->next;
+        }
+    }
+
+    return deleted;
 }
 
 int llist::writefile()

@@ -28,6 +28,7 @@ void getaddress(char address[], int length);
 void getAccountNum(int &accountnum);
 
 using namespace std;
+int debugmode = 0;
 
 /*****************************************************************
 //
