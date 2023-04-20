@@ -64,8 +64,17 @@ llist::llist(const llist &list)
 
 llist& llist::operator=(const llist& list)
 {
+    // operator overloading
+
+
+    // copy calls llist's copy constructor
     llist copy(list);
     return *this;
+}
+
+friend ostream& operator<<(ostream &stream, const llist &list)
+{
+
 }
 
 // destructor
@@ -248,6 +257,9 @@ int llist::writefile()
 
 int llist::readfile()
 {
+    // ifstream var (file name)
+    // check if open
+    // check if good
     return 1;
 }
 

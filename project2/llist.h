@@ -23,6 +23,8 @@ public:
 
     llist& operator=(const llist&);
 
+    friend ostream& operator<<(ostream&, const llist&);
+
     void addRecord(int, char [], char []);
 
     int findRecord(int);

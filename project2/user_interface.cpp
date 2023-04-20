@@ -21,15 +21,13 @@
  ****************************************************************/
 
 #include <iostream>
-#include <string.h>
+#include <cstring>
 #include "llist.h"
 
 void getaddress(char address[], int length);
 void getAccountNum(int &accountnum);
 
 using namespace std;
-
-int debugmode = 0;
 
 /*****************************************************************
 //
