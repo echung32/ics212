@@ -26,16 +26,13 @@
 
 using namespace std;
 
-extern int debugmode;
-
 llist::llist()
 {
-    if (debugmode == 1)
-    {
-        cout << "** START * llist **" << endl;
-        cout << "* filename: " << "database.txt" << endl;
-        cout << "**  END  * llist **" << endl;
-    }
+    #ifdef DEBUG
+    cout << "** START * llist **" << endl;
+    cout << "* filename: " << "database.txt" << endl;
+    cout << "**  END  * llist **" << endl;
+    #endif
 
     this->start = NULL;
     this->readfile();
@@ -44,12 +41,11 @@ llist::llist()
 
 llist::llist(char filename[])
 {
-    if (debugmode == 1)
-    {
-        cout << "** START * llist **" << endl;
-        cout << "* filename: " << filename << endl;
-        cout << "**  END  * llist **" << endl;
-    }
+    #ifdef DEBUG
+    cout << "** START * llist **" << endl;
+    cout << "* filename: " << filename << endl;
+    cout << "**  END  * llist **" << endl;
+    #endif
 
     this->start = NULL;
     this->readfile();
@@ -81,12 +77,11 @@ llist& llist::operator=(const llist& list)
 // destructor
 llist::~llist()
 {
-    if (debugmode == 1)
-    {
-        cout << "** START * ~llist **" << endl;
-        cout << "* called destructor " << endl;
-        cout << "**  END  * ~llist **" << endl;
-    }
+    #ifdef DEBUG
+    cout << "** START * ~llist **" << endl;
+    cout << "* called destructor " << endl;
+    cout << "**  END  * ~llist **" << endl;
+    #endif
 
     writefile();
     cleanup();
@@ -110,14 +105,13 @@ void llist::addRecord(int uaccountno, char uname[], char uaddress[])
 {
     struct record * newAccount = new struct record;
 
-    if (debugmode == 1)
-    {
-        cout << "START * addRecord **" << endl;
-        cout << "* uaccountno: " << uaccountno << endl;
-        cout << "*      uname: " << uname << endl;
-        cout << "*   uaddress: " << uaddress << endl;
-        cout << "**  END  * addRecord **" << endl;
-    }
+    #ifdef DEBUG
+    cout << "START * addRecord **" << endl;
+    cout << "* uaccountno: " << uaccountno << endl;
+    cout << "*      uname: " << uname << endl;
+    cout << "*   uaddress: " << uaddress << endl;
+    cout << "**  END  * addRecord **" << endl;
+    #endif
 
     newAccount->accountno = uaccountno;
     strncpy(newAccount->name, uname, 30);
@@ -174,12 +168,11 @@ int llist::findRecord(int uaccountno)
     struct record *cursor = this->start;
     int success = 1;
 
-    if (debugmode == 1)
-    {
-        cout << "** START * findRecord **" << endl;
-        cout << "* uaccountno: " << uaccountno << endl;
-        cout << "**  END  * findRecord **" << endl;
-    }
+    #ifdef DEBUG
+    cout << "** START * findRecord **" << endl;
+    cout << "* uaccountno: " << uaccountno << endl;
+    cout << "**  END  * findRecord **" << endl;
+    #endif
 
     while (cursor != NULL)
     {
@@ -212,6 +205,11 @@ int llist::findRecord(int uaccountno)
 void llist::printAllRecords()
 {
     struct record *cursor = this->start;
+    int debugmode;
+
+    #ifdef DEBUG
+    debugmode = 1;
+    #endif
 
     if (debugmode == 1)
     {
@@ -248,18 +246,16 @@ void llist::printAllRecords()
 
 int llist::deleteRecord(int uaccountno)
 {
-
     struct record * cursor = this->start;
     struct record * precursor;
     struct record * postcursor;
     int deleted = 1;
 
-    if (debugmode == 1)
-    {
-        cout << "** START * deleteRecord **" << endl;
-        cout << "* uaccountno: " << uaccountno << endl;
-        cout << "**  END  * deleteRecord **" << endl;
-    }
+    #ifdef DEBUG
+    cout << "** START * deleteRecord **" << endl;
+    cout << "* uaccountno: " << uaccountno << endl;
+    cout << "**  END  * deleteRecord **" << endl;
+    #endif
 
     while (cursor != NULL)
     {

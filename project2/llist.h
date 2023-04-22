@@ -7,6 +7,10 @@ private:
     record *start;
     char filename[20];
 
+    llist& operator=(const llist&);
+
+    friend std::ostream& operator<<(std::ostream&, const llist&);
+
     int readfile();
 
     int writefile();
@@ -21,10 +25,6 @@ public:
     llist(const llist&);
 
     ~llist();
-
-    llist& operator=(const llist&);
-
-    friend std::ostream& operator<<(std::ostream&, const llist&);
 
     void addRecord(int, char [], char []);
 

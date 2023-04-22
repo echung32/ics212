@@ -28,7 +28,6 @@ void getaddress(char address[], int length);
 void getAccountNum(int &accountnum);
 
 using namespace std;
-int debugmode = 0;
 
 /*****************************************************************
 //
@@ -53,14 +52,9 @@ int main(int argc, char* argv[])
     llist *start = new llist(filename);
     int quit = 0;
 
-    #ifdef debug
-        debugmode = 1;
+    #ifdef DEBUG
+    cout << "** DEBUG RELEASE **\n" << endl;
     #endif
-
-    if (debugmode == 1)
-    {
-        cout << "** DEBUG RELEASE **\n" << endl;
-    }
 
     cout << "Welcome, banker!" << flush;
     cout << " This program allows you to easily find" << flush;
@@ -174,6 +168,7 @@ int main(int argc, char* argv[])
         }
     }
 
+    delete start;
     return 1;
 }
 
@@ -195,13 +190,12 @@ int main(int argc, char* argv[])
 
 void getaddress(char address[], int length)
 {
-    if (debugmode == 1)
-    {
-        cout << "** START * getaddress **" << endl;
-        cout << "* address: " << address << endl;
-        cout << "*  length: " << length << endl;
-        cout << "**  END  * getaddress **" << endl;
-    }
+    #ifdef DEBUG
+    cout << "** START * getaddress **" << endl;
+    cout << "* address: " << address << endl;
+    cout << "*  length: " << length << endl;
+    cout << "**  END  * getaddress **" << endl;
+    #endif
 
     cin.getline(address, length, '~');
     cin.ignore(1000, '\n');
@@ -211,10 +205,10 @@ void getaddress(char address[], int length)
 //
 //  Function name: getAccountNum
 //
-//  DESCRIPTION:   This helper
+//  DESCRIPTION:   This function helps fetch the account number
+//                 from user input, then stores it in the given pointer.
 //
-//  Parameters:    address (char[]) : A pointer to store the customer's address.
-//                 length (int) : The maximum length of the address.
+//  Parameters:    accountnum (&int) : A reference to the accountnum variable.
 //
 //  Return values:  void
 //
@@ -226,10 +220,6 @@ void getAccountNum(int &accountnum)
 
     do
     {
-        /**
-         * Max 8 characters to prevent integer overflow issues.
-         */
-
         cout << "> Enter account number below." << endl;
         cout << "- Maximum of 8 characters. You can input more, but it will be ignored." << endl;
         cout << "> " << flush;
@@ -247,10 +237,9 @@ void getAccountNum(int &accountnum)
     }
     while (successful == 0);
 
-    if (debugmode == 1)
-    {
-        cout << "** START * getAccountNum **" << endl;
-        cout << "* accountnum: " << accountnum << endl;
-        cout << "**  END  * getAccountNum **" << endl;
-    }
+    #ifdef DEBUG
+    cout << "** START * getAccountNum **" << endl;
+    cout << "* accountnum: " << accountnum << endl;
+    cout << "**  END  * getAccountNum **" << endl;
+    #endif
 }
