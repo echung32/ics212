@@ -26,6 +26,19 @@
 
 using namespace std;
 
+/*****************************************************************
+//
+//  Function name: llist
+//
+//  DESCRIPTION:    Initializes the linked list and reads the database
+//                  file from the disk to restore the data.
+//
+//  Parameters:     void
+//
+//  Return values:  void
+//
+****************************************************************/
+
 llist::llist()
 {
     #ifdef DEBUG
@@ -38,6 +51,19 @@ llist::llist()
     this->readfile();
     strncpy(this->filename, "database.txt", 20);
 }
+
+/*****************************************************************
+//
+//  Function name: llist
+//
+//  DESCRIPTION:    Initializes the linked list and reads the database
+//                  file from the disk to restore the data.
+//
+//  Parameters:    filename (char[]) : The file name to read the data from.
+//
+//  Return values:  void
+//
+****************************************************************/
 
 llist::llist(char filename[])
 {
@@ -52,29 +78,101 @@ llist::llist(char filename[])
     strncpy(this->filename, filename, 20);
 }
 
-// copy constructor
+/*****************************************************************
+//
+//  Function name:  llist
+//
+//  DESCRIPTION:    The copy constructor initializes the list and
+//                  clones data from an existing list. This is used
+//                  when setting an initially uninitialized list.
+//
+//  Parameters:     list (const llist&) : The list to copy data from.
+//
+//  Return values:  void
+//
+****************************************************************/
+
 llist::llist(const llist &list)
 {
-    this->start = list.start;
+    struct record *cursor = this->start;
+
+    while (cursor != NULL)
+    {
+        this->addRecord(cursor->accountno, cursor->name, cursor->address);
+        cursor = cursor->next;
+    }
+
     strncpy(this->filename, list.filename, 20);
 }
 
+/*****************************************************************
+//
+//  Function name: operator=
+//
+//  DESCRIPTION:    The assignment operator replaces the current data
+//                  with the data from the list that is passed in.
+//                  This is called when setting an initialized list.
+//
+//  Parameters:     list (const llist&) : The list to copy data from.
+//
+//  Return values:  llist& : the list where the data was copied to
+//
+****************************************************************/
+
 llist& llist::operator=(const llist& list)
 {
-    // operator overloading
+    // Cleans up the existing data.
+    this->cleanup();
 
-
-    // copy calls llist's copy constructor
+    // Now, add the data from the passed in list.
+    // This function calls the copy constructor to populate `this` list.
     llist copy(list);
     return *this;
 }
 
-//ostream& operator<<(ostream &stream, const llist &list)
-//{
-//    return;
-//}
+/*****************************************************************
+//
+//  Function name: operator<<
+//
+//  DESCRIPTION:   The insertion operator allows direct piping of
+//                 the list class to display all the currently
+//                 held records in the list.
+//
+//  Parameters:    stream (ostream&) : The output stream
+//                 list (const llist&) : The list to print data from.
+//
+//  Return values:  ostream& : the output stream which holds the printed data.
+//
+ ****************************************************************/
 
-// destructor
+ostream& operator<<(ostream &stream, const llist &list)
+{
+    struct record *cursor = this->start;
+
+    while (cursor != NULL)
+    {
+        stream << "#  Account: " << cursor->accountno << endl;
+        stream << "#>    Name: " << cursor->name << endl;
+        stream << "#> Address: " << cursor->address << endl;
+        cursor = cursor->next;
+    }
+
+    return stream;
+}
+
+/*****************************************************************
+//
+//  Function name: ~llist
+//
+//  DESCRIPTION:   This function saves the list to disk and removes
+//                 the list data from the heap.
+//
+//  Parameters:     void
+//
+//  Return values:  void
+//
+ ****************************************************************/
+
 llist::~llist()
 {
     #ifdef DEBUG
