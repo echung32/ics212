@@ -94,7 +94,7 @@ llist::llist(char filename[])
 
 llist::llist(const llist &list)
 {
-    struct record *cursor = this->start;
+    struct record *cursor = list.start;
 
     while (cursor != NULL)
     {
@@ -147,7 +147,7 @@ llist& llist::operator=(const llist& list)
 
 ostream& operator<<(ostream &stream, const llist &list)
 {
-    struct record *cursor = this->start;
+    struct record *cursor = list.start;
 
     while (cursor != NULL)
     {
@@ -401,4 +401,33 @@ int llist::readfile()
 
 void llist::cleanup()
 {
+    struct record * cursor = this->start;
+    struct record * postcursor;
+    int debugmode;
+
+    #ifdef DEBUG
+    debugmode = 1;
+    #endif
+
+    if (debugmode == 1)
+    {
+        cout << "** START * cleanup **" << endl;
+    }
+
+    while (cursor != NULL)
+    {
+        if (debugmode == 1)
+        {
+            cout << "* cleaning account " << cursor->accountno << endl;
+        }
+        postcursor = cursor->next;
+        cursor->next = NULL;
+        delete cursor;
+        cursor = postcursor;
+    }
+
+    if (debugmode == 1)
+    {
+        cout << "**  END  * cleanup **\n" << endl;
+    }
 }

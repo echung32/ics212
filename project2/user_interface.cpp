@@ -111,7 +111,7 @@ int main(int argc, char* argv[])
 
             /** Add to database */
             start->addRecord(data.accountno, data.name, data.address);
-            cout << ">> You've added a new account.\n\n" << endl;
+            cout << ">> You've added a new account.\n" << endl;
         }
         else if (strlen(option) != 0 && strncmp(option, "printall", strlen(option)) == 0)
         {
