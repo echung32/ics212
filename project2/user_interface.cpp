@@ -35,9 +35,7 @@ using namespace std;
 //
 //  DESCRIPTION:   This is the entrypoint to the user interface,
 //                 which handles validation of user input and has
-//                 auto-complete for command options. For debugging,
-//                 the user can pass in the "debug" parameter to
-//                 see what is being done in the database.
+//                 auto-complete for command options.
 //
 //  Parameters:    argc (int) : The number of elements in argv
 //                 argv (char*[]) : An array of arguments passed

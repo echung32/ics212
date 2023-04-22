@@ -2,21 +2,23 @@
 //
 //  NAME:        Ethan Chung
 //
-//  HOMEWORK:    project1
+//  HOMEWORK:    project2
 //
 //  CLASS:       ICS 212
 //
 //  INSTRUCTOR:  Ravi Narayan
 //
-//  DATE:        March 17, 2023
+//  DATE:        April 12, 2023
 //
 //  FILE:        record.h
 //
 //  DESCRIPTION:
-//   The data structure of a Record.
+//   The data structure of a Record struct.
 //
  ****************************************************************/
 
+#ifndef RECORD_H
+#define RECORD_H
 struct record
 {
     int                accountno;
@@ -24,3 +26,4 @@ struct record
     char               address[50];
     struct record*     next;
 };
+#endif
