@@ -219,19 +219,19 @@ void getAccountNum(int &accountnum)
     do
     {
         cout << "> Enter account number below." << endl;
-        cout << "- Maximum of 8 characters. You can input more, but it will be ignored." << endl;
         cout << "> " << flush;
 
+        // consumes integers
         if (!(cin >> accountnum))
         {
-            cout << "!! Account numbers must be integers >= 0. Please try again.\n\n" << endl;
-            cin.ignore(1000, '\n');
+            cout << "!! Account numbers must be integers >= 0. Please try again.\n" << endl;
         }
         else
         {
-            cin.ignore(1000, '\n');
             successful = 1;
         }
+
+        cin.ignore(1000, '\n');
     }
     while (successful == 0);
 

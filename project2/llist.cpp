@@ -23,6 +23,7 @@
 #include "llist.h"
 #include <iostream>
 #include <cstring>
+#include <fstream>
 
 using namespace std;
 
@@ -381,14 +382,103 @@ int llist::deleteRecord(int uaccountno)
 
 int llist::writefile()
 {
-    return 1;
+    int success = 1;
+    int debugmode;
+    #ifdef DEBUG
+    debugmode = 1;
+    #endif
+
+    if (debugmode == 1)
+    {
+        cout << "** START * writefile **" << endl;
+        cout << "* filename: " << this->filename << endl;
+    }
+
+    ofstream ofile(this->filename, ifstream::out);
+
+    if (ofile.is_open())
+    {
+        struct record * cursor = start;
+
+        while (cursor != NULL)
+        {
+            ofile << cursor->accountno << endl;
+            ofile << cursor->name << endl;
+            ofile << cursor->address << endl;
+            ofile << "7a8sd23ba28283f81" << endl;
+            if (debugmode == 1)
+            {
+                cout << "* writing account " << cursor->accountno << endl;
+            }
+
+            cursor = cursor->next;
+        }
+        ofile << endl;
+
+        ofile.close();
+        success = 0;
+    }
+
+    if (debugmode == 1)
+    {
+        cout << "**  END  * writefile **\n" << endl;
+    }
+
+    return success;
 }
 
 int llist::readfile()
 {
-    // ifstream var (file name)
-    // check if open
-    // check if good
+    int success = 1;
+    int debugmode;
+    #ifdef DEBUG
+    debugmode = 1;
+    #endif
+
+    if (debugmode == 1)
+    {
+        cout << "** START * readfile **" << endl;
+        cout << "* filename: " << this->filename << endl;
+    }
+
+    ifstream ofile(this->filename, ifstream::in);
+
+    if (ofile.is_open())
+    {
+        while (ofile.good())
+        {
+            int accountno;
+            char name[30];
+            char address[50];
+            char buffer[100];
+
+            if (debugmode == 1)
+            {
+                cout << "* reading account " << accountno << endl;
+            }
+
+            ofile >> accountno;
+            ofile.ignore(10, '\n');
+            ofile.getline(name, 30, '\n');
+            while (strncmp("7a8sd23ba28283f81", buffer, 17) != 0)
+            {
+                ofile.getline(buffer, 100, '\n');
+                strcat(address, buffer);
+            }
+            
+            this->addRecord(accountno, name, address);
+        }
+
+        ofile.close();
+        success = 0;
+    }
+
+    if (debugmode == 1)
+    {
+        cout << "**  END  * readfile **\n" << endl;
+    }
+
+    return success;
     return 1;
 }
 
