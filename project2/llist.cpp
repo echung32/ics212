@@ -379,6 +379,20 @@ int llist::deleteRecord(int uaccountno)
     return deleted;
 }
 
+/*****************************************************************
+//
+//  Function name: writefile
+//
+//  DESCRIPTION:   called once after the user chooses the quit option.
+//                 It saves the records into a file.
+//
+//  Parameters:    void
+//
+//  Return values:  0 : file written successfully
+//                  1 : file was not written to successfully
+//
+ ****************************************************************/
+
 int llist::writefile()
 {
     int success = 1;
@@ -424,6 +438,20 @@ int llist::writefile()
 
     return success;
 }
+
+/*****************************************************************
+//
+//  Function name: readfile
+//
+//  DESCRIPTION:   called once before the program starts interacting with the user.
+//                 It retrieves the records from the saved file.
+//
+//  Parameters:    void
+//
+//  Return values:  0 : file read successfully
+//                  1 : file was not read successfully
+//
+ ****************************************************************/
 
 int llist::readfile()
 {
@@ -474,8 +502,20 @@ int llist::readfile()
     }
 
     return success;
-    return 1;
 }
+
+/*****************************************************************
+//
+//  Function name: cleanup
+//
+//  DESCRIPTION:   called at the end. It releases all the allocated
+//                 spaces in the heap memory and assign NULL to start.
+//
+//  Parameters:     void
+//
+//  Return values:  void
+//
+ ****************************************************************/
 
 void llist::cleanup()
 {
@@ -503,6 +543,8 @@ void llist::cleanup()
         delete cursor;
         cursor = postcursor;
     }
+
+    this->start = NULL;
 
     if (debugmode == 1)
     {
