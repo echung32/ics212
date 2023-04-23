@@ -49,8 +49,8 @@ llist::llist()
     #endif
 
     this->start = NULL;
+    strncpy(this->filename, "database.txt", 19);
     this->readfile();
-    strncpy(this->filename, "database.txt", 20);
 }
 
 /*****************************************************************
@@ -75,8 +75,8 @@ llist::llist(char filename[])
     #endif
 
     this->start = NULL;
+    strncpy(this->filename, filename, 19);
     this->readfile();
-    strncpy(this->filename, filename, 20);
 }
 
 /*****************************************************************
@@ -96,14 +96,13 @@ llist::llist(char filename[])
 llist::llist(const llist &list)
 {
     struct record *cursor = list.start;
+    strncpy(this->filename, list.filename, 19);
 
     while (cursor != NULL)
     {
         this->addRecord(cursor->accountno, cursor->name, cursor->address);
         cursor = cursor->next;
     }
-
-    strncpy(this->filename, list.filename, 20);
 }
 
 /*****************************************************************
@@ -205,7 +204,7 @@ void llist::addRecord(int uaccountno, char uname[], char uaddress[])
     struct record * newAccount = new struct record;
 
     #ifdef DEBUG
-    cout << "START * addRecord **" << endl;
+    cout << "** START * addRecord **" << endl;
     cout << "* uaccountno: " << uaccountno << endl;
     cout << "*      uname: " << uname << endl;
     cout << "*   uaddress: " << uaddress << endl;
@@ -213,8 +212,8 @@ void llist::addRecord(int uaccountno, char uname[], char uaddress[])
     #endif
 
     newAccount->accountno = uaccountno;
-    strncpy(newAccount->name, uname, 30);
-    strncpy(newAccount->address, uaddress, 50);
+    strncpy(newAccount->name, uname, 29);
+    strncpy(newAccount->address, uaddress, 49);
     newAccount->next = NULL;
 
     if (this->start == NULL)
@@ -405,7 +404,7 @@ int llist::writefile()
             ofile << cursor->accountno << endl;
             ofile << cursor->name << endl;
             ofile << cursor->address << endl;
-            ofile << "7a8sd23ba28283f81" << endl;
+            ofile << "~" << flush;
             if (debugmode == 1)
             {
                 cout << "* writing account " << cursor->accountno << endl;
@@ -413,7 +412,6 @@ int llist::writefile()
 
             cursor = cursor->next;
         }
-        ofile << endl;
 
         ofile.close();
         success = 0;
@@ -445,25 +443,22 @@ int llist::readfile()
 
     if (ofile.is_open())
     {
-        while (ofile.good())
+        // peek to make sure file isn't at eof
+        // can't use ofile.eof(), it still continues to read anyways.
+        while (ofile.good() && ofile.peek() != ifstream::traits_type::eof())
         {
             int accountno;
             char name[30];
             char address[50];
-            char buffer[100];
+
+            ofile >> accountno;
+            ofile.ignore(1000, '\n'); // get rid of leftover newline
+            ofile.getline(name, 30, '\n');
+            ofile.getline(address, 100, '~');
 
             if (debugmode == 1)
             {
                 cout << "* reading account " << accountno << endl;
-            }
-
-            ofile >> accountno;
-            ofile.ignore(10, '\n');
-            ofile.getline(name, 30, '\n');
-            while (strncmp("7a8sd23ba28283f81", buffer, 17) != 0)
-            {
-                ofile.getline(buffer, 100, '\n');
-                strcat(address, buffer);
             }
             
             this->addRecord(accountno, name, address);

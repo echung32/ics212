@@ -75,29 +75,32 @@ int main(int argc, char* argv[])
 
         if (strlen(option) != 0 && strncmp(option, "add", strlen(option)) == 0)
         {
-            struct record data = {0};
+            struct record * data = new struct record;
             int successful = 0;
 
             cout << "\n>> You are adding a new account." << endl;
 
             /** Account number */
-            getAccountNum(data.accountno);
+            getAccountNum(data->accountno);
 
             /** Name */
             do
             {
+                char tempname[1000];
                 cout << "> Enter customer name below." << endl;
                 cout << "- Maximum of 30 characters. You can input more, but it will be ignored." << endl;
                 cout << "> " << flush;
 
-                cin.getline(data.name, 30);
+                cin.getline(tempname, 1000, '\n');
 
-                if (strlen(data.name) == 0)
+                if (strlen(tempname) == 0)
                 {
                     cout << "!! You must input at least one character. Please try again.\n" << endl;
+                    cin.clear();
                 }
                 else
                 {
+                    strncpy(data->name, tempname, 29);
                     successful = 1;
                 }
             }
@@ -107,11 +110,12 @@ int main(int argc, char* argv[])
             cout << "> Enter customer address below." << endl;
             cout << "- Maximum of 50 characters. You can input more, but it will be ignored." << endl;
             cout << "- Stop input by pressing '~ -> ENTER'." << endl;
-            getaddress(data.address, 50);
+            getaddress(data->address, 50);
 
             /** Add to database */
-            start->addRecord(data.accountno, data.name, data.address);
+            start->addRecord(data->accountno, data->name, data->address);
             cout << ">> You've added a new account.\n" << endl;
+            delete data;
         }
         else if (strlen(option) != 0 && strncmp(option, "printall", strlen(option)) == 0)
         {
@@ -188,15 +192,17 @@ int main(int argc, char* argv[])
 
 void getaddress(char address[], int length)
 {
+    char temp[1000];
+    cin.getline(temp, 1000, '~');
+    cin.ignore(1000, '\n');
+    strncpy(address, temp, length - 1);
+
     #ifdef DEBUG
     cout << "** START * getaddress **" << endl;
     cout << "* address: " << address << endl;
     cout << "*  length: " << length << endl;
     cout << "**  END  * getaddress **" << endl;
     #endif
-
-    cin.getline(address, length, '~');
-    cin.ignore(1000, '\n');
 }
 
 /*****************************************************************
@@ -225,6 +231,7 @@ void getAccountNum(int &accountnum)
         if (!(cin >> accountnum))
         {
             cout << "!! Account numbers must be integers >= 0. Please try again.\n" << endl;
+            cin.clear();
         }
         else
         {
