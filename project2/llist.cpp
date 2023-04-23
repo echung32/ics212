@@ -302,7 +302,6 @@ int llist::findRecord(int uaccountno)
 
 void llist::printAllRecords()
 {
-    struct record *cursor = this->start;
     int debugmode;
 
     #ifdef DEBUG
@@ -314,13 +313,7 @@ void llist::printAllRecords()
         cout << "** START * printAllRecords **" << endl;
     }
 
-    while (cursor != NULL)
-    {
-        cout << "#  Account: " << cursor->accountno << endl;
-        cout << "#>    Name: " << cursor->name << endl;
-        cout << "#> Address: " << cursor->address << endl;
-        cursor = cursor->next;
-    }
+    cout << *this;
 
     if (debugmode == 1)
     {
