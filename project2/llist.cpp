@@ -482,7 +482,7 @@ int llist::readfile()
             ofile >> accountno;
             ofile.ignore(1000, '\n'); // get rid of leftover newline
             ofile.getline(name, 30, '\n');
-            ofile.getline(address, 50, '~');
+            ofile.getline(address, 51, '~');
 
             if (debugmode == 1)
             {
