@@ -417,7 +417,7 @@ int llist::writefile()
         {
             ofile << cursor->accountno << endl;
             ofile << cursor->name << endl;
-            ofile << cursor->address << endl;
+            ofile << cursor->address << flush;
             ofile << "~" << flush;
             if (debugmode == 1)
             {
@@ -472,7 +472,7 @@ int llist::readfile()
     if (ofile.is_open())
     {
         // peek to make sure file isn't at eof
-        // can't use ofile.eof(), it still continues to read anyways.
+        // ofile.eof() still continues to read anyways.
         while (ofile.good() && ofile.peek() != ifstream::traits_type::eof())
         {
             int accountno;

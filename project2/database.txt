@@ -1,15 +1,13 @@
-1000
-hello the only one customer i
-the only address in the world
-is the bnest addres
+500
+hello 500 customer!
+the best customer is one who does the customer
 ~1000
-nsdf2899090328 ame name name 
-my name is name
-and i have a nice house
-
-~5000
-hekkloooo
-name name my name is a name
-
-
+hello
+the address
+is the best
+address of line
+12345
+~2000
+customer 2000
+the address of customer 2000 with a new line
 ~
