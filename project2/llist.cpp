@@ -103,7 +103,7 @@ llist::llist(const llist &list)
 
     struct record *cursor = list.start;
     this->start = NULL;
-    strncpy(this->filename, "test.txt", 19);
+    strncpy(this->filename, "copy-db.txt", 19);
 
     while (cursor != NULL)
     {
@@ -135,8 +135,10 @@ llist& llist::operator=(const llist& list)
     #endif
 
     struct record *cursor = list.start;
-    this->start = NULL;
-    strncpy(this->filename, "test.txt", 19);
+    strncpy(this->filename, "assign-db.txt", 19);
+
+    // reset the list data here
+    this->cleanup();
 
     while (cursor != NULL)
     {

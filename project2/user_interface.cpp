@@ -182,6 +182,9 @@ int main(int argc, char* argv[])
     cout << "\nSTART STILL SAME?\n" << endl;
     cout << *start;
     
+    // copy-db.txt should not be generated, since it
+    // should have been deleted by assignment.
+    // only assign-db.txt should be generated.
     cout << "\nCALL ASSIGNMENT\n" << endl;
     copylist = *start;
     cout << copylist;
