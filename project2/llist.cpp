@@ -314,7 +314,7 @@ int llist::findRecord(int uaccountno)
 
 void llist::printAllRecords()
 {
-    int debugmode;
+    int debugmode = 0;
 
     #ifdef DEBUG
     debugmode = 1;
@@ -408,7 +408,7 @@ int llist::deleteRecord(int uaccountno)
 int llist::writefile()
 {
     int success = 1;
-    int debugmode;
+    int debugmode = 0;
     #ifdef DEBUG
     debugmode = 1;
     #endif
@@ -468,7 +468,7 @@ int llist::writefile()
 int llist::readfile()
 {
     int success = 1;
-    int debugmode;
+    int debugmode = 0;
     #ifdef DEBUG
     debugmode = 1;
     #endif
@@ -533,7 +533,7 @@ void llist::cleanup()
 {
     struct record * cursor = this->start;
     struct record * postcursor;
-    int debugmode;
+    int debugmode = 0;
 
     #ifdef DEBUG
     debugmode = 1;
