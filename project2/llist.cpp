@@ -102,6 +102,7 @@ llist::llist(const llist &list)
     #endif
 
     struct record *cursor = list.start;
+
     this->start = NULL;
     strncpy(this->filename, "copy-db.txt", 19);
 
