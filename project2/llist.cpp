@@ -102,7 +102,8 @@ llist::llist(const llist &list)
     #endif
 
     struct record *cursor = list.start;
-    strncpy(this->filename, list.filename, 19);
+    this->start = NULL;
+    strncpy(this->filename, "test.txt", 19);
 
     while (cursor != NULL)
     {
@@ -133,12 +134,16 @@ llist& llist::operator=(const llist& list)
     cout << "**  END  * llist (assignment) **" << endl;
     #endif
 
-    // Cleans up the existing data.
-    this->cleanup();
+    struct record *cursor = list.start;
+    this->start = NULL;
+    strncpy(this->filename, "test.txt", 19);
 
-    // Now, add the data from the passed in list.
-    // This function calls the copy constructor to populate `this` list.
-    llist copy(list);
+    while (cursor != NULL)
+    {
+        this->addRecord(cursor->accountno, cursor->name, cursor->address);
+        cursor = cursor->next;
+    }
+
     return *this;
 }
 

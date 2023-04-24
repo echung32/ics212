@@ -1,16 +1,4 @@
 1000
 hello
 the address
-is the best
-address of line
-12345
-~1000
-customer of the world
-numbah one
-sdfjjsdfjsdf
-sdfjfjsdjfsdjf
-ghfghdfhg
-~2000
-customer 2000
-the address of customer 2000 with a new line
-~
+12345~

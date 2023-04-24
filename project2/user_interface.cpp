@@ -170,6 +170,28 @@ int main(int argc, char* argv[])
         }
     }
 
+    #ifdef DEBUG
+    char name[5] = "name";
+    char address[10] = "address";
+    llist copylist(*start);
+    cout << "\nFRESH COPY?\n" << endl;
+    cout << copylist;
+    cout << "\nADDED ONE RECORD?\n" << endl;
+    copylist.addRecord(1000, name, address);
+    cout << copylist;
+    cout << "\nSTART STILL SAME?\n" << endl;
+    cout << *start;
+    
+    cout << "\nCALL ASSIGNMENT\n" << endl;
+    copylist = *start;
+    cout << copylist;
+    cout << "\nADDED ONE RECORD?\n" << endl;
+    copylist.addRecord(1000, name, address);
+    cout << copylist;
+    cout << "\nSTART STILL SAME?\n" << endl;
+    cout << *start;
+    #endif
+
     delete start;
     return 1;
 }
