@@ -1,7 +1,4 @@
-500
-hello 500 customer!
-the best customer is one who does the customer
-~1000
+1000
 hello
 the address
 is the best

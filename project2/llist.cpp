@@ -95,6 +95,12 @@ llist::llist(char filename[])
 
 llist::llist(const llist &list)
 {
+    #ifdef DEBUG
+    cout << "** START * llist (copy) **" << endl;
+    cout << "* filename: " << list.filename << endl;
+    cout << "**  END  * llist (copy) **" << endl;
+    #endif
+
     struct record *cursor = list.start;
     strncpy(this->filename, list.filename, 19);
 
@@ -121,6 +127,12 @@ llist::llist(const llist &list)
 
 llist& llist::operator=(const llist& list)
 {
+    #ifdef DEBUG
+    cout << "** START * llist (assignment) **" << endl;
+    cout << "* filename: " << list.filename << endl;
+    cout << "**  END  * llist (assignment) **" << endl;
+    #endif
+
     // Cleans up the existing data.
     this->cleanup();
 
