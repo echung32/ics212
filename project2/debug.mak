@@ -9,5 +9,5 @@ user_interface.o: user_interface.cpp record.h llist.h
 llist.o: llist.cpp record.h
 	g++ -DDEBUG -ansi -pedantic-errors -Wall -c llist.cpp
 
-cleanup:
-	rm project_debug llist.o user_interface.o
+clean:
+	rm -v project_debug llist.o user_interface.o

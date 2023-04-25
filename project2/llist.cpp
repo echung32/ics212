@@ -218,7 +218,7 @@ llist::~llist()
 {
     #ifdef DEBUG
     cout << "** START * ~llist **" << endl;
-    cout << "* called destructor " << endl;
+    cout << "* called destructor for " << this->filename << endl;
     cout << "**  END  * ~llist **" << endl;
     #endif
 
