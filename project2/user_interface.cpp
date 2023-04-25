@@ -51,6 +51,30 @@ int main(int argc, char* argv[])
     int quit = 0;
 
     #ifdef DEBUG
+    // We want to test copy/assignment operators.
+    char name[5] = "name";
+    char address[10] = "address";
+    llist copylist(*start);
+    cout << "\nFRESH COPY?\n" << endl;
+    cout << copylist;
+    cout << "\nADDED ONE RECORD?\n" << endl;
+    copylist.addRecord(1000, name, address);
+    cout << copylist;
+    cout << "\nSTART STILL SAME?\n" << endl;
+    cout << *start;
+    
+    // copy-db.txt should not be generated, since it
+    // should have been deleted by assignment.
+    // only assign-db.txt should be generated.
+    cout << "\nCALL ASSIGNMENT\n" << endl;
+    copylist = *start;
+    cout << copylist;
+    cout << "\nADDED ONE RECORD?\n" << endl;
+    copylist.addRecord(1000, name, address);
+    cout << copylist;
+    cout << "\nSTART STILL SAME?\n" << endl;
+    cout << *start;
+
     cout << "** DEBUG RELEASE **\n" << endl;
     #endif
 
@@ -169,31 +193,6 @@ int main(int argc, char* argv[])
             cout << "!! Invalid option. Please try again!\n" << endl;
         }
     }
-
-    #ifdef DEBUG
-    char name[5] = "name";
-    char address[10] = "address";
-    llist copylist(*start);
-    cout << "\nFRESH COPY?\n" << endl;
-    cout << copylist;
-    cout << "\nADDED ONE RECORD?\n" << endl;
-    copylist.addRecord(1000, name, address);
-    cout << copylist;
-    cout << "\nSTART STILL SAME?\n" << endl;
-    cout << *start;
-    
-    // copy-db.txt should not be generated, since it
-    // should have been deleted by assignment.
-    // only assign-db.txt should be generated.
-    cout << "\nCALL ASSIGNMENT\n" << endl;
-    copylist = *start;
-    cout << copylist;
-    cout << "\nADDED ONE RECORD?\n" << endl;
-    copylist.addRecord(1000, name, address);
-    cout << copylist;
-    cout << "\nSTART STILL SAME?\n" << endl;
-    cout << *start;
-    #endif
 
     delete start;
     return 1;

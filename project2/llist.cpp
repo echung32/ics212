@@ -104,6 +104,13 @@ llist::llist(const llist &list)
     struct record *cursor = list.start;
 
     this->start = NULL;
+    /**
+     * This should not be hardcoded to "copy-db.txt",
+     * but since function parmeters cannot be modified
+     * without approval, this is set to another file
+     * to prevent write collisions with the default
+     * `database.txt` file.
+     */
     strncpy(this->filename, "copy-db.txt", 19);
 
     while (cursor != NULL)
@@ -136,6 +143,13 @@ llist& llist::operator=(const llist& list)
     #endif
 
     struct record *cursor = list.start;
+    /**
+     * This should not be hardcoded to "assign-db.txt",
+     * but since function parmeters cannot be modified
+     * without approval, this is set to another file
+     * to prevent write collisions with the default
+     * `database.txt` file.
+     */
     strncpy(this->filename, "assign-db.txt", 19);
 
     // reset the list data here
@@ -169,12 +183,19 @@ ostream& operator<<(ostream &stream, const llist &list)
 {
     struct record *cursor = list.start;
 
-    while (cursor != NULL)
+    if (cursor == NULL)
     {
-        stream << "#  Account: " << cursor->accountno << endl;
-        stream << "#>    Name: " << cursor->name << endl;
-        stream << "#> Address: " << cursor->address << endl;
-        cursor = cursor->next;
+        stream << "# No records have been added!" << endl;
+    }
+    else
+    {
+        while (cursor != NULL)
+        {
+            stream << "#  Account: " << cursor->accountno << endl;
+            stream << "#>    Name: " << cursor->name << endl;
+            stream << "#> Address: " << cursor->address << endl;
+            cursor = cursor->next;
+        }
     }
 
     return stream;
@@ -322,23 +343,13 @@ int llist::findRecord(int uaccountno)
 
 void llist::printAllRecords()
 {
-    int debugmode = 0;
-
     #ifdef DEBUG
-    debugmode = 1;
-    #endif
-
-    if (debugmode == 1)
-    {
-        cout << "** START * printAllRecords **" << endl;
-    }
-
+    cout << "** START * printAllRecords **" << endl;
     cout << *this;
-
-    if (debugmode == 1)
-    {
-        cout << "**  END  * printAllRecords **" << endl;
-    }
+    cout << "**  END  * printAllRecords **" << endl;
+    #else
+    cout << *this;
+    #endif
 }
 
 /*****************************************************************
@@ -416,19 +427,16 @@ int llist::deleteRecord(int uaccountno)
 int llist::writefile()
 {
     int success = 1;
-    int debugmode = 0;
-    #ifdef DEBUG
-    debugmode = 1;
-    #endif
-
-    if (debugmode == 1)
-    {
-        cout << "** START * writefile **" << endl;
-        cout << "* filename: " << this->filename << endl;
-    }
-
     ofstream ofile(this->filename, ifstream::out);
 
+    /**
+     * Ideally, the logic of the open should not be duplicated.
+     * Since we cannot create helper methods without approval,
+     * the code is being duplicated instead.
+     */
+    #ifdef DEBUG
+    cout << "** START * writefile **" << endl;
+    cout << "* filename: " << this->filename << endl;
     if (ofile.is_open())
     {
         struct record * cursor = start;
@@ -439,10 +447,8 @@ int llist::writefile()
             ofile << cursor->name << endl;
             ofile << cursor->address << flush;
             ofile << "~" << flush;
-            if (debugmode == 1)
-            {
-                cout << "* writing account " << cursor->accountno << endl;
-            }
+
+            cout << "* writing account " << cursor->accountno << endl;
 
             cursor = cursor->next;
         }
@@ -451,10 +457,26 @@ int llist::writefile()
         success = 0;
     }
 
-    if (debugmode == 1)
+    cout << "**  END  * writefile **\n" << endl;
+    #else
+    if (ofile.is_open())
     {
-        cout << "**  END  * writefile **\n" << endl;
+        struct record * cursor = start;
+
+        while (cursor != NULL)
+        {
+            ofile << cursor->accountno << endl;
+            ofile << cursor->name << endl;
+            ofile << cursor->address << flush;
+            ofile << "~" << flush;
+
+            cursor = cursor->next;
+        }
+
+        ofile.close();
+        success = 0;
     }
+    #endif
 
     return success;
 }
@@ -476,19 +498,16 @@ int llist::writefile()
 int llist::readfile()
 {
     int success = 1;
-    int debugmode = 0;
-    #ifdef DEBUG
-    debugmode = 1;
-    #endif
-
-    if (debugmode == 1)
-    {
-        cout << "** START * readfile **" << endl;
-        cout << "* filename: " << this->filename << endl;
-    }
-
     ifstream ofile(this->filename, ifstream::in);
 
+    /**
+     * Ideally, the logic of the open should not be duplicated.
+     * Since we cannot create helper methods without approval,
+     * the code is being duplicated instead.
+     */
+    #ifdef DEBUG
+    cout << "** START * readfile **" << endl;
+    cout << "* filename: " << this->filename << endl;
     if (ofile.is_open())
     {
         // peek to make sure file isn't at eof
@@ -504,22 +523,38 @@ int llist::readfile()
             ofile.getline(name, 30, '\n');
             ofile.getline(address, 51, '~');
 
-            if (debugmode == 1)
-            {
-                cout << "* reading account " << accountno << endl;
-            }
-            
+            cout << "* reading account " << accountno << endl;
+
+            this->addRecord(accountno, name, address);
+        }
+
+        ofile.close();
+        success = 0;
+        cout << "**  END  * readfile **\n" << endl;
+    }
+    #else
+    if (ofile.is_open())
+    {
+        // peek to make sure file isn't at eof
+        // ofile.eof() still continues to read anyways.
+        while (ofile.good() && ofile.peek() != ifstream::traits_type::eof())
+        {
+            int accountno;
+            char name[30];
+            char address[50];
+
+            ofile >> accountno;
+            ofile.ignore(1000, '\n'); // get rid of leftover newline
+            ofile.getline(name, 30, '\n');
+            ofile.getline(address, 51, '~');
+
             this->addRecord(accountno, name, address);
         }
 
         ofile.close();
         success = 0;
     }
-
-    if (debugmode == 1)
-    {
-        cout << "**  END  * readfile **\n" << endl;
-    }
+    #endif
 
     return success;
 }
@@ -541,33 +576,26 @@ void llist::cleanup()
 {
     struct record * cursor = this->start;
     struct record * postcursor;
-    int debugmode = 0;
+    this->start = NULL;
 
     #ifdef DEBUG
-    debugmode = 1;
-    #endif
-
-    if (debugmode == 1)
-    {
-        cout << "** START * cleanup **" << endl;
-    }
-
+    cout << "** START * cleanup **" << endl;
     while (cursor != NULL)
     {
-        if (debugmode == 1)
-        {
-            cout << "* cleaning account " << cursor->accountno << endl;
-        }
+        cout << "* cleaning account " << cursor->accountno << endl;
         postcursor = cursor->next;
         cursor->next = NULL;
         delete cursor;
         cursor = postcursor;
     }
-
-    this->start = NULL;
-
-    if (debugmode == 1)
+    cout << "**  END  * cleanup **\n" << endl;
+    #else
+    while (cursor != NULL)
     {
-        cout << "**  END  * cleanup **\n" << endl;
+        postcursor = cursor->next;
+        cursor->next = NULL;
+        delete cursor;
+        cursor = postcursor;
     }
+    #endif
 }
