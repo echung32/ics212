@@ -1,11 +1,6 @@
-1
-1000
-1000
-1000
-~1
-2000
-2000
-2000
-~1000
+100
+3rd Holy Kiteen of Nirvana
+1424-23 Intersellar YUoda Pavillion
+Central Mars,~1000
 name
 address~

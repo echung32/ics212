@@ -1,0 +1,27 @@
+Script started on Tue 25 Apr 2023 01:32:44 AM HST
+]0;echung32@uhx02:~/ics212/project2[?1034huhx02:/home/e/echung32/ics212/project2% make -f release.mak clean
+rm -v project llist.o user_interface.o
+removed ‘project’
+removed ‘llist.o’
+removed ‘user_interface.o’
+]0;echung32@uhx02:~/ics212/project2uhx02:/home/e/echung32/ics212/project2% make -f release.mak clean[K[K[K[K[K[K
+g++ -ansi -pedantic-errors -Wall -c user_interface.cpp
+g++ -ansi -pedantic-errors -Wall -c llist.cpp
+g++ -o project user_interface.o llist.o
+]0;echung32@uhx02:~/ics212/project2uhx02:/home/e/echung32/ics212/project2% make -f release.mak
+make: `project' is up to date.
+]0;echung32@uhx02:~/ics212/project2uhx02:/home/e/echung32/ics212/project2% make -f debug.mak clean
+rm -v project_debug llist.o user_interface.o
+removed ‘project_debug’
+removed ‘llist.o’
+removed ‘user_interface.o’
+]0;echung32@uhx02:~/ics212/project2uhx02:/home/e/echung32/ics212/project2% make -f debug.mak
+g++ -DDEBUG -ansi -pedantic-errors -Wall -c user_interface.cpp
+g++ -DDEBUG -ansi -pedantic-errors -Wall -c llist.cpp
+g++ -o project_debug user_interface.o llist.o
+]0;echung32@uhx02:~/ics212/project2uhx02:/home/e/echung32/ics212/project2% make -f debug.mak
+make: `project_debug' is up to date.
+]0;echung32@uhx02:~/ics212/project2uhx02:/home/e/echung32/ics212/project2% q[Kexit
+exit
+
+Script done on Tue 25 Apr 2023 01:33:37 AM HST
