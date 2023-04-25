@@ -1,6 +1,5 @@
-100
-3rd Holy Kiteen of Nirvana
-1424-23 Intersellar YUoda Pavillion
-Central Mars,~1000
+1000
 name
-address~
+address~2000
+John Smith
+1111 Dole St Honolly Hawaii 96821~

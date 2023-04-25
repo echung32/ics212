@@ -19,8 +19,8 @@
 
 #ifndef LLIST_H
 #define LLIST_H
-#include "record.h"
 #include <ostream>
+#include "record.h"
 
 class llist
 {
@@ -38,7 +38,7 @@ public:
     llist(const llist&);
     llist& operator=(const llist&);
     ~llist();
-    void addRecord(int, char [], char []);
+    void addRecord(int, char[], char[]);
     int findRecord(int);
     void printAllRecords();
     int deleteRecord(int);

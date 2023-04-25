@@ -1,3 +1,10 @@
+1000
 2000
+2000
+~2000
 John Smith
-1111 Dole St Honolly Hawaii 96821~
+1111 Dole St Honolly Hawaii 96821~10000
+2000
+20000
+20000
+~
