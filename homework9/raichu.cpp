@@ -10,14 +10,14 @@
 //
 //  DATE:        April 28, 2023
 //
-//  FILE:        pokemon.cpp
+//  FILE:        raichu.cpp
 //
 //  DESCRIPTION:
 //   Describe the file
 //
 ****************************************************************/
 
-#include "pokemon.h"
+#include "raichu.h"
 #include <iostream>
 using namespace std;
 
@@ -36,12 +36,22 @@ using namespace std;
 //
 ****************************************************************/
 
-Pokemon::Pokemon()
+Raichu::Raichu()
 {
-    cout << "called pokemon constructor" << endl;
+    cout << "called raichu constructor" << endl;
+
+    this->type = "electric";
+    this->weight = 66.1;
 }
 
-Pokemon::~Pokemon()
+Raichu::~Raichu()
 {
-    cout << "called pokemon destructor" << endl;
+    cout << "called weedle destructor" << endl;
+}
+
+void Raichu::printData()
+{
+    cout << "Name: " << "Raichu" << endl;
+    cout << "Type: " << this->type << endl;
+    cout << "Weight: " << this->weight << endl;
 }

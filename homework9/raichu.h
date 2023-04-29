@@ -10,23 +10,23 @@
 //
 //  DATE:        April 28, 2023
 //
-//  FILE:        psyduck.h
+//  FILE:        raichu.h
 //
 //  DESCRIPTION:
 //   Describe the file
 //
 ****************************************************************/
 
-#ifndef PSYDUCK_H
-#define PSYDUCK_H
+#ifndef RAICHU_H
+#define RAICHU_H
 
 #include "pokemon.h"
 
-class Psyduck : public Pokemon
+class Raichu : public Pokemon
 {
     public:
-        Psyduck();
-        ~Psyduck();
+        Raichu();
+        ~Raichu();
         void printData();
 };
 #endif

@@ -10,14 +10,14 @@
 //
 //  DATE:        April 28, 2023
 //
-//  FILE:        pokemon.cpp
+//  FILE:        weedle.cpp
 //
 //  DESCRIPTION:
 //   Describe the file
 //
 ****************************************************************/
 
-#include "pokemon.h"
+#include "weedle.h"
 #include <iostream>
 using namespace std;
 
@@ -36,12 +36,22 @@ using namespace std;
 //
 ****************************************************************/
 
-Pokemon::Pokemon()
+Weedle::Weedle()
 {
-    cout << "called pokemon constructor" << endl;
+    cout << "called weedle constructor" << endl;
+
+    this->type = "bug, poison";
+    this->weight = 7.1;
 }
 
-Pokemon::~Pokemon()
+Weedle::~Weedle()
 {
-    cout << "called pokemon destructor" << endl;
+    cout << "called weedle destructor" << endl;
+}
+
+void Weedle::printData()
+{
+    cout << "Name: " << "Weedle" << endl;
+    cout << "Type: " << this->type << endl;
+    cout << "Weight: " << this->weight << endl;
 }

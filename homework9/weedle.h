@@ -10,23 +10,23 @@
 //
 //  DATE:        April 28, 2023
 //
-//  FILE:        psyduck.h
+//  FILE:        weedle.h
 //
 //  DESCRIPTION:
 //   Describe the file
 //
 ****************************************************************/
 
-#ifndef PSYDUCK_H
-#define PSYDUCK_H
+#ifndef WEEDLE_H
+#define WEEDLE_H
 
 #include "pokemon.h"
 
-class Psyduck : public Pokemon
+class Weedle : public Pokemon
 {
     public:
-        Psyduck();
-        ~Psyduck();
+        Weedle();
+        ~Weedle();
         void printData();
 };
 #endif

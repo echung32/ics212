@@ -38,6 +38,8 @@ using namespace std;
 
 Psyduck::Psyduck()
 {
+    cout << "called psyduck constructor" << endl;
+
     this->type = "water";
     this->weight = 43.2;
 }

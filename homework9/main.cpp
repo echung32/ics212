@@ -10,7 +10,7 @@
 //
 //  DATE:        April 28, 2023
 //
-//  FILE:        pokemon.cpp
+//  FILE:        main.cpp
 //
 //  DESCRIPTION:
 //   Describe the file
@@ -19,6 +19,8 @@
 
 #include "pokemon.h"
 #include "psyduck.h"
+#include "weedle.h"
+#include "raichu.h"
 #include <iostream>
 using namespace std;
 
@@ -41,6 +43,14 @@ using namespace std;
 int main(int argc, char* argv[])
 {
     Pokemon * psyduck = new Psyduck();
+    Pokemon * weedle = new Weedle();
+    Pokemon * raichu = new Raichu();
+
     psyduck->printData();
+    weedle->printData();
+    raichu->printData();
+
     delete psyduck;
+    delete weedle;
+    delete raichu;
 }
