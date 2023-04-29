@@ -22,14 +22,16 @@
 //
  ****************************************************************/
 
-#include "pokemon.h"
-#include "psyduck.h"
-#include "weedle.h"
-#include "raichu.h"
 #include <iostream>
 #include <vector>
 #include <string>
 #include <map>
+
+#include "pokemon.h"
+#include "psyduck.h"
+#include "weedle.h"
+#include "raichu.h"
+
 using namespace std;
 
 void checkPokedex(Pokemon*);
