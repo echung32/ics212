@@ -13,7 +13,8 @@
 //  FILE:        pokemon.h
 //
 //  DESCRIPTION:
-//   Describe the file
+//   This file contains the class and function prototypes for the main
+//   Pokemon class, which all pokemons should be subclasses of.
 //
 ****************************************************************/
 

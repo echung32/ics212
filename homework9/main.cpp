@@ -13,7 +13,12 @@
 //  FILE:        main.cpp
 //
 //  DESCRIPTION:
-//   Describe the file
+//   This program implements a simple program which uses a class hierarchy,
+//   by creating a Pokedex example where 3 pokemons are added to the "Pokedex",
+//   which are contaiend in a Map, accessed through a Vector containing the
+//   nicknames to these pokemons. Then, it calls the Pokemon's "printData()"
+//   function to show the details held within those Pokemons. This program also
+//   demonstrates the usage of virtual functions.
 //
 ****************************************************************/
 
@@ -32,15 +37,16 @@ void checkPokedex(Pokemon*);
 //
 //  Function name: main
 //
-//  DESCRIPTION:   Don't forget to describe what your main
-//                 function does.
+//  DESCRIPTION:   This function is the driver code to test the
+//                 constructors and destructors of the Pokemon
+//                 classes, and uses Vectors and Maps to store and
+//                 show a Pokemon's details.
 //
 //  Parameters:    argc (int) : The number of elements in argv
 //                 argv (char*[]) : An array of arguments passed
 //                                  to the program.
 //
-//  Return values:  0 : some meaning
-//                 -1 : some meaning
+//  Return values:  0 : success
 //
 ****************************************************************/
 
@@ -89,7 +95,22 @@ int main(int argc, char* argv[])
     delete psyduck;
     delete weedle;
     delete raichu;
+
+    return 0;
 }
+
+/*****************************************************************
+//
+//  Function name: checkPokedex
+//
+//  DESCRIPTION:   This function calls the "printData()" function
+//                 of the pokemon given.
+//
+//  Parameters:    pokemon (Pokemon*) : A pointer to the pokemon object.
+//
+//  Return values:  void
+//
+****************************************************************/
 
 void checkPokedex(Pokemon* pokemon)
 {

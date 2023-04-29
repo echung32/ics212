@@ -13,7 +13,11 @@
 //  FILE:        pokemon.cpp
 //
 //  DESCRIPTION:
-//   Describe the file
+//   This file contains the implementation for the Psyduck class,
+//   specified by the psyduck.h file, which is a subclass of the
+//   Pokemon class. This file implements the data of Psyduck,
+//   including its type, weight, and adds a function to print this
+//   information to the terminal.
 //
 ****************************************************************/
 
@@ -23,16 +27,15 @@ using namespace std;
 
 /*****************************************************************
 //
-//  Function name: foo
+//  Function name: Psyduck
 //
-//  DESCRIPTION:   A template function
-//                 This function does not do anything.
-//                 Please describe your function correctly.
+//  DESCRIPTION:   This function is the constructor for the Psyduck
+//                 class. It outputs that it was called, and assigns
+//                 the type and weight variables.
 //
-//  Parameters:    bar (int) : Describe the meaning
+//  Parameters:    void
 //
-//  Return values:  0 : some meaning
-//                 -1 : some meaning
+//  Return values:  void
 //
 ****************************************************************/
 
@@ -44,10 +47,36 @@ Psyduck::Psyduck()
     this->weight = 43.2;
 }
 
+/*****************************************************************
+//
+//  Function name: ~Psyduck
+//
+//  DESCRIPTION:   This function is the destructor for the Psyduck
+//                 class. It outputs that it was called.
+//
+//  Parameters:    void
+//
+//  Return values:  void
+//
+****************************************************************/
+
 Psyduck::~Psyduck()
 {
     cout << "Psyduck Destructor" << endl;
 }
+
+/*****************************************************************
+//
+//  Function name: printData
+//
+//  DESCRIPTION:   This function prints the name, type, and weight
+//                 of the Pokemon.
+//
+//  Parameters:    void
+//
+//  Return values:  void
+//
+****************************************************************/
 
 void Psyduck::printData()
 {

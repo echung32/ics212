@@ -13,7 +13,8 @@
 //  FILE:        weedle.h
 //
 //  DESCRIPTION:
-//   Describe the file
+//   This file contains the class and function prototypes for the
+//   Weedle class, which is a subclass of the Pokemon class.
 //
 ****************************************************************/
 

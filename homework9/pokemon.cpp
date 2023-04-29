@@ -13,7 +13,9 @@
 //  FILE:        pokemon.cpp
 //
 //  DESCRIPTION:
-//   Describe the file
+//   This file contains the implementation for the main Pokemon
+//   class, specified by the pokemon.h file, which all pokemons
+//   should inherit from.
 //
 ****************************************************************/
 
@@ -23,16 +25,14 @@ using namespace std;
 
 /*****************************************************************
 //
-//  Function name: foo
+//  Function name: Pokemon
 //
-//  DESCRIPTION:   A template function
-//                 This function does not do anything.
-//                 Please describe your function correctly.
+//  DESCRIPTION:   This function is the constructor for the Pokemon
+//                 class. It outputs that it was called.
 //
-//  Parameters:    bar (int) : Describe the meaning
+//  Parameters:    void
 //
-//  Return values:  0 : some meaning
-//                 -1 : some meaning
+//  Return values:  void
 //
 ****************************************************************/
 
@@ -40,6 +40,19 @@ Pokemon::Pokemon()
 {
     cout << "Pokemon Constructor" << endl;
 }
+
+/*****************************************************************
+//
+//  Function name: ~Pokemon
+//
+//  DESCRIPTION:   This function is the destructor for the Pokemon
+//                 class. It outputs that it was called.
+//
+//  Parameters:    void
+//
+//  Return values:  void
+//
+****************************************************************/
 
 Pokemon::~Pokemon()
 {

@@ -13,7 +13,11 @@
 //  FILE:        raichu.cpp
 //
 //  DESCRIPTION:
-//   Describe the file
+//   This file contains the implementation for the Raichu class,
+//   specified by the raichu.h file, which is a subclass of the
+//   Pokemon class. This file implements the data of Raichu,
+//   including its type, weight, and adds a function to print this
+//   information to the terminal.
 //
 ****************************************************************/
 
@@ -23,16 +27,15 @@ using namespace std;
 
 /*****************************************************************
 //
-//  Function name: foo
+//  Function name: Raichu
 //
-//  DESCRIPTION:   A template function
-//                 This function does not do anything.
-//                 Please describe your function correctly.
+//  DESCRIPTION:   This function is the constructor for the Raichu
+//                 class. It outputs that it was called, and assigns
+//                 the type and weight variables.
 //
-//  Parameters:    bar (int) : Describe the meaning
+//  Parameters:    void
 //
-//  Return values:  0 : some meaning
-//                 -1 : some meaning
+//  Return values:  void
 //
 ****************************************************************/
 
@@ -44,10 +47,36 @@ Raichu::Raichu()
     this->weight = 66.1;
 }
 
+/*****************************************************************
+//
+//  Function name: ~Raichu
+//
+//  DESCRIPTION:   This function is the destructor for the Raichu
+//                 class. It outputs that it was called.
+//
+//  Parameters:    void
+//
+//  Return values:  void
+//
+****************************************************************/
+
 Raichu::~Raichu()
 {
     cout << "Raichu Destructor" << endl;
 }
+
+/*****************************************************************
+//
+//  Function name: printData
+//
+//  DESCRIPTION:   This function prints the name, type, and weight
+//                 of the Pokemon.
+//
+//  Parameters:    void
+//
+//  Return values:  void
+//
+****************************************************************/
 
 void Raichu::printData()
 {
