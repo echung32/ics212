@@ -16,7 +16,7 @@
 //   This file contains the class and function prototypes for the
 //   Raichu class, which is a subclass of the Pokemon class.
 //
-****************************************************************/
+ ****************************************************************/
 
 #ifndef RAICHU_H
 #define RAICHU_H

@@ -16,7 +16,7 @@
 //   This file contains the class and function prototypes for the main
 //   Pokemon class, which all pokemons should be subclasses of.
 //
-****************************************************************/
+ ****************************************************************/
 
 #ifndef POKEMON_H
 #define POKEMON_H

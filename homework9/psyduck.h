@@ -16,7 +16,7 @@
 //   This file contains the class and function prototypes for the
 //   Psyduck class, which is a subclass of the Pokemon class.
 //
-****************************************************************/
+ ****************************************************************/
 
 #ifndef PSYDUCK_H
 #define PSYDUCK_H

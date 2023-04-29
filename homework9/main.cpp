@@ -20,7 +20,7 @@
 //   function to show the details held within those Pokemons. This program also
 //   demonstrates the usage of virtual functions.
 //
-****************************************************************/
+ ****************************************************************/
 
 #include "pokemon.h"
 #include "psyduck.h"
@@ -28,6 +28,7 @@
 #include "raichu.h"
 #include <iostream>
 #include <vector>
+#include <string>
 #include <map>
 using namespace std;
 
@@ -48,7 +49,7 @@ void checkPokedex(Pokemon*);
 //
 //  Return values:  0 : success
 //
-****************************************************************/
+ ****************************************************************/
 
 int main(int argc, char* argv[])
 {
@@ -110,7 +111,7 @@ int main(int argc, char* argv[])
 //
 //  Return values:  void
 //
-****************************************************************/
+ ****************************************************************/
 
 void checkPokedex(Pokemon* pokemon)
 {

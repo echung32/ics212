@@ -16,7 +16,7 @@
 //   This file contains the class and function prototypes for the
 //   Weedle class, which is a subclass of the Pokemon class.
 //
-****************************************************************/
+ ****************************************************************/
 
 #ifndef WEEDLE_H
 #define WEEDLE_H
