@@ -20,12 +20,12 @@
 //
  ****************************************************************/
 
-#include "llist.h"
+using namespace std;
+
 #include <iostream>
 #include <cstring>
 #include <fstream>
-
-using namespace std;
+#include "llist.h"
 
 /*****************************************************************
 //
@@ -104,6 +104,7 @@ llist::llist(const llist &list)
     struct record *cursor = list.start;
 
     this->start = NULL;
+
     /**
      * This should not be hardcoded to "copy-db.txt",
      * but since function parmeters cannot be modified
@@ -111,6 +112,7 @@ llist::llist(const llist &list)
      * to prevent write collisions with the default
      * `database.txt` file.
      */
+
     strncpy(this->filename, "copy-db.txt", 19);
 
     while (cursor != NULL)
@@ -143,6 +145,7 @@ llist& llist::operator=(const llist& list)
     #endif
 
     struct record *cursor = list.start;
+
     /**
      * This should not be hardcoded to "assign-db.txt",
      * but since function parmeters cannot be modified
@@ -150,6 +153,7 @@ llist& llist::operator=(const llist& list)
      * to prevent write collisions with the default
      * `database.txt` file.
      */
+
     strncpy(this->filename, "assign-db.txt", 19);
 
     // reset the list data here
@@ -434,6 +438,7 @@ int llist::writefile()
      * Since we cannot create helper methods without approval,
      * the code is being duplicated instead.
      */
+
     #ifdef DEBUG
     cout << "** START * writefile **" << endl;
     cout << "* filename: " << this->filename << endl;
@@ -505,6 +510,7 @@ int llist::readfile()
      * Since we cannot create helper methods without approval,
      * the code is being duplicated instead.
      */
+
     #ifdef DEBUG
     cout << "** START * readfile **" << endl;
     cout << "* filename: " << this->filename << endl;
@@ -519,7 +525,9 @@ int llist::readfile()
             char address[50];
 
             ofile >> accountno;
-            ofile.ignore(1000, '\n'); // get rid of leftover newline
+
+            // get rid of leftover newline
+            ofile.ignore(1000, '\n');
             ofile.getline(name, 30, '\n');
             ofile.getline(address, 51, '~');
 
@@ -544,7 +552,9 @@ int llist::readfile()
             char address[50];
 
             ofile >> accountno;
-            ofile.ignore(1000, '\n'); // get rid of leftover newline
+
+            // get rid of leftover newline
+            ofile.ignore(1000, '\n');
             ofile.getline(name, 30, '\n');
             ofile.getline(address, 51, '~');
 

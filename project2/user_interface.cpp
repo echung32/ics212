@@ -44,6 +44,7 @@ using namespace std;
 //  Return values:  1 : success
 //
  ****************************************************************/
+
 int main(int argc, char* argv[])
 {
     char filename[] = "database.txt";
@@ -62,7 +63,7 @@ int main(int argc, char* argv[])
     cout << copylist;
     cout << "\nSTART STILL SAME?\n" << endl;
     cout << *start;
-    
+
     // copy-db.txt should not be generated, since it
     // should have been deleted by assignment.
     // only assign-db.txt should be generated.
@@ -112,7 +113,8 @@ int main(int argc, char* argv[])
             {
                 char tempname[1000];
                 cout << "> Enter customer name below." << endl;
-                cout << "- Maximum of 30 characters. You can input more, but it will be ignored." << endl;
+                cout << "- Maximum of 30 characters. " << flush;
+                cout << "You can input more, but it will be ignored." << endl;
                 cout << "> " << flush;
 
                 cin.getline(tempname, 1000, '\n');
@@ -132,7 +134,8 @@ int main(int argc, char* argv[])
 
             /** Address */
             cout << "> Enter customer address below." << endl;
-            cout << "- Maximum of 50 characters. You can input more, but it will be ignored." << endl;
+            cout << "- Maximum of 50 characters. " << flush;
+            cout << "You can input more, but it will be ignored." << endl;
             cout << "- Stop input by pressing '~ -> ENTER'." << endl;
             getaddress(data->address, 50);
 

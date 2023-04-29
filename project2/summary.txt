@@ -1,7 +1,7 @@
 All requirements were met, and all components are functional,
 with the exception of the potential for user input functions
-to cause errors in regards to sanitization. However, the current
-test cases for this program prove the program to be fine.
+to cause unintentional errors. However, the current test cases
+for this program prove the program to be fine.
 
 A copy constructor and an assignment operator was implemented,
 and is tested on startup when using the debug release. An issue
@@ -18,3 +18,4 @@ duplicate code in certain functions.
 conflicts, but this also means copy/assignment can only be unique
 once. In the future, the filename should be adjustable even after
 initialization, allowing the user to choose the desired behavior.
+
