@@ -38,7 +38,7 @@ using namespace std;
 
 Psyduck::Psyduck()
 {
-    cout << "called psyduck constructor" << endl;
+    cout << "Psyduck Constructor" << endl;
 
     this->type = "water";
     this->weight = 43.2;
@@ -46,7 +46,7 @@ Psyduck::Psyduck()
 
 Psyduck::~Psyduck()
 {
-    cout << "called psyduck destructor" << endl;
+    cout << "Psyduck Destructor" << endl;
 }
 
 void Psyduck::printData()

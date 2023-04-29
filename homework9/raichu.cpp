@@ -38,7 +38,7 @@ using namespace std;
 
 Raichu::Raichu()
 {
-    cout << "called raichu constructor" << endl;
+    cout << "Raichu Constructor" << endl;
 
     this->type = "electric";
     this->weight = 66.1;
@@ -46,7 +46,7 @@ Raichu::Raichu()
 
 Raichu::~Raichu()
 {
-    cout << "called weedle destructor" << endl;
+    cout << "Raichu Destructor" << endl;
 }
 
 void Raichu::printData()

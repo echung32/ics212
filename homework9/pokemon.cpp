@@ -38,10 +38,10 @@ using namespace std;
 
 Pokemon::Pokemon()
 {
-    cout << "called pokemon constructor" << endl;
+    cout << "Pokemon Constructor" << endl;
 }
 
 Pokemon::~Pokemon()
 {
-    cout << "called pokemon destructor" << endl;
+    cout << "Pokemon Destructor" << endl;
 }

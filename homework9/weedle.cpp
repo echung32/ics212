@@ -38,7 +38,7 @@ using namespace std;
 
 Weedle::Weedle()
 {
-    cout << "called weedle constructor" << endl;
+    cout << "Weedle Constructor" << endl;
 
     this->type = "bug, poison";
     this->weight = 7.1;
@@ -46,7 +46,7 @@ Weedle::Weedle()
 
 Weedle::~Weedle()
 {
-    cout << "called weedle destructor" << endl;
+    cout << "Weedle Destructor" << endl;
 }
 
 void Weedle::printData()
