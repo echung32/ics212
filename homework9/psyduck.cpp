@@ -44,6 +44,7 @@ Psyduck::Psyduck()
 
 Psyduck::~Psyduck()
 {
+    cout << "called psyduck destructor" << endl;
 }
 
 void Psyduck::printData()

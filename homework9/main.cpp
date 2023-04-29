@@ -42,4 +42,5 @@ int main(int argc, char* argv[])
 {
     Pokemon * psyduck = new Psyduck();
     psyduck->printData();
+    delete psyduck;
 }

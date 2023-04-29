@@ -18,6 +18,7 @@
 ****************************************************************/
 
 #include "pokemon.h"
+#include <iostream>
 using namespace std;
 
 /*****************************************************************
@@ -41,4 +42,5 @@ Pokemon::Pokemon()
 
 Pokemon::~Pokemon()
 {
+    cout << "called pokemon destructor" << endl;
 }
