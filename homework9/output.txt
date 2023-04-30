@@ -1,0 +1,45 @@
+Script started on Sat 29 Apr 2023 12:26:54 AM HST
+]0;echung32@uhx02:~/ics212/homework9[?1034huhx02:/home/e/echung32/ics212/homework9% make[K[K[K[K./homework9 
+~~ Call constructors ~~
+Pokemon Constructor
+Psyduck Constructor
+Pokemon Constructor
+Weedle Constructor
+Pokemon Constructor
+Raichu Constructor
+
+~~ Assign nicknames to pokeVector ~~
+~ Psyduck as John
+~ Weedle as Nick
+~ Raichu as Paul
+
+~~ Assign key and pokemon to pokeMap ~~
+~ pokeMap[John] = Psyduck
+~ pokeMap[Nick] = Weedle
+~ pokeMap[Paul] = Raichu
+
+~~ Access checkPokedex using pokeIterator ~~
+~ pokeMap[John]
+Name: Psyduck
+Type: water
+Weight: 43.2
+~ pokeMap[Nick]
+Name: Weedle
+Type: bug, poison
+Weight: 7.1
+~ pokeMap[Paul]
+Name: Raichu
+Type: electric
+Weight: 66.1
+
+~~ Call destructors ~~
+Psyduck Destructor
+Pokemon Destructor
+Weedle Destructor
+Pokemon Destructor
+Raichu Destructor
+Pokemon Destructor
+]0;echung32@uhx02:~/ics212/homework9uhx02:/home/e/echung32/ics212/homework9% exit
+exit
+
+Script done on Sat 29 Apr 2023 12:27:02 AM HST

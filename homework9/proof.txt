@@ -1,0 +1,22 @@
+Script started on Sat 29 Apr 2023 12:26:09 AM HST
+]0;echung32@uhx02:~/ics212/homework9[?1034huhx02:/home/e/echung32/ics212/homework9% make clean
+rm -v homework9 main.o pokemon.o psyduck.o raichu.o weedle.o
+removed ‘homework9’
+removed ‘main.o’
+removed ‘pokemon.o’
+removed ‘psyduck.o’
+removed ‘raichu.o’
+removed ‘weedle.o’
+]0;echung32@uhx02:~/ics212/homework9uhx02:/home/e/echung32/ics212/homework9% make
+g++ -ansi -pedantic-errors -Wall -c main.cpp
+g++ -ansi -pedantic-errors -Wall -c pokemon.cpp
+g++ -ansi -pedantic-errors -Wall -c psyduck.cpp
+g++ -ansi -pedantic-errors -Wall -c raichu.cpp
+g++ -ansi -pedantic-errors -Wall -c weedle.cpp
+g++ -o homework9 main.o pokemon.o psyduck.o raichu.o weedle.o
+]0;echung32@uhx02:~/ics212/homework9uhx02:/home/e/echung32/ics212/homework9% exit[K[K[K[Kmake
+make: `homework9' is up to date.
+]0;echung32@uhx02:~/ics212/homework9uhx02:/home/e/echung32/ics212/homework9% exit
+exit
+
+Script done on Sat 29 Apr 2023 12:26:20 AM HST
