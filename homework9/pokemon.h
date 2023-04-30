@@ -25,13 +25,13 @@
 
 class Pokemon
 {
-    protected:
-        std::string type;
-        float weight;
+protected:
+    std::string type;
+    float weight;
 
-    public:
-        Pokemon();
-        virtual ~Pokemon();
-        virtual void printData() = 0;
+public:
+    Pokemon();
+    virtual ~Pokemon();
+    virtual void printData() = 0;
 };
 #endif

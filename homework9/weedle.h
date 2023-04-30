@@ -25,9 +25,9 @@
 
 class Weedle : public Pokemon
 {
-    public:
-        Weedle();
-        ~Weedle();
-        void printData();
+public:
+    Weedle();
+    ~Weedle();
+    void printData();
 };
 #endif

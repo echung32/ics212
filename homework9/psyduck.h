@@ -25,9 +25,9 @@
 
 class Psyduck : public Pokemon
 {
-    public:
-        Psyduck();
-        ~Psyduck();
-        void printData();
+public:
+    Psyduck();
+    ~Psyduck();
+    void printData();
 };
 #endif

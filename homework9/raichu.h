@@ -25,9 +25,9 @@
 
 class Raichu : public Pokemon
 {
-    public:
-        Raichu();
-        ~Raichu();
-        void printData();
+public:
+    Raichu();
+    ~Raichu();
+    void printData();
 };
 #endif
