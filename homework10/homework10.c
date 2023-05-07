@@ -13,7 +13,8 @@
 //  FILE:        homework10.c
 //
 //  DESCRIPTION:
-//   Describe the file
+//   This is the backend component for the number multiple checker.
+//   Code written in Java can call this fucntion to use the methods.
 //
 ****************************************************************/
 
@@ -21,19 +22,19 @@
 
 /*****************************************************************
 //
-//  Function name: main
+//  Function name: is_multiple5
 //
-//  DESCRIPTION:   Don't forget to describe what your main
-//                 function does.
+//  DESCRIPTION:   Check whether the inputted value is a multiple
+//                 of 5 or not.
 //
-//  Parameters:    argc (int) : The number of elements in argv
-//                 argv (char*[]) : An array of arguments passed
-//                                  to the program.
+//  Parameters:     env (JNIEnv*) : the JNI environment pointer
+//                  class (jclass) : the java class calling the function
+//                  number (jint) : The number to check
 //
-//  Return values:  0 : some meaning
-//                 -1 : some meaning
+//  Return values:  1 : multiple of 5
+//                  0 : not a multiple of 5
 //
-****************************************************************/
+ ****************************************************************/
 
 JNIEXPORT jint JNICALL Java_homework10_is_1multiple5(JNIEnv * env, jclass class, jint number)
 {
