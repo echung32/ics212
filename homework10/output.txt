@@ -232,147 +232,6 @@ bash: homework10.ctar: command not found
 -rw-r--r-- echung32/uh     438 2023-05-06 15:21 Makefile
 -rw-r--r-- echung32/uh     800 2023-05-06 15:23 proof.txt
 -rw-r--r-- echung32/uh    8192 2023-05-06 15:27 output.txt
-]0;echung32@uhx02:~/ics212/h No
-      32   No
-      33   No
-      34   No
-      35  Yes
-      36   No
-      37   No
-      38   No
-      39   No
-      40  Yes
-      41   No
-      42   No
-      43   No
-      44   No
-      45  Yes
-      46   No
-      47   No
-      48   No
-      49   No
-      50  Yes
-      51   No
-      52   No
-      53   No
-      54   No
-      55  Yes
-      56   No
-      57   No
-      58   No
-      59   No
-      60  Yes
-      61   No
-      62   No
-      63   No
-      64   No
-      65  Yes
-      66   No
-      67   No
-      68   No
-      69   No
-      70  Yes
-      71   No
-      72   No
-      73   No
-      74   No
-      75  Yes
-      76   No
-      77   No
-      78   No
-      79   No
-      80  Yes
-      81   No
-      82   No
-      83   No
-      84   No
-      85  Yes
-      86   No
-      87   No
-      88   No
-      89   No
-      90  Yes
-      91   No
-      92   No
-      93   No
-      94   No
-      95  Yes
-      96   No
-      97   No
-      98   No
-      99   No
-     100  Yes
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% exit
-exit
-Script done, file is output.txt
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% make run
-java -Djava.library.path=. homework10
-This program checks which numbers, in the sequence from 0 to a number, are multiples of 5.
-
-Enter maximum number to show: 39
-  Number  Multiple of 5?
-       0  Yes
-       1   No
-       2   No
-       3   No
-       4   No
-       5  Yes
-       6   No
-       7   No
-       8   No
-       9   No
-      10  Yes
-      11   No
-      12   No
-      13   No
-      14   No
-      15  Yes
-      16   No
-      17   No
-      18   No
-      19   No
-      20  Yes
-      21   No
-      22   No
-      23   No
-      24   No
-      25  Yes
-      26   No
-      27   No
-      28   No
-      29   No
-      30  Yes
-      31   No
-      32   No
-      33   No
-      34   No
-      35  Yes
-      36   No
-      37   No
-      38   No
-      39   No
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% ls
-homework10.c  homework10.class  homework10.h  homework10.java  [0m[38;5;34mlibhomework10.so[0m  Makefile  output.txt  proof.txt
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% git add .
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% git push -m ""h"w"1"0":" "s"t"u"[1P"[1P"[1P"[1P" "p"r"o"o"f" "a"n"d" "o"u"t"p"u"t"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[K[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[Ktar zcvf homework10.tar.gz homework10.java homework10.c Makefile proof.txt out put.txt
-homework10.java
-homework10.c
-Makefile
-proof.txt
-output.txt
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% 
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% homework10.java
-bash: homework10.java: command not found
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% homework10.chomework10.java
-bash: homework10.chomework10.java: command not found
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% homework10.ctar tvf homework10.tar.gz
-bash: homework10.ctar: command not found
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% tar tvf homework10.tar.gz
--rw-r--r-- echung32/uh    4345 2023-05-06 15:26 homework10.java
--rw-r--r-- echung32/uh    1267 2023-05-06 15:15 homework10.c
--rw-r--r-- echung32/uh     438 2023-05-06 15:21 Makefile
--rw-r--r-- echung32/uh     800 2023-05-06 15:23 proof.txt
--rw-r--r-- echung32/uh    8192 2023-05-06 15:27 output.txt
 ]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% make
 javah homework10
 ]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% make
@@ -467,4 +326,37 @@ You must enter a valid integer. Try again!
 Enter maximum number to show: ^Cmake: *** [run] Error 130
 
 ]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% make run[K cleanbnls[Kmaketar tvf homework10.tar.gz[12@homework10.c[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[12P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[12@homework10.c[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[10Phomework10.javajava[Ktar zcvf homework10.tar.gz homework10.java homework10.c Makefile proof.txt outpput.txt[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgit add .[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctar zcvf homework10.tar.gz homework10.java homework10.c Makefile proof.txt outpput.txt
+homework10.java
+homework10.c
+Makefile
+proof.txt
+output.txt
+]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% tar zcvf homework10.tar.gz homework10.java homework10.c Makefile proof.txt outpput.txt[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake run[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K cleanbnls[Kmaketar tvf homework10.tar.gz
+-rw-r--r-- echung32/uh    4345 2023-05-06 15:26 homework10.java
+-rw-r--r-- echung32/uh    1267 2023-05-06 15:15 homework10.c
+-rw-r--r-- echung32/uh     438 2023-05-06 15:21 Makefile
+-rw-r--r-- echung32/uh     800 2023-05-06 15:23 proof.txt
+-rw-r--r-- echung32/uh   16384 2023-05-06 15:29 output.txt
+]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% add .
+bash: add: command not found
+]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% git add .
+]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% git pull
+Already up-to-date.
+]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% git push -m ""[K[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"c"o"m"m"i"t" "-"m" "[C"
+[?1049h[?1h=[1;30r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[30;1H".git/COMMIT_EDITMSG" 14L, 400C[1;1H[38;5;130m      1 
+      2 [m# Please enter the commit message for your changes. Lines starting
+[38;5;130m      3 [m# with '#' will be ignored, and an empty message aborts the commit.
+[38;5;130m      4 [m# On branch master
+[38;5;130m      5 [m# Changes to be committed:
+[38;5;130m      6 [m#   (use "git reset HEAD <file>..." to unstage)
+[38;5;130m      7 [m#
+[38;5;130m      8 [m#   modified:   Makefile
+[38;5;130m      9 [m#   modified:   homework10.class
+[38;5;130m     10 [m#   new file:   homework10.tar.gz
+[38;5;130m     11 [m#   new file:   libhomework10.so
+[38;5;130m     12 [m#   new file:   output.txt
+[38;5;130m     13 [m#   new file:   proof.txt
+[38;5;130m     14 [m#
+[94m~                                                                                                                       [16;1H~                                                                                                                       [17;1H~                                                                                                                       [18;1H~                                                                                                                       [19;1H~                                                                                                                       [20;1H~                                                                                                                       [21;1H~                                                                                                                       [22;1H~                                                                                                                       [23;1H~                                                                                                                       [24;1H~                                                                                                                       [25;1H~                                                                                                                       [26;1H~                                                                                                                       [27;1H~                                                                          
