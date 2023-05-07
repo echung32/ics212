@@ -1,0 +1,16 @@
+Script started on Sat 06 May 2023 03:22:55 PM HST
+]0;echung32@uhx02:~/ics212/homework10[?1034huhx02:/home/e/echung32/ics212/homework10% make clean
+rm -v libhomework10.so homework10.h homework10.class
+removed ‘libhomework10.so’
+removed ‘homework10.h’
+removed ‘homework10.class’
+]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% make
+javac homework10.java
+javah homework10
+gcc -I/usr/java/latest/include -I/usr/java/latest/include/linux -shared -o libhomework10.so homework10.c
+]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% make
+make: `libhomework10.so' is up to date.
+]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% exit
+exit
+
+Script done on Sat 06 May 2023 03:23:01 PM HST

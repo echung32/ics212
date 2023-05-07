@@ -12,3 +12,7 @@ homework10.class: homework10.java
 
 run:
 	java -Djava.library.path=. homework10
+
+clean:
+	rm -v libhomework10.so homework10.h homework10.class
+
