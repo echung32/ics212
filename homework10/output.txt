@@ -1,64 +1,62 @@
-Script started on Sat 06 May 2023 03:24:50 PM HST
+Script started on Sat 06 May 2023 03:31:42 PM HST
 ]0;echung32@uhx02:~/ics212/homework10[?1034huhx02:/home/e/echung32/ics212/homework10% make run
 java -Djava.library.path=. homework10
 This program checks which numbers, in the sequence from 0 to a number, are multiples of 5.
 
-Enter maximum number to show: -100    abcd
-You must enter a valid integer. Try again!
-Enter maximum number to show: -100
-You must enter a positive integer greater than 0. Try again!
-Enter maximum number to show: 0
-You must enter a positive integer greater than 0. Try again!
-Enter maximum number to show: 0123    abc123
-You must enter a valid integer. Try again!
-Enter maximum number to show: You must enter a valid integer. Try again!
-Enter maximum number to show: git ^Cmake: *** [run] Error 130
-
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% git pull
-remote: Enumerating objects: 7, done.[K
-remote: Counting objects:  14% (1/7)[Kremote: Counting objects:  28% (2/7)[Kremote: Counting objects:  42% (3/7)[Kremote: Counting objects:  57% (4/7)[Kremote: Counting objects:  71% (5/7)[Kremote: Counting objects:  85% (6/7)[Kremote: Counting objects: 100% (7/7)[Kremote: Counting objects: 100% (7/7), done.[K
-remote: Compressing objects: 100% (1/1)[Kremote: Compressing objects: 100% (1/1), done.[K
-remote: Total 4 (delta 3), reused 4 (delta 3), pack-reused 0[K
-Unpacking objects:  25% (1/4)   Unpacking objects:  50% (2/4)   Unpacking objects:  75% (3/4)   Unpacking objects: 100% (4/4)   Unpacking objects: 100% (4/4), done.
-From github.com:Aericio/ics212
-   471aaed..97d9cd2  master     -> origin/master
-Updating 471aaed..97d9cd2
-Fast-forward
- homework10/homework10.java | 1 +
- 1 file changed, 1 insertion(+)
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% git pullmake run[4Pexitmake run[4Pexitmake clean[6Pexit[K[K[K[Kscript 
-homework10.c      homework10.h      libhomework10.so  output.txt        
-homework10.class  homework10.java   Makefile          proof.txt         
-uhx02:/home/e/echung32/ics212/homework10% script 
-homework10.c      homework10.h      libhomework10.so  output.txt        
-homework10.class  homework10.java   Makefile          proof.txt         
-uhx02:/home/e/echung32/ics212/homework10% script [K[K[K[K[K[K[Kmake
-javac homework10.java
-javah homework10
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% script output.txt
-Script started, file is output.txt
-]0;echung32@uhx02:~/ics212/homework10[?1034huhx02:/home/e/echung32/ics212/homework10% 
-Display all 2549 possibilities? (y or n)^C
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% ma[K[Kexit
-exit
-Script done, file is output.txt
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% script output.txt
-Script started, file is output.txt
-]0;echung32@uhx02:~/ics212/homework10[?1034huhx02:/home/e/echung32/ics212/homework10% make run
+Enter maximum number to show: 100   36
+  Number  Multiple of 5?
+       0  Yes
+       1   No
+       2   No
+       3   No
+       4   No
+       5  Yes
+       6   No
+       7   No
+       8   No
+       9   No
+      10  Yes
+      11   No
+      12   No
+      13   No
+      14   No
+      15  Yes
+      16   No
+      17   No
+      18   No
+      19   No
+      20  Yes
+      21   No
+      22   No
+      23   No
+      24   No
+      25  Yes
+      26   No
+      27   No
+      28   No
+      29   No
+      30  Yes
+      31   No
+      32   No
+      33   No
+      34   No
+      35  Yes
+      36   No
+]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% make run
 java -Djava.library.path=. homework10
 This program checks which numbers, in the sequence from 0 to a number, are multiples of 5.
 
+Enter maximum number to show: 100   abcds 
+You must enter a valid integer. Try again!
 Enter maximum number to show: 100   -100
 You must enter a positive integer greater than 0. Try again!
-Enter maximum number to show: abcd
+Enter maximum number to show: a abcd100
 You must enter a valid integer. Try again!
-Enter maximum number to show: 100abcd
+Enter maximum number to show: abc=    100abcd
 You must enter a valid integer. Try again!
-Enter maximum number to show: abcd100
+Enter maximum number to show: 10 10       abcd abcd abcd 100                  abcd 100
 You must enter a valid integer. Try again!
-Enter maximum number to show: 0
-You must enter a positive integer greater than 0. Try again!
-Enter maximum number to show: 100
+Enter maximum number to show: 100 abcd
   Number  Multiple of 5?
        0  Yes
        1   No
@@ -161,253 +159,9 @@ Enter maximum number to show: 100
       98   No
       99   No
      100  Yes
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% exit
+]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% 1
+bash: 1: command not found
+]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% 1[Kexit
 exit
-Script done, file is output.txt
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% make run
-java -Djava.library.path=. homework10
-This program checks which numbers, in the sequence from 0 to a number, are multiples of 5.
 
-Enter maximum number to show: 39
-  Number  Multiple of 5?
-       0  Yes
-       1   No
-       2   No
-       3   No
-       4   No
-       5  Yes
-       6   No
-       7   No
-       8   No
-       9   No
-      10  Yes
-      11   No
-      12   No
-      13   No
-      14   No
-      15  Yes
-      16   No
-      17   No
-      18   No
-      19   No
-      20  Yes
-      21   No
-      22   No
-      23   No
-      24   No
-      25  Yes
-      26   No
-      27   No
-      28   No
-      29   No
-      30  Yes
-      31   No
-      32   No
-      33   No
-      34   No
-      35  Yes
-      36   No
-      37   No
-      38   No
-      39   No
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% ls
-homework10.c  homework10.class  homework10.h  homework10.java  [0m[38;5;34mlibhomework10.so[0m  Makefile  output.txt  proof.txt
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% git add .
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% git push -m ""h"w"1"0":" "s"t"u"[1P"[1P"[1P"[1P" "p"r"o"o"f" "a"n"d" "o"u"t"p"u"t"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[K[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[Ktar zcvf homework10.tar.gz homework10.java homework10.c Makefile proof.txt out put.txt
-homework10.java
-homework10.c
-Makefile
-proof.txt
-output.txt
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% 
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% homework10.java
-bash: homework10.java: command not found
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% homework10.chomework10.java
-bash: homework10.chomework10.java: command not found
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% homework10.ctar tvf homework10.tar.gz
-bash: homework10.ctar: command not found
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% tar tvf homework10.tar.gz
--rw-r--r-- echung32/uh    4345 2023-05-06 15:26 homework10.java
--rw-r--r-- echung32/uh    1267 2023-05-06 15:15 homework10.c
--rw-r--r-- echung32/uh     438 2023-05-06 15:21 Makefile
--rw-r--r-- echung32/uh     800 2023-05-06 15:23 proof.txt
--rw-r--r-- echung32/uh    8192 2023-05-06 15:27 output.txt
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% make
-javah homework10
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% make
-javah homework10
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% make
-javah homework10
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% ls
-homework10.c      homework10.h     [0m[38;5;9mhomework10.tar.gz[0m  Makefile    proof.txt
-homework10.class  homework10.java  [38;5;34mlibhomework10.so[0m   output.txt
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% make cleabn
-make: *** No rule to make target `cleabn'.  Stop.
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% make clean
-rm -v libhomework10.so homework10.h homework10.class
-removed ‘libhomework10.so’
-removed ‘homework10.h’
-removed ‘homework10.class’
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% majke[K[K[Kke
-javac homework10.java
-javah homework10
-gcc -I/usr/java/latest/include -I/usr/java/latest/include/linux -shared -o libhomework10.so homework10.c
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% make clean[K[K[K[K[K[K[K[K[K[Kg[Kmake run
-java -Djava.library.path=. homework10
-This program checks which numbers, in the sequence from 0 to a number, are multiples of 5.
-
-Enter maximum number to show: 10
-  Number  Multiple of 5?
-       0  Yes
-       1   No
-       2   No
-       3   No
-       4   No
-       5  Yes
-       6   No
-       7   No
-       8   No
-       9   No
-      10  Yes
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% make run
-java -Djava.library.path=. homework10
-This program checks which numbers, in the sequence from 0 to a number, are multiples of 5.
-
-Enter maximum number to show: 29
-  Number  Multiple of 5?
-       0  Yes
-       1   No
-       2   No
-       3   No
-       4   No
-       5  Yes
-       6   No
-       7   No
-       8   No
-       9   No
-      10  Yes
-      11   No
-      12   No
-      13   No
-      14   No
-      15  Yes
-      16   No
-      17   No
-      18   No
-      19   No
-      20  Yes
-      21   No
-      22   No
-      23   No
-      24   No
-      25  Yes
-      26   No
-      27   No
-      28   No
-      29   No
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% make run
-java -Djava.library.path=. homework10
-This program checks which numbers, in the sequence from 0 to a number, are multiples of 5.
-
-Enter maximum number to show: -10
-You must enter a positive integer greater than 0. Try again!
-Enter maximum number to show: abcd
-You must enter a valid integer. Try again!
-Enter maximum number to show: 219casd
-You must enter a valid integer. Try again!
-Enter maximum number to show: 1293sdc
-You must enter a valid integer. Try again!
-Enter maximum number to show: fsd19
-You must enter a valid integer. Try again!
-Enter maximum number to show: 0
-You must enter a positive integer greater than 0. Try again!
-Enter maximum number to show: exit
-You must enter a valid integer. Try again!
-Enter maximum number to show: ^Cmake: *** [run] Error 130
-
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% make run[K cleanbnls[Kmaketar tvf homework10.tar.gz[12@homework10.c[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[12P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[12@homework10.c[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[10Phomework10.javajava[Ktar zcvf homework10.tar.gz homework10.java homework10.c Makefile proof.txt outpput.txt[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgit add .[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctar zcvf homework10.tar.gz homework10.java homework10.c Makefile proof.txt outpput.txt
-homework10.java
-homework10.c
-Makefile
-proof.txt
-output.txt
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% tar zcvf homework10.tar.gz homework10.java homework10.c Makefile proof.txt outpput.txt[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake run[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K cleanbnls[Kmaketar tvf homework10.tar.gz
--rw-r--r-- echung32/uh    4345 2023-05-06 15:26 homework10.java
--rw-r--r-- echung32/uh    1267 2023-05-06 15:15 homework10.c
--rw-r--r-- echung32/uh     438 2023-05-06 15:21 Makefile
--rw-r--r-- echung32/uh     800 2023-05-06 15:23 proof.txt
--rw-r--r-- echung32/uh   16384 2023-05-06 15:29 output.txt
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% add .
-bash: add: command not found
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% git add .
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% git pull
-Already up-to-date.
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% git push -m ""[K[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"c"o"m"m"i"t" "-"m" "[C"
-[?1049h[?1h=[1;30r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[30;1H".git/COMMIT_EDITMSG" 14L, 400C[1;1H[38;5;130m      1 
-      2 [m# Please enter the commit message for your changes. Lines starting
-[38;5;130m      3 [m# with '#' will be ignored, and an empty message aborts the commit.
-[38;5;130m      4 [m# On branch master
-[38;5;130m      5 [m# Changes to be committed:
-[38;5;130m      6 [m#   (use "git reset HEAD <file>..." to unstage)
-[38;5;130m      7 [m#
-[38;5;130m      8 [m#   modified:   Makefile
-[38;5;130m      9 [m#   modified:   homework10.class
-[38;5;130m     10 [m#   new file:   homework10.tar.gz
-[38;5;130m     11 [m#   new file:   libhomework10.so
-[38;5;130m     12 [m#   new file:   output.txt
-[38;5;130m     13 [m#   new file:   proof.txt
-[38;5;130m     14 [m#
-[94m~                                                                                                                       [16;1H~                                                                                                                       [17;1H~                                                                                                                       [18;1H~                                                                                                                       [19;1H~                                                                                                                       [20;1H~                                                                                                                       [21;1H~                                                                                                                       [22;1H~                                                                                                                       [23;1H~                                                                                                                       [24;1H~                                                                                                                       [25;1H~                                                                                                                       [26;1H~                                                                                                                       [27;1H~                                                                                                                       [28;1H~                                                                                                                       [29;1H~                                                                                                                       [1;9H[?12l[?25h[?25l[m[30;1H[1m-- INSERT --[m[30;13H[K[1;9H[?12l[?25h[?25lh[?12l[?25h[?25lw[?12l[?25h[?25l1[?12l[?25h[?25l0[?12l[?25h[?25l:[?12l[?25h[?25l [?12l[?25h[?25li[?12l[?25h[?25lm[?12l[?25h[?25lp[?12l[?25h[?25ll[?12l[?25h[?25l[1;18H[K[1;18H[?12l[?25h[?25l[1;17H[K[1;17H[?12l[?25h[?25l[1;16H[K[1;16H[?12l[?25h[?25l[1;15H[K[1;15H[?12l[?25h[?25la[?12l[?25h[?25ld[?12l[?25h[?25ld[?12l[?25h[?25l [?12l[?25h[?25lp[?12l[?25h[?25lr[?12l[?25h[?25lo[?12l[?25h[?25lo[?12l[?25h[?25lf[?12l[?25h[?25ls[?12l[?25h[?25l [?12l[?25h[?25la[?12l[?25h[?25ln[?12l[?25h[?25ld[?12l[?25h[?25l [?12l[?25h[?25lt[?12l[?25h[?25la[?12l[?25h[?25lr[?12l[?25h[?25l [?12l[?25h[?25lf[?12l[?25h[?25li[?12l[?25h[?25ll[?12l[?25h[?25le[?12l[?25h[30;1H[K[1;37H[?25l[?12l[?25h[?25l[30;1H:[?12l[?25hwq[?25l".git/COMMIT_EDITMSG" 14L, 429C written
-[?1l>[?12l[?25h[?1049l[master 04d7333] hw10: add proofs and tar file
- 6 files changed, 490 insertions(+)
- rewrite homework10/homework10.class (95%)
- create mode 100644 homework10/homework10.tar.gz
- create mode 100755 homework10/libhomework10.so
- create mode 100644 homework10/output.txt
- create mode 100644 homework10/proof.txt
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% git commit
-# On branch master
-# Your branch is ahead of 'origin/master' by 1 commit.
-#   (use "git push" to publish your local commits)
-#
-# Changes not staged for commit:
-#   (use "git add <file>..." to update what will be committed)
-#   (use "git checkout -- <file>..." to discard changes in working directory)
-#
-#	modified:   output.txt
-#
-no changes added to commit (use "git add" and/or "git commit -a")
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% gt [K[K[Ki[Kgit push[K[K[K[K[K[K[K[Kgit add .
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% git add .commit
-[?1049h[?1h=[1;30r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[30;1H".git/COMMIT_EDITMSG" 12L, 367C[1;1H[38;5;130m      1 
-      2 [m# Please enter the commit message for your changes. Lines starting
-[38;5;130m      3 [m# with '#' will be ignored, and an empty message aborts the commit.
-[38;5;130m      4 [m# On branch master
-[38;5;130m      5 [m# Your branch is ahead of 'origin/master' by 1 commit.
-[38;5;130m      6 [m#   (use "git push" to publish your local commits)
-[38;5;130m      7 [m#
-[38;5;130m      8 [m# Changes to be committed:
-[38;5;130m      9 [m#   (use "git reset HEAD <file>..." to unstage)
-[38;5;130m     10 [m#
-[38;5;130m     11 [m#   modified:   output.txt
-[38;5;130m     12 [m#
-[94m~                                                                                                                       [14;1H~                                                                                                                       [15;1H~                                                                                                                       [16;1H~                                                                                                                       [17;1H~                                                                                                                       [18;1H~                                                                                                                       [19;1H~                                                                                                                       [20;1H~                                                                                                                       [21;1H~                                                                                                                       [22;1H~                                                                                                                       [23;1H~                                                                                                                       [24;1H~                                                                                                                       [25;1H~                                                                                                                       [26;1H~                                                                                                                       [27;1H~                                                                                                                       [28;1H~                                                                                                                       [29;1H~                                                                                                                       [1;9H[?12l[?25h[?25l[m[30;1H[K[30;1H:[?12l[?25h [1;9H[?25l[30;1H[1m-- INSERT --[1;9H[?12l[?25h[?25l[mh[?12l[?25h[?25lw[?12l[?25h[?25l1[?12l[?25h[?25l0[?12l[?25h[?25l:[?12l[?25h[?25l [?12l[?25h[?25lu[?12l[?25h[?25lp[?12l[?25h[?25ld[?12l[?25h[?25la[?12l[?25h[?25lt[?12l[?25h[?25le[?12l[?25h[?25l [?12l[?25h[?25lo[?12l[?25h[?25lu[?12l[?25h[?25lt[?12l[?25h[?25lp[?12l[?25h[?25lu[?12l[?25h[?25lt[?12l[?25h[30;1H[K[1;27H[?25l[?12l[?25h[?25l[30;1H:[?12l[?25hwq[?25l".git/COMMIT_EDITMSG" 12L, 386C written
-[?1l>[?12l[?25h[?1049l[master e2c3b67] hw10: update output
- 1 file changed, 34 insertions(+), 142 deletions(-)
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% git commit[1Padd .
-]0;echung32@uhx02:~/ics212/homework10uhx02:/home/e/echung32/ics212/homework10% git add .commit
-[?1049h[?1h=[1;30r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[30;1H".git/COMMIT_EDITMSG" 12L, 368C[1;1H[38;5;130m      1 
-      2 [m# Please enter the commit message for your changes. Lines starting
-[38;5;130m      3 [m# with '#' will be ignored, and an empty message aborts the commit.
-[38;5;130m      4 [m# On branch master
-[38;5;130m      5 [m# Your branch is ahead of 'origin/master' by 2 commits.
-[38;5;130m      6 [m#   (use "git push" to publish your local commits)
-[38;5;130m      7 [m#
-[38;5;130m      8 [m# Changes to be committed:
-[38;5;130m      9 [m#   (use "git reset HEAD <file>..." to unstage)
-[38;5;130m     10 [m#
-[38;5;130m     11 [m#   modified:   output.txt
-[38;5;130m     12 [m#
-[94m~                                                                                                                       [14;1H~                                                                                                                       [15;1H~                                                                                                                       [16;1H~                                                                                                                       [17;1H~                                                                                                                       [18;1H~                                                                                                                       [19;1H~                                                                                                                       [20;1H~                                                                                                                       [21;1H~                                                                                                                       [22;1H~                                                                                                                       [23
+Script done on Sat 06 May 2023 03:35:48 PM HST
