@@ -8,16 +8,16 @@
 //
 //  INSTRUCTOR:  Ravi Narayan
 //
-//  DATE:        February 3, 2023
+//  DATE:        May 6, 2023
 //
-//  FILE:        template.c
+//  FILE:        homework10.c
 //
 //  DESCRIPTION:
 //   Describe the file
 //
 ****************************************************************/
 
-
+#include "homework10.h"
 
 /*****************************************************************
 //
@@ -35,7 +35,13 @@
 //
 ****************************************************************/
 
-int main(int argc, char* argv[])
+JNIEXPORT jint JNICALL Java_homework10_is_1multiple5(JNIEnv * env, jclass class, jint number)
 {
-    return 0;
+    int returnValue = 0;
+    if ( number % 5 == 0 )
+    {
+        returnValue = 1;
+    }
+
+    return returnValue;
 }
