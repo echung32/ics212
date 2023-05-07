@@ -88,6 +88,7 @@ public class homework10
                 if (number <= 0)
                 {
                     System.out.println("You must enter a positive integer greater than 0. Try again!");
+                    scan.nextLine();
                 }
                 else
                 {
